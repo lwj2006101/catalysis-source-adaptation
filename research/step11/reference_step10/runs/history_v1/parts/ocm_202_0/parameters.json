@@ -1,0 +1,821 @@
+{
+  "tasks": {
+    "ocm_f0": {
+      "theta": {
+        "kind": "isotropic",
+        "alpha": 1.0,
+        "gamma": 1.0
+      },
+      "theta_index": 7,
+      "atlas": [
+        {
+          "kind": "isotropic",
+          "alpha": 0.01,
+          "gamma": 0.1
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 0.01,
+          "gamma": 1.0
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 0.01,
+          "gamma": 10.0
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 0.1,
+          "gamma": 0.1
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 0.1,
+          "gamma": 1.0
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 0.1,
+          "gamma": 10.0
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 1.0,
+          "gamma": 0.1
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 1.0,
+          "gamma": 1.0
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 1.0,
+          "gamma": 10.0
+        }
+      ],
+      "working_weights": [
+        0.06427669896869603,
+        0.012407474710236214,
+        0.0024495851112265217,
+        0.21773071109795272,
+        0.0800986523245756,
+        0.02251325071050292,
+        0.2085420806144225,
+        0.24405244090761766,
+        0.1479291055547697
+      ],
+      "working_noise": 0.6333492260780146,
+      "weight_temperature": 0.07639308633784037,
+      "historical_group_equal_mae": [
+        3.6092548006555507,
+        3.734913642874155,
+        3.858852290551793,
+        3.5160505109143427,
+        3.592443597252183,
+        3.6893982626569546,
+        3.519344441964823,
+        3.507332219076955,
+        3.5455784163369
+      ],
+      "n_historical_groups": 16,
+      "interpretation": "empirical kernel-covariance averaging; not a calibrated posterior"
+    },
+    "ocm_f1": {
+      "theta": {
+        "kind": "anova",
+        "alpha": 0.01,
+        "gamma_op": 0.1,
+        "gamma_chem": 10.0
+      },
+      "theta_index": 65,
+      "atlas": [
+        {
+          "kind": "isotropic",
+          "alpha": 0.01,
+          "gamma": 0.1
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 0.01,
+          "gamma": 1.0
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 0.01,
+          "gamma": 10.0
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 0.1,
+          "gamma": 0.1
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 0.1,
+          "gamma": 1.0
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 0.1,
+          "gamma": 10.0
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 1.0,
+          "gamma": 0.1
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 1.0,
+          "gamma": 1.0
+        },
+        {
+          "kind": "isotropic",
+          "alpha": 1.0,
+          "gamma": 10.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.01,
+          "gamma_op": 0.1,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.01,
+          "gamma_op": 0.1,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.01,
+          "gamma_op": 0.1,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.01,
+          "gamma_op": 1.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.01,
+          "gamma_op": 1.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.01,
+          "gamma_op": 1.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.01,
+          "gamma_op": 10.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.01,
+          "gamma_op": 10.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.01,
+          "gamma_op": 10.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.1,
+          "gamma_op": 0.1,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.1,
+          "gamma_op": 0.1,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.1,
+          "gamma_op": 0.1,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.1,
+          "gamma_op": 1.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.1,
+          "gamma_op": 1.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.1,
+          "gamma_op": 1.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.1,
+          "gamma_op": 10.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.1,
+          "gamma_op": 10.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 0.1,
+          "gamma_op": 10.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 1.0,
+          "gamma_op": 0.1,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "additive",
+          "alpha": 1.0,
+          "gamma_op": 0.1,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 1.0,
+          "gamma_op": 0.1,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 1.0,
+          "gamma_op": 1.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "additive",
+          "alpha": 1.0,
+          "gamma_op": 1.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 1.0,
+          "gamma_op": 1.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 1.0,
+          "gamma_op": 10.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "additive",
+          "alpha": 1.0,
+          "gamma_op": 10.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "additive",
+          "alpha": 1.0,
+          "gamma_op": 10.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "product",
+          "alpha": 0.01,
+          "gamma_op": 0.1,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "product",
+          "alpha": 0.01,
+          "gamma_op": 0.1,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "product",
+          "alpha": 0.01,
+          "gamma_op": 0.1,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "product",
+          "alpha": 0.01,
+          "gamma_op": 1.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "product",
+          "alpha": 0.01,
+          "gamma_op": 1.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "product",
+          "alpha": 0.01,
+          "gamma_op": 1.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "product",
+          "alpha": 0.01,
+          "gamma_op": 10.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "product",
+          "alpha": 0.01,
+          "gamma_op": 10.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "product",
+          "alpha": 0.01,
+          "gamma_op": 10.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "product",
+          "alpha": 0.1,
+          "gamma_op": 0.1,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "product",
+          "alpha": 0.1,
+          "gamma_op": 0.1,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "product",
+          "alpha": 0.1,
+          "gamma_op": 0.1,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "product",
+          "alpha": 0.1,
+          "gamma_op": 1.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "product",
+          "alpha": 0.1,
+          "gamma_op": 1.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "product",
+          "alpha": 0.1,
+          "gamma_op": 1.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "product",
+          "alpha": 0.1,
+          "gamma_op": 10.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "product",
+          "alpha": 0.1,
+          "gamma_op": 10.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "product",
+          "alpha": 0.1,
+          "gamma_op": 10.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "product",
+          "alpha": 1.0,
+          "gamma_op": 0.1,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "product",
+          "alpha": 1.0,
+          "gamma_op": 0.1,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "product",
+          "alpha": 1.0,
+          "gamma_op": 0.1,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "product",
+          "alpha": 1.0,
+          "gamma_op": 1.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "product",
+          "alpha": 1.0,
+          "gamma_op": 1.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "product",
+          "alpha": 1.0,
+          "gamma_op": 1.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "product",
+          "alpha": 1.0,
+          "gamma_op": 10.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "product",
+          "alpha": 1.0,
+          "gamma_op": 10.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "product",
+          "alpha": 1.0,
+          "gamma_op": 10.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.01,
+          "gamma_op": 0.1,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.01,
+          "gamma_op": 0.1,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.01,
+          "gamma_op": 0.1,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.01,
+          "gamma_op": 1.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.01,
+          "gamma_op": 1.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.01,
+          "gamma_op": 1.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.01,
+          "gamma_op": 10.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.01,
+          "gamma_op": 10.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.01,
+          "gamma_op": 10.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.1,
+          "gamma_op": 0.1,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.1,
+          "gamma_op": 0.1,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.1,
+          "gamma_op": 0.1,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.1,
+          "gamma_op": 1.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.1,
+          "gamma_op": 1.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.1,
+          "gamma_op": 1.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.1,
+          "gamma_op": 10.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.1,
+          "gamma_op": 10.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 0.1,
+          "gamma_op": 10.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 1.0,
+          "gamma_op": 0.1,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "anova",
+          "alpha": 1.0,
+          "gamma_op": 0.1,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 1.0,
+          "gamma_op": 0.1,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 1.0,
+          "gamma_op": 1.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "anova",
+          "alpha": 1.0,
+          "gamma_op": 1.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 1.0,
+          "gamma_op": 1.0,
+          "gamma_chem": 10.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 1.0,
+          "gamma_op": 10.0,
+          "gamma_chem": 0.1
+        },
+        {
+          "kind": "anova",
+          "alpha": 1.0,
+          "gamma_op": 10.0,
+          "gamma_chem": 1.0
+        },
+        {
+          "kind": "anova",
+          "alpha": 1.0,
+          "gamma_op": 10.0,
+          "gamma_chem": 10.0
+        }
+      ],
+      "working_weights": [
+        0.001954846343504227,
+        0.03465579135907759,
+        0.08539212234288356,
+        0.00031391786378914935,
+        0.0019399255974521747,
+        0.0340815311332752,
+        0.000221586351024908,
+        0.0003098984386731977,
+        0.001565025819064261,
+        0.0003117386266524672,
+        0.006247870547743764,
+        0.15669563997314254,
+        4.8778295697957066e-05,
+        0.001005643013589897,
+        0.04047529872551072,
+        6.697816347781046e-06,
+        0.00013840414989932232,
+        0.009439328282708473,
+        0.0005822383279467658,
+        0.0010531213141968666,
+        0.015495825809744988,
+        0.0002100285410880092,
+        0.00038386248226399974,
+        0.006527664950593021,
+        5.2671233565803414e-05,
+        9.592981165618094e-05,
+        0.0017200247963811979,
+        0.0003051757459142163,
+        0.0003290054874628906,
+        0.0005944922351302759,
+        0.0005124789867950289,
+        0.0005504186866217309,
+        0.0009661983280360132,
+        0.0003815779738061686,
+        0.00040922732959704493,
+        0.0007075262004840959,
+        0.000303895919750131,
+        0.014797552522088229,
+        0.15791160663027903,
+        3.5531860933807544e-05,
+        0.002120865051440205,
+        0.03940377125778806,
+        3.8615239181926025e-06,
+        0.0002539998046412184,
+        0.013564666268635738,
+        0.0004830841397346333,
+        0.0014199397977958839,
+        0.05586493646399611,
+        0.00013296542475270656,
+        0.00037099689255421794,
+        0.017081639208612186,
+        2.593578846178901e-05,
+        6.658116938329127e-05,
+        0.0034906980265837725,
+        0.0003970023770674056,
+        0.0004550152893714321,
+        0.0012266437398526554,
+        0.0004851709600021866,
+        0.0005566326077020934,
+        0.0015519126724758611,
+        0.00025589778919893325,
+        0.0002922560646171114,
+        0.0008012913273699203,
+        0.0003020811682510136,
+        0.008831310925361366,
+        0.16436733273752802,
+        4.216979889568547e-05,
+        0.001353111657568057,
+        0.04458717076558504,
+        5.261934541006368e-06,
+        0.00018811714699689118,
+        0.01563726565855211,
+        0.0005497744975310872,
+        0.0011893091648197168,
+        0.026061867815253655,
+        0.00017527366445346614,
+        0.0003709162003953959,
+        0.009712316595023932,
+        3.94384444621577e-05,
+        8.170417910147645e-05,
+        0.0023384044584138057,
+        0.0003358824218771753,
+        0.00036955015477510203,
+        0.0007686771893749087,
+        0.0005062805529975566,
+        0.0005561326543159463,
+        0.0011467902946473397,
+        0.00033365419847256327,
+        0.00036661215912571336,
+        0.0007477300613516816
+      ],
+      "working_noise": 0.044197813797628806,
+      "weight_temperature": 0.05984062891983455,
+      "historical_group_equal_mae": [
+        3.4229820214730102,
+        3.2509310423461164,
+        3.1969674213223427,
+        3.5324266721220257,
+        3.4234405187659354,
+        3.2519309326926806,
+        3.5532703008213073,
+        3.533197823034576,
+        3.4362911321879754,
+        3.5328435380866305,
+        3.353451453389323,
+        3.1606410794137516,
+        3.643840702792891,
+        3.462757156529948,
+        3.2416421592712323,
+        3.762654504808123,
+        3.581433355273718,
+        3.3287585692616197,
+        3.4954602139242934,
+        3.4599966315276434,
+        3.299096415417573,
+        3.556475899205449,
+        3.52038955021602,
+        3.3508299193303617,
+        3.6392458999276633,
+        3.603368609938667,
+        3.430639999483061,
+        3.5341167835956098,
+        3.5296175699813186,
+        3.494213865706027,
+        3.50309708416084,
+        3.498823294674361,
+        3.465151578090768,
+        3.520746748029953,
+        3.5165605607832187,
+        3.483797586565895,
+        3.5343682670239223,
+        3.301855600279906,
+        3.1601785053781826,
+        3.6628015452766904,
+        3.418104264906174,
+        3.2432477043554853,
+        3.7956099151428204,
+        3.5451007900768463,
+        3.307061343251849,
+        3.5066318023695193,
+        3.442112898130611,
+        3.222358812893441,
+        3.5838323001065917,
+        3.522429558105258,
+        3.2932659352292917,
+        3.681639732884524,
+        3.625222108411473,
+        3.3882870154428915,
+        3.5183754403776644,
+        3.510213851611222,
+        3.450869539037592,
+        3.5063738603651027,
+        3.498151512160529,
+        3.43679464136578,
+        3.544655300176363,
+        3.536705338114905,
+        3.476350424832293,
+        3.5347266838612628,
+        3.332742839411268,
+        3.157780791183578,
+        3.6525523706540617,
+        3.4449976714184576,
+        3.235852321909212,
+        3.777093020051914,
+        3.5630690523523683,
+        3.2985526912104124,
+        3.4988933708851357,
+        3.452719163103088,
+        3.26798511938681,
+        3.56730076271762,
+        3.5224425749116675,
+        3.3270525122736263,
+        3.6565594912854613,
+        3.612973727612578,
+        3.4122611390923208,
+        3.528379662809206,
+        3.522663368526987,
+        3.4788370114425975,
+        3.503825269251306,
+        3.4982052836577027,
+        3.4548976978679673,
+        3.5287779644946564,
+        3.523141014387257,
+        3.4804903523278568
+      ],
+      "n_historical_groups": 16,
+      "interpretation": "empirical kernel-covariance averaging; not a calibrated posterior"
+    }
+  },
+  "historical_sources": 16,
+  "historical_groups": 16,
+  "actual_kernel_validation_prediction_values": 99990,
+  "primary_parameter_budget": 5,
+  "tuning": "group-equal historical random-support MAE; fixed deployed kernel across policies and budgets",
+  "new_backbone_fits": 0
+}

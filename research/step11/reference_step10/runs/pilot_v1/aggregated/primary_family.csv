@@ -1,0 +1,6 @@
+control,candidate_mae,control_mae,delta_mae,family_adjusted_ci_low,family_adjusted_ci_high,n_sources,n_leakage_groups,adjusted_support_for_advantage,statistical_status
+composition_vopt,2.5590184662987343,1.9249160439398656,0.6341024223588686,1.4802973661668753e-16,1.3849659617039969,6,6,False,historical development diagnostic
+kernel_vopt,2.5590184662987343,2.318250890480219,0.24076757581851513,-0.09689817177254478,0.9180909898725412,6,6,False,historical development diagnostic
+robust_view_vopt,2.5590184662987343,1.9572154345307136,0.6018030317680204,-0.06459878118169653,1.3849659617039969,6,6,False,historical development diagnostic
+pool_vopt,2.5590184662987343,2.11330921791958,0.4457092483791543,-0.27308381336810544,1.306188493131006,6,6,False,historical development diagnostic
+centered_mae,2.5590184662987343,1.9249160439398654,0.6341024223588689,0.0,1.3849659617039969,6,6,False,historical development diagnostic

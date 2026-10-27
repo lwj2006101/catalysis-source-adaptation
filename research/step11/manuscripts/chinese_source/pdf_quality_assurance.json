@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "all_pages_rendered": true,
+  "visually_reviewed": true,
+  "pages": 11,
+  "text_outside_page": [],
+  "source_english_pdf_sha256": "9760254bd1b4b5302378787fe1f1826920ed3d823c2712eb3b611db3b57b2f4e",
+  "chinese_pdf_sha256": "71e8ba4567a9aaef1b0b403cb166697982ffead2fc4ca58eb1490ca7212b1bd4",
+  "all_pages_reviewed": "All eleven rendered pages inspected in contact sheets; title and mathematical methods additionally inspected at full resolution.",
+  "final_latex_warning_count": 0
+}

@@ -1,0 +1,16 @@
+\begin{table}[htbp]\centering\small
+\caption{Five-label F1 comparisons with predictor parameters held fixed across policies. MAE is in percentage points. History is development over 22 sources; both publication applications use the same previously opened family. The catalyst query and pool have disjoint reported catalyst identifiers.}\label{tab:step10matched}
+\begin{tabular}{llrrr}\toprule
+Acquisition & Predictor & History & Opened random & Catalyst holdout \\ \midrule
+Random & Expanded kernel & 3.317 & 4.848 & 4.915 \\
+Composition V & Expanded kernel & 2.863 & 4.164 & 5.055 \\
+Pool V & Expanded kernel & 3.053 & 3.978 & 4.578 \\
+Finite-intercept GP & Expanded kernel & 2.790 & 5.460 & 4.199 \\
+Centered squared risk & Expanded kernel & 2.792 & 5.460 & 4.199 \\
+Centered absolute risk & Expanded kernel & 2.845 & 5.788 & 4.199 \\
+Averaged absolute risk & Expanded kernel & 3.030 & 4.793 & 4.381 \\
+Random & Strong local RBF & 3.288 & 4.792 & 4.818 \\
+Composition V & Strong local RBF & 2.851 & 3.813 & 4.680 \\
+Centered squared risk & Strong local RBF & 2.784 & 5.145 & 3.689 \\
+\bottomrule\end{tabular}
+\end{table}

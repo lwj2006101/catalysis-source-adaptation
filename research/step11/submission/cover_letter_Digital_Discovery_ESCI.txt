@@ -1,0 +1,16 @@
+Dear Editor,
+
+Please consider the enclosed manuscript, "What few target labels learn under publication shift in catalysis", as a Research Article for Digital Discovery.
+
+The manuscript addresses a practical question for data-efficient catalytic research: when a few measurements improve prediction on a new publication, what information has actually been learned? We separate a target response level, input-response correspondence, historical response reuse and measurement geometry. The study combines source-disjoint evaluation in methanol synthesis and oxidative coupling of methane with matched support controls, label permutation and acquisition-prediction representation crossing.
+
+The results establish actionable equal-budget measurement benefits. At five labels, standard query-directed design improves methanol productivity and composition-enriched OCM prediction in the adjusted historical primary family. Chemistry informs acquisition even when the deployed predictor consumes only operating conditions. Across twenty catalyst-disjoint partitions of one publication with publicly released measurements, composition-directed acquisition reduces mean local-RBF MAE from 4.922 to 4.107 percentage points and improves nineteen partitions. These partitions are explicitly treated as sensitivity within one experimental family. Strong local controls also distinguish calibration value from an incremental benefit of historical response transfer.
+
+A prediction-operator risk calculation and an exact covariance sensitivity bound explain why measurement locations, predictor choice and the query population need to be considered jointly. The contribution is the controlled information analysis and its empirical evidence, rather than a claim that established ridge, kernel or V-optimal estimators are new algorithms.
+
+We provide the main manuscript, complete Supplementary Information, editable scientific figures, machine-readable source-level results and a computational reproduction archive. The reported predictions and losses are computed by the archived code, and newly added RBF predictions have been independently reconstructed. The work addresses data-efficient catalytic discovery through reproducible source-dependent prediction and the design of scarce measurements. Its emphasis on transparent information controls and the conditions under which active learning helps is aligned with rigorous computational discovery workflows.
+
+Author identities and disclosures will accompany the final submission record.
+
+Sincerely,
+The submitting authors

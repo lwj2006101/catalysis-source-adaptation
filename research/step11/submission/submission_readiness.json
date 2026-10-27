@@ -1,0 +1,19 @@
+{
+  "scientific_manuscript_complete": true,
+  "supplementary_complete": true,
+  "actual_computations_audited": true,
+  "submission_attachments_complete": true,
+  "article_submitted": false,
+  "new_public_repository_published": false,
+  "journal_quartile_officially_verified": false,
+  "author_identity_filled": false,
+  "author_declarations_confirmed": false,
+  "main_candidate": "Computers & Chemical Engineering; scope candidate, quartile unverified",
+  "alternative": "Digital Discovery; official ESCI",
+  "remaining_author_actions": [
+    "supply genuine authors and affiliations",
+    "confirm contributions, funding and conflict statements",
+    "choose and verify target journal",
+    "arrange actual repository deposit and final submission"
+  ]
+}

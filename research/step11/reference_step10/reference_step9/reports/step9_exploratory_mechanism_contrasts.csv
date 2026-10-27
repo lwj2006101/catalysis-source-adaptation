@@ -1,0 +1,9 @@
+task,left,right,method,delta_mae,ci95_low,ci95_high,n_sources,analysis_status
+ocm_f0,composition_vopt,operating_vopt,adaptive_blend,-0.4518640483847456,-0.9681768761919798,-0.013834828617193668,22,post-result exploratory conditional contrast; not an additional confirmatory family
+ocm_f0,composition_vopt,random,adaptive_blend,-0.3354301616867951,-0.5158049435303526,-0.1632715747787407,22,post-result exploratory conditional contrast; not an additional confirmatory family
+ocm_f0,composition_vopt,shuffled_composition_vopt,adaptive_blend,-0.27755711971862734,-0.4727806188477445,-0.0929410601871958,22,post-result exploratory conditional contrast; not an additional confirmatory family
+ocm_f0,robust_view_vopt,composition_vopt,adaptive_blend,0.009765373008180851,-0.004526791508006154,0.030986809545430094,22,post-result exploratory conditional contrast; not an additional confirmatory family
+ocm_f1,composition_vopt,operating_vopt,adaptive_blend,-0.5917076783906493,-1.3359199640675128,-0.018368532363811158,22,post-result exploratory conditional contrast; not an additional confirmatory family
+ocm_f1,composition_vopt,random,adaptive_blend,-0.38327024986712027,-0.6401234233333265,-0.149775020980431,22,post-result exploratory conditional contrast; not an additional confirmatory family
+ocm_f1,composition_vopt,shuffled_composition_vopt,adaptive_blend,-0.3304915717872385,-0.5999065117325375,-0.08530056490019967,22,post-result exploratory conditional contrast; not an additional confirmatory family
+ocm_f1,robust_view_vopt,composition_vopt,adaptive_blend,-0.006340176350896176,-0.03925869959956145,0.014294472756990934,22,post-result exploratory conditional contrast; not an additional confirmatory family

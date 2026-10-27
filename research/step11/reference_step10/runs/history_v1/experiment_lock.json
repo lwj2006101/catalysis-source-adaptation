@@ -1,0 +1,58 @@
+{
+  "identity": "2dd13c6ab2f01338b7590d6c5522f2051914a46bdb72a1d1c9667cfacb1d4f9d",
+  "created_utc": "2026-10-11T06:21:41.903108+00:00",
+  "config": {
+    "version": "step10-predictor-matched-2",
+    "seeds": [
+      42,
+      101,
+      202,
+      303,
+      404
+    ],
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "policies": [
+      "random",
+      "operating_vopt",
+      "composition_vopt",
+      "feature_cover",
+      "pool_vopt",
+      "kernel_vopt",
+      "robust_view_vopt",
+      "finite_gp_v",
+      "centered_mse",
+      "centered_mae",
+      "hedged_mse",
+      "hedged_mae"
+    ],
+    "methods": [
+      "matched_kernel",
+      "locked_local_rbf",
+      "frozen_blend",
+      "local_ridge",
+      "target_mean",
+      "zero_label",
+      "random_tuned_isotropic"
+    ],
+    "budgets": [
+      1,
+      2,
+      3,
+      5,
+      10
+    ],
+    "plan_sha256": "80dca5ae98fa8a086705dbc711515b90cf9bdb2070134663c75f28cfe39fc6a9",
+    "code_hashes": {
+      "run_matched.py": "cf49592e3b34d4c681493606fa0c39513bd717671d81ccc12e201f4882c57c21",
+      "matched_kernel.py": "a1aa9d9f2e43efaa6025c3461bb8d593d1b4c40c8c37ab074e41ae1d73cdc636",
+      "freeze_apply.py": "509d5bd56577f8cf78acbb6b72d81e782c65631e37d1060232e8206eb817b8e7"
+    },
+    "predecessor_manifest_sha256": "243863481e199202d31dbe4482078705393feea065008df800475e320e5f38eb"
+  }
+}

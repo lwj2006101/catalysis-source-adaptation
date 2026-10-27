@@ -1,0 +1,21 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "modules": {
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "scikit-learn": "1.8.0",
+    "joblib": "1.5.3",
+    "matplotlib": "3.10.8",
+    "PyMuPDF": "1.26.6",
+    "reportlab": "4.4.9",
+    "Pillow": "12.3.0"
+  },
+  "source_file": "第9步_实跑结果与论文完整包.zip",
+  "source_sha256": "1db4a170fdc35ca054765841ef8f060c92e4c86cf0e18fbebdcaeecfabacc7bb",
+  "source_library_file_id": "libfile_d1f011949ea08191ab0ea40143a61c36",
+  "source_file_id": "file_00000000d36881f59e8532e7b866dbd3",
+  "source_manifest_files_verified": 2868,
+  "execution": "current runtime; no private-network connection",
+  "created_utc": "2026-10-11T06:06:07.400954+00:00"
+}

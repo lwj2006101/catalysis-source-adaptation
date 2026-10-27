@@ -1,0 +1,265 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=22mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,booktabs,tabularx,longtable,graphicx,hyperref,placeins}
+\emergencystretch=2em
+\title{Supplementary information\\Few-label calibration under publication shift in catalysis}
+\author{}\date{}
+\usepackage{pdflscape}
+\begin{document}\maketitle
+\section{Analysis populations and provenance}
+Historical cleaned input snapshots are inherited from the supplied research archive; the preceding full-study release refit the controlled split analysis and established a traceable source-tuned adaptation engine. It does not claim independent re-extraction of every historical measurement or restoration of the original archive's missing executed-engine version. Rows preserve original-file and row identifiers; historical OCM includes the row-audit table. The cleaned snapshots, their hashes and actual train/test ledgers are the reproducible starting point. Historical raw-file curation exclusions are not represented as newly independently audited extraction decisions.
+
+The methanol paired corpus has 1,245 rows, 82 sources and 80 leakage groups; STY has 1,230 rows and 109 sources; OCM has 1,794 rows, 408 sources and 405 groups. Methanol and STY share 20 publication identifiers. OCM F0/F1 have identical outcome and source populations. All reported targets are finite; genuine zeros remain observations. Required operating-variable meanings follow the released upstream datasets. Missing operating values are imputed using a median fitted on the current training rows; an entirely missing training column uses the documented keep-empty-feature behavior. Numeric scaling also uses only that partition. No target-source query feature values extend composition vocabularies.
+\input{tables/si_input_quality.tex}
+There are 497 missing catalyst names in the paired methanol data. The name holdout uses only nonempty normalized strings and requires a complete eligible stratum; it does not identify a physical preparation batch. The STY operating snapshot has no catalyst-name field. Richer public Suvarna metadata are retained in the retrieved workbook but are not retroactively added to this operating-input benchmark. The OCM catalyst number identifies an upstream record, not repeated measurements certified on one physical catalyst.
+
+\section{Chronology and claim scope}
+The historical adaptation study is retrospective: archived outcomes motivated its research question. The new-source protocol was locally timestamped and hashed before new query outcomes were evaluated, not independently preregistered. Its primary hypothesis is the five-label composition-enriched blend versus local response contrast. Bibliographic identity corrections remove re-listed old sources even when spelling or number changes; no error-dependent inclusion is used. The additional compilation is a separately released source of observations, rather than a prospective laboratory campaign.
+
+The label-permutation, matched-alpha and fit-regime sensitivity analyses are explanatory follow-ups, not replacements for the frozen primary test. The latter uses every one of the 25 historical outer-training fits; no fit is selected by external performance. Fixed ridge/boosting split audits on old data are retrospective, with configuration held constant within each comparison. Published-workflow audits serve a separate question about validation scope. Suvarna numbers are recomputed from archived predictions; Xu's matched five-fold grouping comparison is newly refitted with XGBoost 3.2.0. Neither is external validation of the new adapters.
+
+\section{Split and support construction}
+Historical outer folds are stored in leakage-group split ledgers, with seeds 42, 101, 202, 303 and 404. Each seed covers every row exactly once as an outer test observation. Training inner folds randomly permute sorted leakage-group identities into three blocks. All imputation/scaling/composition encoders are fitted on the relevant inner training block before OOF prediction.
+
+For a source with $n$ records, sort row identifiers, shuffle with a stable SHA-derived identifier seed, and query $\max(5,\lceil n/4\rceil)$ rows. Remaining rows are the support pool. A complete curve requires ten pool records. Fifty independently seeded pool orders create nested budgets 1, 2, 3, 5 and 10; the same order is used for every method. No support record is also a query. Calibration labels are disclosed to the prediction function only for that budget.
+
+High-temperature design enumerates observed cutoffs and selects the upper block closest to a quarter of available finite-temperature records, subject to at least five queries and ten strictly lower-temperature pool rows. It never splits tied temperatures across support and query. Name-stratum design enumerates complete reported-name strata with the same minimum sizes and selects the query size closest to a quarter; it never places the same normalized name on both sides. Stress hyperparameters are frozen from random-source training. Matched-source random panels are available for interpretation, but their query records differ from stress panels, so these contrasts are not causal measurements of a difficulty increase.
+
+\section{All nine strategies}
+Let $p_A=f_G(A)$, $p_T=f_G(T)$, support responses $y_A$, support residual mean $\bar r$, and historical response scale $s>0$.
+\begin{enumerate}
+\item Global: $q=p_T$, a zero-support-label reference at every plotted budget.
+\item Support mean: $q=\bar y_A$.
+\item Offset: $q=p_T+\bar r$.
+\item Affine: $z_A=(p_A-\bar p_A)/s$, $z_T=(p_T-\bar p_A)/s$,
+\[q=p_T+\bar r+z_T\frac{z_A^\top(y_A-p_A)}{z_A^\top z_A+\lambda}.\]
+This shrinks the additional slope toward an offset map, with an unpenalized residual mean.
+\item Empirical-Bayes offset: $q=p_T+\mu+\eta_k(\bar r-\mu)$,
+\[\eta_k=\frac{k\tau^2}{\sigma^2+k\tau^2}.\]
+Historical OOF residuals provide the source-equal residual mean $\mu$, pooled within-source variance $\sigma^2$, and between-source variance corrected for within-source mean noise, truncated below at zero. The variance floor is $10^{-12}$.
+\item Local ridge: fit $y_A$ on training-fitted $z_A$, intercept unpenalized.
+\item Temperature ridge: the same support fit using only the scaled temperature coordinate.
+\item Residual ridge: fit $y_A-p_A$ on $z_A$ and add $p_T$.
+\item Shrinkage blend: combine local and residual predictions with support leave-one-out and historical pseudo-source shrinkage, as specified in the main text.
+\end{enumerate}
+Ridge/affine strengths are separately selected per method and label budget from $\{.1,1,10,100\}$. Ties follow the declared grid order. The base grid has four ridge candidates; boosting candidates (100,2), (100,3), (300,2), (300,3), (500,8), where pairs are trees/depth. Boosting uses learning rate .05, subsample .8, minimum split size 3 and random state 42. Its candidate score is source-equal absolute OOF error, not pooled record MAE.
+
+Adapters are scored on ten training-source pseudo-support draws per budget. Local, residual, temperature and affine strengths minimize source-equal pseudo-query MAE. For blending, prior $w_0\in\{0,.25,.5,.75,1\}$ minimizes pseudo-query error; disagreement scale is the source-equal mean component leave-one-out squared difference (one-label query disagreement at $k=1$). Shrinkage $c\in\{\infty,10,2,.5,0\}$ is selected with the prior/scale for each pseudo-source excluding its leakage group. Actual outer or additional-source query labels are not used. Reuse of training pseudo-queries across hyperparameter stages can affect training selection, but final outer and additional-source assessments remain separate.
+
+\section{Exact ridge leave-one-out and projection identity}
+Center support matrix $X$ and responses $y$ without penalizing the intercept. For $k$ support records, let $K=X_cX_c^\top$, $B=(K+\alpha I)^{-1}$, and
+\[\widehat y_T=\bar y+(X_T-\bar X)X_c^\top B(y-\bar y).\]
+The diagonal leverage is $h_i=1/k+(KB)_{ii}$. For $k>1$ the exact leave-one-out response prediction is
+\[\widehat y_{-i}=y_i-\frac{y_i-\widehat y_i}{1-h_i}.\]
+This uses fixed historical transformations; it does not refit the historical preprocessing on support labels. Independent mathematical verification compares predictions with scikit-learn Ridge and leave-one-out refits.
+
+For fixed features, the map from $y_A$ to query predictions is linear. Therefore
+\[R_\alpha[y_A-p_A]=R_\alpha[y_A]-R_\alpha[p_A],\quad q_R-q_L=p_T-R_\alpha[p_A].\]
+The main method chooses its two alphas separately. In the exploratory matched-alpha ablation, both use the selected local alpha without new tuning. The identity is checked numerically for all historical OCM and additional-source random draws at $k=5$. An added global component can correct a local response or add error; linearity alone does not determine which.
+
+\section{Additional OCM source reconstruction}
+The public updated workbook has 4,759 rows and 533 represented publication numbers. The old bibliography has 420 unique numbers up to 421, including an ambiguous duplicated number. Existing numbers are conservatively old, even when their citation text has a typographic change. Additional numbers are screened against normalized old citations and bibliometric fields. Three aliases are removed: 424=396, 427=395 and 429=105, leaving 118 additional bibliographic entries before record-quality eligibility. Four old-number citation differences are logged; two concern missing old citation strings and the others typography. They do not qualify as new sources.
+
+Admitted new records require finite positive temperature, partial pressures, pressure ratio and total pressure; contact time may be missing but cannot be nonpositive when observed. C$_2$ yield must be reported within $[0,100]$. Composition encoding validates species/amount pairing and amount range; a fifth/sixth cation or third support cannot be omitted to fit the frozen schema. Full upstream record duplicates are removed. The exclusion reasons overlap: 1,845 records are old/unverifiable publications, 393 lack valid CH$_4$ partial pressure, 393 lack valid O$_2$ partial pressure, 100 exceed slots, 44 lack a valid target, and 21 are full duplicates. Their sum is not the excluded-row count. Exactly 2,378 distinct rows are excluded, leaving 2,381 from 91 sources.
+
+The workbook describes species amounts as molar percentages, pressures in bar, temperature in K, contact time in s and C$_2$ yield as methane conversion times combined C$_2$ selectivity. We preserve these reported variables rather than infer pressure assumptions or physical absence from blank slots. The complete row-audit, all-source registry and bibliography screen are distributed. The 52-source main cohort and 40-source high-temperature cohort have label-blind design ledgers and shared F0/F1 support orders.
+
+The full-fit F1 backbone is gradient boosting (500,8). At $k=5$, local and residual alphas are both 1, affine strength 1, temperature alpha 1, blend prior .5, shrinkage 10 and disagreement scale 6.6618. F0 backbone is (100,3); local alpha 10, residual alpha 100, affine .1, temperature 1, blend prior 0, shrinkage 10 and scale 1.4613. These settings come exclusively from old OCM sources. Serialized backbones, preprocessing parameters, training OOF records and all selection scores are saved.
+\input{tables/si_external_sources.tex}
+
+\section{Metric estimands and uncertainty}
+Let $e_{srj}$ be query MAE for source $s$, support repeat $r$ and historical outer seed $j$. Historical source MAE is $\bar e_s=\frac1J\sum_j\frac1R\sum_r e_{srj}$, and the primary benchmark MAE is $\frac1S\sum_s\bar e_s$. External full-fit MAE omits the seed average. Row-weighted sensitivity weights each source by its fixed query count. Bounded sensitivity clips percentage predictions to $[0,100]$ and STY predictions below at zero; raw observations are unchanged.
+
+Cluster bootstrap samples leakage groups with replacement and divides sampled source-error sums by sampled source counts. It does not replace the source-equal estimand with group-equal averaging. Twenty thousand draws estimate percentile intervals, conditional on the fitted models and observed sources. No adjustment across secondary comparisons is applied. A zero-crossing interval is neither equivalence nor proof of no effect. Identical within-source control outputs can yield numerical differences near floating-point precision.
+
+Stacked repeated $R^2$ is $1-\sum_{sjri}(y_i-p_i)^2/\sum_{sjri}(y_i-\bar y)^2$ over the specified repeated prediction population. $R^2$ of a mean prediction instead averages each record's predictions before squaring the error; these are different quantities. The main controlled audit uses the former. An older archive field named prediction-averaged $R^2$ actually averaged squared errors before forming $R^2$; that label is not retained as an averaged-prediction metric.
+
+\section{Complete budget tables}
+Values below are source-equal raw MAEs. Units are pp for percent targets and mg MeOH h$^{-1}$ g$_{cat}^{-1}$ for STY. Stress cohorts and selected parameters are fixed across budgets. Intervals, bounded/row-weighted sensitivities and paired source values accompany the CSV exports; printed tables avoid pretending that support repeats increase the number of independent sources.
+\input{tables/si_budget_tables.tex}
+
+\section{Mechanism and robustness interpretation}
+The external alignment diagnostic uses ten support draws, twenty permutations and five labels. Labels are permuted within the fixed support set; input records and their mean response remain unchanged. Mean, offset and EB offset therefore remain numerically invariant. The local F1 penalty is 1.2649 pp [0.8769,1.6941]; this ten-draw diagnostic is not substituted for the fifty-draw headline error. It diagnoses correspondence rather than proving chemical causality or computing a valid permutation-test p-value.
+
+Same-alpha F1 residual differences are $-.2039$ [$-.4254,.0036$] internally and $.1230$ [$-.0710,.3156$] externally. The external alpha-matched point equals the primary residual point because both selected alphas are 1. F0 differences are .0095 internally and .0346 externally, with intervals spanning zero. The exact decomposition does not turn these inconclusive comparisons into positive evidence.
+
+Applying all 25 old F1 outer-training fits to all additional sources at $k=5$ gives random local/blend MAEs 3.6421/3.5797; difference $-.0624$ [$-.1603,.0244$]. High-temperature values are 4.5258/4.4357, difference $-.0901$ [$-.2066,.0167$]. These are error averages over fits, not prediction averaging, and do not replace the frozen full-fit primary result. Only three main sources report an unseen species and nine contain an operating value beyond an old input range. These coverage summaries are descriptive and do not validate a source selection rule.
+
+\section{Published-study weighting correction and reproduction scope}
+Archived Suvarna XGBoost predictions on 1,234 records and 109 sources yield record/source MAEs 57.8969/124.0426. The corresponding stacked raw-STY $R^2$ values are .8756/.3193. This release audits saved predictions; older full training-flow reproduction claims are not restated as newly executed results.
+
+The Xu re-run uses 1,757 DOI-known rows from 156 sources; 82 DOI-missing upstream rows are outside the main audit. Its fixed XGBoost has 500 trees, depth 6, learning rate .05 and random state 42; the response is fitted in log1p space and transformed back for raw-unit MAE. Category maps and medians are fitted on each training partition. DOI is never a model input. Record and source five-fold fits use the same five seeds and current XGBoost 3.2.0. Pool record errors within each source/seed first; averaging sources directly from uneven source--fold cells produces a different weighting. Correct MAEs 69.6198/126.3649 replace the old five-fold grouping claim. Archived random-80/20 source-equal MAE is separately 62.9776. Old statements giving local OCM-F1 an average allocation advantage over affine are withdrawn; the present study's claims use its new source-tuned comparisons.
+
+\section{Reproduction files}
+Verified original-stage archives supply the analyses in Sections 1--11. The preceding acquisition-stage package independently contains all experiments in Section 12. The current covariance-stage package independently contains all experiments in Section 13, including their inputs, predecessor settings and prediction exports. A final public deposit should combine these stages.
+
+The frozen historical benchmark code is unchanged and hashes its inputs, splits and protocol. Repeated cells are preserved per fit with an index rather than duplicated in one large aggregate; the verified runner reconstructs an aggregate if requested. Historical row predictions are retained for support repeat zero, while every repeat's scalar cells remain present. All 480,500 external query prediction rows across F0/F1 include each support draw and budget. Export audit recomputes cell MAEs from those rows, checks support/query disjointness, shared representation ledgers and exact one-label identities. An atomic gzip writer is used for new large outputs; every distributed gzip stream and archive entry is validated.
+
+The statistical engine is reproducible from the delivered cleaned snapshots. Original historical extraction, archived third-party model fitting and a prospective experimental campaign are distinct scopes. System dependency versions and commands are in the package entry-point guide. Document and plot builders consume the measured tables; no simulated performance values are used. Source attributions and third-party rights are retained separately from generated analysis code.
+
+\clearpage
+\section{Acquisition extension: derivation, choices and complete factors}
+\subsection{Fixed-correction risk identity}
+Let $G=V_T-H_AV_A$. Under the stated model, $q_A-f_T=-G\delta+H_A\epsilon$. Independence and zero means remove the cross term, yielding $\mathbb E\|q_A-f_T\|^2=\operatorname{tr}(GBG^\top)+\sigma^2\operatorname{tr}(H_AH_A^\top)$. A query-noise term, if independent and homoscedastic, adds a support-independent constant. The selector evaluates the latent-error expression. The 100,000-trial Gaussian simulation differs from the analytical risk by 0.293\%. This verifies the formula under the model, not its calibration on catalyst data. Label-updated component weights make the predictor nonlinear in the support responses, so the same formula is only a design surrogate for that predictor.
+
+The ridge map is $H_A=\mathbf1_T\mathbf1_A^\top/k+(Z_T-\mathbf1_T\bar z_A^\top)Z_{A,c}^\top(Z_{A,c}Z_{A,c}^\top+\alpha I)^{-1}$. It satisfies $H_A\mathbf1_A=\mathbf1_T$. The leave-one-out evidence has the form $D=\operatorname{diag}(1-h_{ii})^{-1}(I-H_{AA})U_A$. Since $(I-H_{AA})\mathbf1=0$, its rank is at most $k-1$. Constants on supports have no direct independent coefficient evidence. Correlation encoded in a prior can still influence posterior predictions; this is not a claim of complete information absence in every Bayesian model.
+
+\subsection{Historical covariance construction}
+Only historical sources with at least 15 records enter the covariance proxy. Component scales use the source-equal first and second moments of historical cross-fitted response functions. For each source $s$, center $F_s=U_s/\operatorname{diag}(s_j)$ and $y_s$, then fit
+\[
+\theta_s=(F_{s,c}^\top F_{s,c}+0.1n_sI)^{-1}F_{s,c}^\top y_{s,c}.
+\]
+The residual proxy is $\sigma_s^2=\|y_{s,c}-F_{s,c}\theta_s\|^2/\max(n_s-1-d_s,1)$ with ridge effective slope degrees of freedom $d_s$. A positive floor of $10^{-8}$ prevents numerical degeneracy. The within-source working posterior covariance is $V_s=\sigma_s^2(F_{s,c}^\top F_{s,c}+0.1n_sI)^{-1}$. With $S_\theta$ the across-source sample covariance, set $B=0.5S_\theta+0.5\operatorname{diag}(S_\theta)+\operatorname{mean}_sV_s$ and $\sigma^2=\operatorname{mean}_s\sigma_s^2$. These are preset empirical-Bayes proxies rather than unbiased estimates of physical noise or a proven optimal covariance.
+
+For historical control tuning, direct covariance records from the pseudo-source's leakage group are removed. Historical cross-fitted dictionaries and inherited hyperparameters are formed within the entire outer historical-training set. This tuning stage is not a new independent test of the surrogate, and does not claim full repeated nesting of every inherited choice. The actual outer query groups and all additional-publication outcomes are excluded from all fitted covariance and control parameters.
+
+\subsection{Policies, nested budgets and query access}
+All selectors sort candidates by stable row identifier; exact ties choose the first. Coverage starts at the candidate nearest the pool feature centroid, then chooses a maximin point. Temperature coverage uses only standardized temperature; feature coverage uses all training-transformed features. Linear V-optimal design uses features $[10,z]$, a unit coefficient prior, and observation variance equal to the inherited local ridge $\alpha$. Augmented V-optimal design uses $[10,z,U/s]$ and inherited ordinary augmented-ridge $\alpha$. Its three component features are shared with the new response dictionary. Greedy V-optimal design minimizes mean query posterior variance. This is an ordinary standard-design implementation, not a claimed bitwise reproduction of Yu et al.'s complete algorithm or Fontaine et al.'s heteroscedastic online algorithm.
+
+Innovation risk uses the exact local-ridge map in the main-text equation. Isotropic risk replaces $B$ by $\operatorname{tr}(B)I/3$. No-component risk sets $B=0$, leaving noise amplification only. No-noise risk sets $\sigma^2=0$. Pool-only risk replaces the query feature set by the complete pool. Prefix sizes $1,2,3,5,10$ are reported; intermediate sizes use the regularizer at the next reported budget. This rule maintains a common nested order. The sequence is greedy and need not minimize the final-budget global objective. V-optimal and the four query-aware risk rules see query covariates; coverage, random and pool-only risk do not. No rule sees acquisition-pool or query outcomes when selecting positions.
+
+\subsection{Predictors and historical retuning}
+The thirteen predictors are: global; support mean; frozen local ridge; frozen original blend; ANOVA transfer; ANOVA fixed prior; frozen local RBF; frozen ordinary two-component augmented ridge; same-local-alpha residual ridge; policy-retuned local ridge; policy-retuned blend prior; policy-retuned local RBF; and policy-retuned ordinary three-component augmented ridge. The inherited two-component features use empirical Shapley allocation with its own paired-reference intercept, rather than substituting the product-reference ANOVA functions. Their predictions remain unchanged under random acquisition to numerical precision.
+
+Retuned local/ordinary augmented ridge choose $\alpha\in\{0.1,1,10,100\}$. RBF chooses $\alpha\in\{0.01,0.1,1\}$ and $\gamma\in\{0.1,1,10\}$ with squared distances divided by the transformed feature dimension. Blend retuning chooses prior weight $0,0.25,0.5,0.75,1$, retaining its original two regularizers and shrinkage penalty. Tuning uses source-equal pseudo-query MAE, ten random orders and one order for each deterministic rule, entirely inside historical training groups. Settings are selected separately by policy and budget. All selected values and complete candidate scores are archived.
+
+The ANOVA adapter uses inherited prior grids $\{0,0.5,1\}^3$ and penalties $\{\infty,10,2,0.5,0.1\}$ from the preceding response study. Its direction-aware precision is $\Omega=cD_0^2(I+D^\top D/D_0^2)^{-1}$, and box-constrained weights minimize $w^\top(D^\top D+\Omega)w-2w^\top(D^\top e+\Omega\mu)$. Exact active-set enumeration is used in three dimensions. Infinite $c$ returns the prior. This remains a retrospective component-transfer candidate, rather than a newly established estimator family.
+
+\subsection{Complete acquisition factors and verification}
+The extension contains 26 fitted regimes, 66,965 policy/budget error cells and 130 predictor--policy combinations. Nine inherited methods on random supports reproduce 510,750 error values to a maximum difference of $3.56\times10^{-15}$. Independent auditing re-aggregates 7,367,035 row-prediction values and re-computes 1,248,650 values directly from support labels. Every one of 13,393 support orders is reproduced after poisoning all evaluated outcomes, proving label-free acquisition for the frozen deployment interface. This does not erase retrospective corpus inspection.
+
+Four candidate-focused random-query $k=5$ contrasts form the reported adjusted family: innovation-risk ANOVA versus random ANOVA; versus augmented-design ANOVA; versus augmented-design retuned blend; and versus innovation-risk retuned blend. Percentile tails are $0.05/(2\times4)$ and its complement. Most other intervals remain nominal. Draws, seeds and folds are not independent sources. The covariance of training-fit uncertainty is not included in source-group intervals.
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{../figures/step5_01_factorial.pdf}\caption{Selected columns of the complete acquisition factorial at five labels. The following tables retain all thirteen predictors and ten policies.}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{../figures/step5_04_risk_calibration.pdf}\caption{Secondary risk-calibration diagnostic for the fixed-prior predictor. Latent working risk excludes irreducible query noise; observed squared errors include outcome variability. Within a source, this support-independent noise cannot explain the full ordering discrepancy.}\end{figure}
+
+\clearpage\begin{landscape}\begin{table}[htbp]\centering\small
+\caption{Historical random queries, 22 sources. Five-label MAE (pp), all factors.}
+\begin{tabular}{lrrrrrrrrrr}\toprule Predictor & R & T & F & L & A & I & S & NC & NN & P\\\midrule
+Global & 4.527 & 4.527 & 4.527 & 4.527 & 4.527 & 4.527 & 4.527 & 4.527 & 4.527 & 4.527\\
+Support mean & 3.693 & 3.935 & 3.491 & 3.409 & 3.497 & 3.672 & 3.666 & 3.947 & 3.709 & 3.775\\
+Local ridge & 3.374 & 3.714 & 3.121 & 2.899 & 2.968 & 3.389 & 3.347 & 3.693 & 3.213 & 3.455\\
+Original blend & 3.081 & 3.407 & 2.921 & 2.708 & 2.737 & 3.192 & 3.144 & 3.406 & 3.008 & 3.305\\
+ANOVA transfer & 3.165 & 3.498 & 2.951 & 2.810 & 2.796 & 3.237 & 3.191 & 3.542 & 3.062 & 3.351\\
+ANOVA fixed prior & 3.162 & 3.452 & 2.986 & 2.803 & 2.831 & 3.264 & 3.205 & 3.465 & 3.064 & 3.362\\
+Local RBF & 3.356 & 3.755 & 3.143 & 2.899 & 3.047 & 3.435 & 3.370 & 3.720 & 3.256 & 3.484\\
+2-component augmented & 3.127 & 3.521 & 3.028 & 2.718 & 2.736 & 3.239 & 3.190 & 3.524 & 3.067 & 3.313\\
+Same-alpha residual & 3.171 & 3.420 & 2.961 & 2.802 & 2.795 & 3.261 & 3.150 & 3.462 & 3.032 & 3.389\\
+Retuned local & 3.374 & 4.011 & 3.114 & 2.823 & 3.046 & 3.355 & 3.332 & 3.750 & 3.319 & 3.492\\
+Retuned blend & 3.084 & 3.451 & 2.937 & 2.716 & 2.763 & 3.192 & 3.165 & 3.440 & 3.022 & 3.332\\
+Retuned RBF & 3.356 & 3.841 & 3.093 & 2.851 & 3.051 & 3.397 & 3.331 & 3.751 & 3.214 & 3.486\\
+3-component augmented & 3.210 & 3.770 & 3.067 & 2.783 & 2.844 & 3.311 & 3.284 & 3.786 & 3.191 & 3.403\\
+\bottomrule\end{tabular}\par\medskip\footnotesize R: random; T: temperature cover; F: feature cover; L: linear V-optimal; A: augmented V-optimal; I: innovation risk; S: isotropic risk; NC: no components; NN: no noise; P: pool-only risk. Each column shares supports across predictors.\end{table}\end{landscape}
+
+\clearpage\begin{landscape}\begin{table}[htbp]\centering\small
+\caption{Additional random queries, 52 sources. Five-label MAE (pp), all factors.}
+\begin{tabular}{lrrrrrrrrrr}\toprule Predictor & R & T & F & L & A & I & S & NC & NN & P\\\midrule
+Global & 6.120 & 6.120 & 6.120 & 6.120 & 6.120 & 6.120 & 6.120 & 6.120 & 6.120 & 6.120\\
+Support mean & 4.490 & 5.665 & 4.444 & 4.106 & 4.200 & 4.279 & 4.154 & 5.122 & 4.434 & 4.644\\
+Local ridge & 3.593 & 4.713 & 3.430 & 3.203 & 3.170 & 3.764 & 3.778 & 4.546 & 3.410 & 3.808\\
+Original blend & 3.552 & 4.468 & 3.405 & 3.140 & 3.153 & 3.662 & 3.682 & 4.302 & 3.363 & 3.676\\
+ANOVA transfer & 3.553 & 4.456 & 3.375 & 3.141 & 3.159 & 3.716 & 3.732 & 4.430 & 3.362 & 3.743\\
+ANOVA fixed prior & 3.553 & 4.456 & 3.375 & 3.141 & 3.159 & 3.716 & 3.732 & 4.430 & 3.362 & 3.743\\
+Local RBF & 3.553 & 4.674 & 3.307 & 2.968 & 2.961 & 3.558 & 3.679 & 4.457 & 3.233 & 3.651\\
+2-component augmented & 3.556 & 4.752 & 3.463 & 3.129 & 3.113 & 3.650 & 3.684 & 4.513 & 3.321 & 3.671\\
+Same-alpha residual & 3.716 & 4.351 & 3.501 & 3.252 & 3.269 & 3.747 & 3.762 & 4.516 & 3.429 & 3.797\\
+Retuned local & 3.593 & 4.713 & 3.455 & 3.155 & 3.170 & 3.764 & 3.778 & 4.546 & 3.410 & 3.808\\
+Retuned blend & 3.552 & 4.367 & 3.423 & 3.145 & 3.131 & 3.672 & 3.693 & 4.353 & 3.383 & 3.712\\
+Retuned RBF & 3.553 & 4.659 & 3.307 & 2.968 & 3.169 & 3.771 & 3.768 & 4.457 & 3.447 & 3.651\\
+3-component augmented & 3.573 & 5.023 & 3.631 & 3.229 & 3.141 & 3.623 & 3.668 & 4.504 & 3.310 & 3.708\\
+\bottomrule\end{tabular}\par\medskip\footnotesize R: random; T: temperature cover; F: feature cover; L: linear V-optimal; A: augmented V-optimal; I: innovation risk; S: isotropic risk; NC: no components; NN: no noise; P: pool-only risk. Each column shares supports across predictors.\end{table}\end{landscape}
+
+\clearpage
+\section{Source-contrast covariance transfer and matching acquisition}
+\subsection{Why change the uncertainty model?}
+The earlier acquisition risk identity is mathematically correct under its stated working model, but its empirical ordering does not track observed errors well. This is motivation for a distinct candidate, not an identified diagnosis of which earlier assumption failed. The present model directly describes cross-fitted errors of $\gamma f_G$ after removing source levels. It combines existing random-coefficient regression, a flat intercept, functional-response features and a matching integrated-variance objective. None of empirical Bayes, universal kriging, cross-fitting or V-optimality alone is an originality claim.
+
+\subsection{Feature scaling and contrast records}
+For historical source $s$ with at least 15 compatible rows, the unscaled feature vector contains the six preprocessed operating covariates and three ANOVA response functions. Each row's backbone, preprocessing and ANOVA reference set excludes that row's leakage group. Let $a_j=S^{-1}\sum_s\operatorname{mean}_i \phi_{sij}$ and $d_j^2=S^{-1}\sum_s\operatorname{mean}_i\phi_{sij}^2-a_j^2$, floored at $10^{-8}$. Divide by $d_j$; an additional subtraction of $a_j$ is unnecessary because the unrestricted source intercept makes joint feature translations irrelevant. Operating-only covariance uses the first six dimensions. All other variants use nine. These semantic coordinates allow three OOF dictionaries with different composition vocabularies to be combined without merging their full encoded feature vectors.
+
+An outer historical fit has three first-level source-group folds. In tuning fold $j$, the whole held fold is absent from the covariance corpus. Within its complement, three new source-group folds supply OOF predictions for covariance rows. This requires nine secondary backbones per outer fit. Direct in-sample records from the same allowed complement form the in-sample ablation. The final deployment covariance uses the original three first-level OOF dictionaries on the complete historical training set. A fresh full historical fit reproduces the preceding full-fit geometry to numerical precision. The actual outer query groups, additional-publication outcomes and their labels never enter these fits.
+
+\subsection{Stabilized posterior-moment estimation}
+Define $X_s=\Phi_s-\mathbf1\overline\phi_s^\top$ and
+$t_s=(y_s-\gamma f_{G,s})-\mathbf1\operatorname{mean}(y_s-\gamma f_{G,s})$.
+The working prior is zero-mean with covariance $B$. Given current $B$ and $\sigma^2$,
+\begin{align}
+V_s&=(B^{-1}+X_s^\top X_s/\sigma^2)^{-1},\\
+m_s&=V_sX_s^\top t_s/\sigma^2,\\
+\widetilde B&=S^{-1}\sum_s(V_s+m_sm_s^\top),\\
+\sigma_{\rm next}^2&=\frac{\sum_s[\|t_s-X_sm_s\|^2+\operatorname{tr}(X_s^\top X_sV_s)]}{\sum_s(n_s-1)}.
+\end{align}
+The full/operating/in-sample variants set $B_{\rm next}=0.8\widetilde B+0.2\operatorname{diag}(\widetilde B)$; diagonal keeps only its diagonal, and isotropic sets $B_{\rm next}=\operatorname{tr}(\widetilde B)I/p$. Eigendecomposition symmetrizes $B$ and floors its eigenvalues. With $v=\max[S^{-1}\sum_s\operatorname{mean}(t_s^2),10^{-6}]$, initialize $B=vI/p$ and $\sigma^2=v/2$. The common positive floor is $\max(v\times10^{-6},10^{-8})$. Stop after 80 updates or maximum relative covariance/noise change below $10^{-5}$. Every iteration count and final change is released. The procedure is a shrunk posterior-moment fit, not a proven exact REML maximum-likelihood optimizer. Noise pools contrast degrees of freedom, whereas covariance averages posterior second moments per source. Source-equal fitting of every variance term is not claimed.
+
+For each variant, nine pairs $(\gamma,\eta)$ are assessed using ten random pseudo-support orders and budgets $1,2,3,5,10$. MAEs are first averaged over random orders, then equally over budgets and pseudo-sources. The minimum selects one pair for every budget and policy. The final covariance is refitted to allowed historical records at that gamma. This stage's pseudo-query scores are optimization diagnostics. Backbone configuration and original standard-design regularizers are inherited, not independently nested again through a new global configuration search.
+
+\subsection{Established posterior and its information boundary}
+The main-text posterior follows the GP with an explicit constant basis and an infinitely diffuse intercept prior \cite{gpml}. In a coefficient formulation, eliminating the intercept gives
+\[
+V_A=\left[B^{-1}+\frac{\Phi_{A,c}^\top\Phi_{A,c}}{\nu}\right]^{-1},\qquad
+m_A=V_A\Phi_{A,c}^\top(r_A-\overline r_A\mathbf1)/\nu.
+\]
+The predictor is $\gamma f_{G,Q}+\overline r_A+(\Phi_Q-\overline\phi_A)m_A$. For $B=\tau^2I$ this is residual ridge with an unpenalized intercept and $\alpha=\nu/\tau^2$. Thus the isotropic version is an ordinary ridge working model; its mean transfer and its learned feature scaling are also explicit parts of the comparator.
+
+The data information increment is $\Phi_{A,c}^\top\Phi_{A,c}/\nu$, with rank at most $\min(p,k-1)$. A component constant over supports has no independent contrast information. Off-diagonal prior covariance can couple its posterior update to observed directions, but those relationships originate in historical data, not new independent target labels. Bayesian conditioning cannot manufacture missing target information. At one label the posterior coefficient mean is zero and the prediction uses a global-response increment plus the estimated source offset.
+
+With frozen working hyperparameters, additional support observations cannot increase latent posterior covariance in positive-semidefinite order; the flat-intercept limit is well defined for nonempty supports and positive noise. Consequently, the integrated-variance criterion is nonincreasing along the nested greedy sequence. Greedy selection need not be globally optimal, nor does decreasing working variance imply decreasing real MAE. The observation predictor's working variance adds $\nu$ to the latent diagonal. Neither variance includes uncertainty in estimated $B$, gamma, feature dictionary or inherited backbone choice.
+
+\subsection{Controls and statistical estimands}
+Policies are random, inherited linear V-optimal, inherited ANOVA-augmented V-optimal, contrast V-optimal, and contrast pool-only. Candidate pools and query rows are identical across rules. The two standard-design orders are exactly reproduced using the preceding regularizers and component scales. The contrast rule sees known query features; pool-only does not. Random is evaluated with 50 orders per source, deterministic rules once. All predictors share each policy's labels.
+
+The eight noncandidate predictors are global, support mean, frozen local ridge, frozen original blend, re-tuned blend, re-tuned local ridge, re-tuned RBF, and ordinary ANOVA-feature ridge. Re-tuned ridge/residual controls use $\alpha\in\{0.1,1,10,100\}$. RBF uses the preceding nine $(\alpha,\gamma_{\rm RBF})$ combinations. Ordinary ANOVA ridge uses inherited component scales and four alphas. Stronger blend controls first select separate local/residual alphas by source-equal pseudo-query MAE, then select a prior weight in $\{0,0.25,0.5,0.75,1\}$ and shrinkage in $\{\infty,10,2,0.5,0\}$; its evidence scale remains inherited. These controls are tuned separately per policy/budget, whereas every covariance variant keeps one random-tuned pair across all budgets/policies.
+
+All evaluation MAEs first average orders within each source/seed, then seeds within source, then sources. Publication leakage groups are resampled in 20,000 bootstrap draws. Intervals condition on fitted models. The four locked random-query $k=5$ comparisons are contrast-design/contrast-predictor versus linear-design/re-tuned-blend; versus augmented-design/re-tuned-blend; versus contrast-design/re-tuned-blend; and versus augmented-design/the same contrast predictor. Bonferroni percentile tails are $0.05/(2\times4)$ and their complement, adjusted separately within each cohort. All additional contrasts are exploratory. Prior inspection of the same corpora remains a limitation despite this within-stage protocol lock.
+
+Support permutation is a descriptive mechanism diagnostic using repeat-zero five-label supports, twenty permutations per cell. It preserves the support mean but removes its response--input assignment. It does not estimate prospective deployment error, identify causal catalysis mechanisms or add independent sources.
+
+\subsection{Observed performance, matched ablations and verification}
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{../figures/step6_02_budgets.pdf}\caption{Random-query budgets with fixed source populations. Standard-design frozen blending remains a comparator at every budget; no curve is selected using additional-source outcomes.}\end{figure}
+\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{../figures/step6_03_variance_diagnostic.pdf}\caption{Five-label working variances versus observed MSE. Observation variance adds the frozen working residual term; this term includes lack of fit. These averages do not certify predictive coverage or identify physical laboratory noise.}\end{figure}
+\FloatBarrier
+\begin{table}[htbp]\centering\small\caption{Historical, 22 sources. Five-label random-query MAE (pp), all 65 factors.}\begin{tabular}{lrrrrr}\toprule Predictor & R & L & A & C & P\\\midrule
+Global & 4.527 & 4.527 & 4.527 & 4.527 & 4.527\\
+Support mean & 3.693 & 3.409 & 3.497 & 3.624 & 3.675\\
+Frozen local ridge & 3.374 & 2.899 & 2.968 & 3.196 & 3.300\\
+Frozen blend & 3.081 & 2.708 & 2.737 & 2.920 & 3.030\\
+Retuned blend & 3.073 & 2.696 & 2.897 & 3.027 & 3.080\\
+Retuned local ridge & 3.374 & 2.823 & 3.046 & 3.304 & 3.297\\
+Retuned RBF & 3.356 & 2.851 & 3.051 & 3.303 & 3.222\\
+Ordinary ANOVA ridge & 3.210 & 2.783 & 2.844 & 3.129 & 3.230\\
+Contrast full & 3.365 & 3.034 & 3.090 & 3.287 & 3.389\\
+Contrast diagonal & 3.368 & 3.049 & 3.096 & 3.296 & 3.390\\
+Operating only & 3.430 & 3.064 & 3.153 & 3.340 & 3.452\\
+Isotropic & 3.390 & 3.059 & 3.107 & 3.300 & 3.413\\
+In-sample covariance & 3.382 & 3.065 & 3.063 & 3.291 & 3.369\\
+\bottomrule\end{tabular}\par\smallskip\footnotesize R: random; L: linear V-optimal; A: augmented V-optimal; C: contrast V-optimal; P: contrast pool-only. All columns share query populations; each column shares supports across predictors.\end{table}
+\begin{table}[htbp]\centering\small\caption{Additional, 52 sources. Five-label random-query MAE (pp), all 65 factors.}\begin{tabular}{lrrrrr}\toprule Predictor & R & L & A & C & P\\\midrule
+Global & 6.120 & 6.120 & 6.120 & 6.120 & 6.120\\
+Support mean & 4.490 & 4.106 & 4.200 & 4.015 & 4.290\\
+Frozen local ridge & 3.593 & 3.203 & 3.170 & 3.447 & 3.744\\
+Frozen blend & 3.552 & 3.140 & 3.153 & 3.411 & 3.710\\
+Retuned blend & 3.571 & 3.149 & 3.157 & 3.422 & 3.619\\
+Retuned local ridge & 3.593 & 3.155 & 3.170 & 3.447 & 3.744\\
+Retuned RBF & 3.553 & 2.968 & 3.169 & 3.478 & 3.744\\
+Ordinary ANOVA ridge & 3.573 & 3.229 & 3.141 & 3.349 & 3.709\\
+Contrast full & 4.298 & 3.907 & 4.003 & 3.903 & 4.184\\
+Contrast diagonal & 4.338 & 3.952 & 4.050 & 3.920 & 4.201\\
+Operating only & 4.405 & 4.032 & 4.114 & 3.981 & 4.280\\
+Isotropic & 3.936 & 3.589 & 3.617 & 3.753 & 3.995\\
+In-sample covariance & 4.231 & 3.802 & 3.833 & 3.927 & 4.206\\
+\bottomrule\end{tabular}\par\smallskip\footnotesize R: random; L: linear V-optimal; A: augmented V-optimal; C: contrast V-optimal; P: contrast pool-only. All columns share query populations; each column shares supports across predictors.\end{table}
+\FloatBarrier\begin{table}[htbp]\centering\small\caption{Post-hoc parameter-matched covariance diagnostic. Linear-design supports at five labels; gamma and total observation noise are fixed to the main candidate. Nominal intervals are exploratory.}\begin{tabular}{lrr}\toprule Covariance & Historical MAE & Additional MAE\\\midrule
+Contrast full & 3.034 & 3.907\\
+Contrast diagonal & 3.040 & 3.951\\
+Operating only & 3.054 & 4.027\\
+Isotropic & 3.048 & 3.823\\
+In-sample covariance & 3.045 & 3.982\\
+\bottomrule\end{tabular}\end{table}
+The candidate's historical dictionary has nine dimensions, whereas full-feature local ridge/RBF uses six operating features plus historical composition vocabulary channels. The covariance ablations are cleaner tests of covariance choices than the comparison with those wider dictionaries; neither supplies a unique causal explanation for failure. Independently tuned variants may choose different gammas/noise multipliers. The matched diagnostic was added after the locked results were observed, uses the main historical gamma and total noise, and makes no new selection from query outcomes. It evaluates all five covariance alternatives, including unfavorable ones.
+
+The complete stage contains 61290 error cells, 65 predictor--policy combinations, and five new covariance-transfer variants. All 11,804 inherited support orders and 236,080 original-method MAEs reproduce the preceding stage to maximum $3.56\times10^{-15}$. The covariance stage refits 338 backbones in total: 26 full, 78 first-level and 234 secondary. The released numerical verifier checks isotropic-ridge equivalence, feature/response shift identities, all ten greedy steps against scalar scores, constant-feature nonidentifiability, and a 100,000-trial Gaussian risk simulation (0.311\% relative error). Independent row audits and poisoned-outcome support-order checks are archived with exact counts. Prediction files are lossless float64 NPZ, without object arrays or quantization.
+
+The covariance-stage reproduction entry point re-fits this stage; it does not claim to newly re-fit all earlier multi-task studies. Full earlier records are in the preceding packages. Every current cell, support/query ledger, covariance record, fitted parameter, prediction export, protocol lock and figure source is included. A separate fresh-directory smoke check re-fits one historical regime from an extracted package; the full mode re-fits all 26. Manifest verification and numerical audit use released outputs without treating a completed cache as a new training run.
+
+\input{references.tex}
+\end{document}

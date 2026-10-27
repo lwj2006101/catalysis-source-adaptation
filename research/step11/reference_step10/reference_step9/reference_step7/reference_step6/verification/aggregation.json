@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "fits": 26,
+  "cells": 61290,
+  "policies": [
+    "random",
+    "linear_vopt",
+    "augmented_vopt",
+    "contrast_vopt",
+    "contrast_pool"
+  ],
+  "predictors": [
+    "base",
+    "target_mean",
+    "local_ridge",
+    "adaptive_blend",
+    "adaptive_blend_retuned",
+    "local_ridge_retuned",
+    "local_rbf_retuned",
+    "anova_feature_ridge",
+    "contrast_transfer",
+    "contrast_diagonal",
+    "contrast_operating",
+    "contrast_isotropic",
+    "contrast_in_sample"
+  ],
+  "factorial_combinations": 65,
+  "covariance_transfer_variants": 5,
+  "new_acquisition_policies": 2,
+  "budgets": [
+    1,
+    2,
+    3,
+    5,
+    10
+  ],
+  "random_repeats": 50,
+  "deterministic_repeats": 1,
+  "historical_seeds": 5,
+  "historical_folds": 5,
+  "bootstrap_draws": 20000,
+  "matched_archived_orders": 11804,
+  "matched_archived_errors": 236080,
+  "maximum_archived_difference": 3.552713678800501e-15,
+  "refitted_backbones": 26,
+  "first_level_crossfit_models": 78,
+  "secondary_crossfit_models": 234,
+  "retrospective": true,
+  "query_outcomes_used_for_tuning_or_acquisition": false,
+  "intervals": "source-group resampling conditional on fitted models; primary family four contrasts, adjusted separately per cohort"
+}

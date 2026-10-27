@@ -1,0 +1,7 @@
+{
+  "completed_utc": "2026-10-11T06:31:42.037488+00:00",
+  "reduction": "average draws, then seeds within source, then equal source mean",
+  "primary": "F1 matched-kernel predictor; k5 random query; hedged_mae vs five fixed controls",
+  "adjusted_intervals": "99% percentile paired leakage-group bootstrap, 20000 draws; conditional development evidence",
+  "one_family_interval": null
+}

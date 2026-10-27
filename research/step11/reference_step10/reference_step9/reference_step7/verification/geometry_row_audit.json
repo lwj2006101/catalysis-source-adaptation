@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "cells": 2700,
+  "row_values_reaggregated": 172800,
+  "row_values_recomputed": 34560,
+  "acquisition_orders_recomputed": 270,
+  "maximum_prediction_difference": 0.0
+}

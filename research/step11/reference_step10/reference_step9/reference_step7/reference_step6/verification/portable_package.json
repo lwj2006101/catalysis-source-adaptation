@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "extracted_zip_manifest_verification": true,
+  "extracted_zip_mathematical_and_row_and_matched_ablation_audits": true,
+  "fresh_directory_smoke_fit": "ocm_f1_42_0_C2_yield_percent",
+  "fresh_fit_seconds": 37.68230651799968,
+  "fresh_backbones_refitted": 13,
+  "fresh_error_values_compared": 49140,
+  "maximum_fresh_error_difference": 0.0,
+  "fresh_row_prediction_values_compared": 150930,
+  "maximum_fresh_row_prediction_difference": 0.0,
+  "full_study_fresh_fits_previously_completed": 26,
+  "full_study_fresh_backbones_previously_completed": 338,
+  "scope": "all released numerical audits; one additional fresh refit from extracted release, not a second complete 26-fit rerun"
+}

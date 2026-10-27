@@ -1,0 +1,51 @@
+part,task,theta,kind,isotropic_theta,working_noise,weight_entropy,n_historical_groups
+ocm_101_0,ocm_f0,"{""alpha"": 1.0, ""gamma"": 10.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.6880012413773334,1.7805700021406712,17
+ocm_101_0,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.03581382883313136,3.1059482573989765,17
+ocm_101_1,ocm_f0,"{""alpha"": 0.1, ""gamma"": 0.1, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 0.1, ""gamma"": 0.1, ""kind"": ""isotropic""}",0.6103346130370539,1.730432454918223,18
+ocm_101_1,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.025486286154595594,2.707090338133546,18
+ocm_101_2,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6846491369558877,1.822162323282179,18
+ocm_101_2,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.035865824219901574,2.9322098273733044,18
+ocm_101_3,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6141673748168393,1.8531981157072654,15
+ocm_101_3,ocm_f1,"{""alpha"": 0.1, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""product""}",product,"{""alpha"": 0.01, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.10213723090287576,3.4487331296418584,15
+ocm_101_4,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.632361780209432,1.8121741824588211,20
+ocm_101_4,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.0442845668061044,3.015861576363581,20
+ocm_202_0,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6333492260780146,1.8189596653024882,16
+ocm_202_0,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""anova""}",anova,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.044197813797628806,2.7866118179088217,16
+ocm_202_1,ocm_f0,"{""alpha"": 0.1, ""gamma"": 0.1, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 0.1, ""gamma"": 0.1, ""kind"": ""isotropic""}",0.6041640439576051,1.7400061264027182,20
+ocm_202_1,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.03153437138364609,2.9027985352258576,20
+ocm_202_2,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.7044029053273574,1.7812774208986273,17
+ocm_202_2,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.05049572809641472,3.0662809643689735,17
+ocm_202_3,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6824950168413613,1.761322668152647,18
+ocm_202_3,ocm_f1,"{""alpha"": 0.1, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""product""}",product,"{""alpha"": 0.01, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.07904843197798314,3.4728297270542803,18
+ocm_202_4,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6662758078727049,1.7591545137923508,17
+ocm_202_4,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""anova""}",anova,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.026774345046606435,2.9126056731529,17
+ocm_303_0,ocm_f0,"{""alpha"": 1.0, ""gamma"": 10.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.6367410587424125,1.7888851242041308,16
+ocm_303_0,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.04246900647328065,3.2347651460576152,16
+ocm_303_1,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.665363825917236,1.7470398942528493,17
+ocm_303_1,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""product""}",product,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.029015092884484336,2.8437783565822845,17
+ocm_303_2,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6270882562193878,1.833268004727533,17
+ocm_303_2,ocm_f1,"{""alpha"": 0.1, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""product""}",product,"{""alpha"": 0.1, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.1070686906842295,3.1058773603748184,17
+ocm_303_3,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6735308371958674,1.7712525568290105,18
+ocm_303_3,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.02902325018666793,2.9212711310200365,18
+ocm_303_4,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6972321465929933,1.7351931553200686,20
+ocm_303_4,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.041900839007583374,2.978005981094382,20
+ocm_404_0,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.627410256234588,1.8112758309785528,21
+ocm_404_0,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""anova""}",anova,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.04493534144942404,3.0439292311405337,21
+ocm_404_1,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6038373826013842,1.909872809688637,18
+ocm_404_1,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.0486191074559157,3.103876337409212,18
+ocm_404_2,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6416609724233745,1.7918665566315697,18
+ocm_404_2,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.05162088068936127,3.072969045643664,18
+ocm_404_3,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6518009229878657,1.7675268163225688,15
+ocm_404_3,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""anova""}",anova,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.027884796791350693,2.7317029649759794,15
+ocm_404_4,ocm_f0,"{""alpha"": 0.1, ""gamma"": 0.1, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 0.1, ""gamma"": 0.1, ""kind"": ""isotropic""}",0.43459610665195914,1.6548044611379034,16
+ocm_404_4,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.050439955755849634,3.2259472822531445,16
+ocm_42_0,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6028502964448573,1.7167734519122533,16
+ocm_42_0,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""anova""}",anova,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.031918501749612416,2.955977281647731,16
+ocm_42_1,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6308137597814658,1.8934398333633116,16
+ocm_42_1,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""product""}",product,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.05033970378419734,3.1122644697445807,16
+ocm_42_2,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6678653897357902,1.7717561810214952,19
+ocm_42_2,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.05132670744653978,3.063364625918339,19
+ocm_42_3,ocm_f0,"{""alpha"": 0.1, ""gamma"": 0.1, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 0.1, ""gamma"": 0.1, ""kind"": ""isotropic""}",0.618676806540027,1.728251794834707,18
+ocm_42_3,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 10.0, ""kind"": ""isotropic""}",0.028660299214488396,2.811609274132432,18
+ocm_42_4,ocm_f0,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",isotropic,"{""alpha"": 1.0, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.6650075414665079,1.7968767862807964,19
+ocm_42_4,ocm_f1,"{""alpha"": 0.01, ""gamma_chem"": 10.0, ""gamma_op"": 0.1, ""kind"": ""additive""}",additive,"{""alpha"": 0.01, ""gamma"": 1.0, ""kind"": ""isotropic""}",0.07820235578139298,3.300201485922971,19

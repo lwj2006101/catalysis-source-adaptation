@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "primal_posterior_greedy_steps": 20,
+  "maximum_primal_dual_variance_difference": 6.561418075534675e-14,
+  "ridge_sklearn_primal_maximum_difference": 4.440892098500626e-16,
+  "ridge_loo_refit_maximum_difference": 1.3322676295501878e-15,
+  "query_agnostic_rules_verified": [
+    "temperature_cover",
+    "feature_cover",
+    "linear_pool_vopt"
+  ]
+}

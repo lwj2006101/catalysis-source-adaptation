@@ -1,0 +1,36 @@
+{
+  "original_measurements_only": true,
+  "historical_overlap_review_complete": true,
+  "previous_external_overlap_review_complete": true,
+  "units_review_complete": true,
+  "batch_and_replicate_review_complete": true,
+  "model_development_did_not_use_rows": true,
+  "status": "curated_before_first_frozen_application",
+  "reaction": "OCM",
+  "yield_definition": "100 * C2 product carbon / inlet CH4 carbon",
+  "source_publication_dois": [
+    "10.1039/d3cy00596h"
+  ],
+  "raw_assets": [
+    {
+      "relative_path": "data/raw/nishimura2023_cads.csv",
+      "sha256": "9d0620b199b6660a33d4e82aa47be4d752c3450f2cc4f1ac1f623025f3b5334e"
+    },
+    {
+      "relative_path": "data/raw/nishimura2023_original_article.pdf",
+      "sha256": "cdaea9dffbbb36fa737f4e65d7064397c6d3287a19103adff29f92ac9262bb1f"
+    }
+  ],
+  "evidence": "Original article sections 2.1, 2.2, 2.4 and 3 identify the five measured validation phases, and Table S3; data availability links author CADS measurements. Mixed List0, prediction lists, unpublished and control rows are not evaluated.",
+  "outcome_units_evidence": "Reported C2 carbon yield; ethane plus ethylene yield agrees within 0.1 pp, and conversion minus carbon products agrees with reported missing carbon within 0.2 pp. Carbon-basis interpretation also follows the original N2-internal-standard method; not an outlet mole fraction.",
+  "source_evidence": "Historical and previous external records originate from compilations through 2019. The paper reports freshly prepared and measured validation phases in 2023; publication date alone is not the inclusion argument.",
+  "replicate_handling": "One first row per catalyst-condition signature across validation phases; no retained repeated signature.",
+  "limitations": [
+    "One publication and one experiment family, not five independent studies.",
+    "Publication/lab separation beyond reported provenance cannot be certified for all historical labs.",
+    "Four operating variables and all mol percentages are unreported in this mapped representation and remain missing.",
+    "Original curve measurements share catalyst runs; this offline query split does not test unseen catalysts or a prospective campaign."
+  ],
+  "possible_rounded_fingerprint_matches": 9,
+  "pipeline_freeze_sha256": "0fa37e7da89ccc9c5bdab0aaa40fbc4594eb7746b4412f5bf1887a4a103864b3"
+}

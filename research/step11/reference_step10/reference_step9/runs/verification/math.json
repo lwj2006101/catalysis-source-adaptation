@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-11T01:21:44.049607+00:00",
+  "maximum_variance_difference": 2.3092638912203256e-14,
+  "maximum_ridge_difference": 1.6653345369377348e-15,
+  "same_view_robust_design_matches_linear": true,
+  "outcome_poisoned_partitions_unchanged": true,
+  "gate_label_argument_absent": true,
+  "synthetic_values_are_mathematical_checks_not_catalyst_results": true
+}

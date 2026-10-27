@@ -1,0 +1,17 @@
+{
+  "unchanged_predecessor_files": 2868,
+  "verified_previous_frozen_files": 79,
+  "scientific_code_and_parameter_locks_passed": true,
+  "current_python_sources_parse": true,
+  "math_and_preserved_six_predictor_pilot_passed": true,
+  "historical_cells": 82350,
+  "application_cells": 1830,
+  "actual_scalar_predictions": 9795380,
+  "all_stored_actual_audits_passed": true,
+  "new_backbone_refits": 0,
+  "new_independent_families": 0,
+  "primary_candidate_superiority_supported": false,
+  "visually_reviewed_pdf_pages": 76,
+  "current_manifest_status": "created after pre-packaging verification",
+  "passed": true
+}

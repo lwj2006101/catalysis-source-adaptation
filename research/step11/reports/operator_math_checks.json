@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "spectral_ball_upper_bound_tight": true,
+  "random_symmetric_perturbations": 1000,
+  "gaussian_simulations": 50000,
+  "simulations_are_not_catalysis_data": true,
+  "constant_source_shift_cancelled": true,
+  "nominal_risk": 0.959374781464786,
+  "amplification": 0.36364943945253736,
+  "worst_working_risk": 1.3684696133005472,
+  "simulation_mean": 1.3677005886858817,
+  "simulation_se": 0.0033917970565545603
+}

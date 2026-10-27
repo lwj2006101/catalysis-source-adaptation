@@ -1,0 +1,20 @@
+{
+  "scientific_computations_started": false,
+  "original_main_sections_preserved": true,
+  "original_result_subsections_preserved": true,
+  "integration_groups": 16,
+  "sources": [
+    {
+      "file": "inputs/manuscript_cn.pdf",
+      "sha256": "3ae1e2631e8095a200c9753eb24353683169a9271c6404304254486ad2f9b59a"
+    },
+    {
+      "file": "recovered/original/PAPER1_FINAL_RELEASE_V2/01_MANUSCRIPT/manuscript_cn.tex",
+      "sha256": "8ebbe8739741058bb0ba633ad4abe7a32d1eca12cb986bf38190033dd28ec678"
+    },
+    {
+      "file": "recovered/latest/step11/manuscripts/chinese_source/manuscript_cn.tex",
+      "sha256": "7ded211f37add2524a8efb1d024ab11ddd9b366a574ca75c818ca5ed8833658c"
+    }
+  ]
+}

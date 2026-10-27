@@ -1,0 +1,164 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\setmainfont{NimbusRoman-Regular.otf}[Path=../fonts/,BoldFont=NimbusRoman-Bold.otf,ItalicFont=NimbusRoman-Italic.otf,BoldItalicFont=NimbusRoman-BoldItalic.otf]
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,tabularx,graphicx,longtable}
+\usepackage[colorlinks=true,allcolors=black]{hyperref}
+\setlength{\parskip}{2pt}
+\emergencystretch=3em
+\title{\textbf{Supplement A: Core protocol and audits}\\
+\textbf{Source-Disjoint Evaluation Reveals Hidden Generalization Gaps\\
+in Literature-Derived Catalysis Machine Learning}}
+\author{Zhang Junyu \& Li Wenjie}
+\date{September 28, 2026}
+\begin{document}\renewcommand{\thepage}{A\arabic{page}}\renewcommand{\thetable}{A\arabic{table}}
+\maketitle
+\tableofcontents
+
+\section{S1 Dataset and provenance details}
+\textbf{Methanol conversion/selectivity corpus (1,245 paired records, 82 sources, 80
+leakage groups).} Rebuilt row-by-row from TheMeCat v1 (\texttt{TheMeCat\_v1.csv},
+Zenodo record 17085762 v1.0, CC BY 4.0, 1,124 rows, SHA-256 46000f00\ldots) and the
+Communications Engineering methanol synthesis file (\texttt{commseng\_datameoh.csv},
+500 rows, SHA-256 0a81730a\ldots). Inclusion: both targets reported within $[0,100]$;
+temperature, pressure, H$_2$/CO$_2$ positive and reported; GHSV/BET allowed missing
+(imputed within training folds); no performance-based filtering; genuine zeros retained;
+full-field duplicates kept once. Exclusions (row-level log): $-319$ no paired target,
+$-26$ one target missing, $-30$ unresolved attribution/invalid DOI, $-1$ duplicate.
+Twenty records whose BET had been reconstructed as $10^{\mathrm{LN}}$ were recomputed
+from the stored natural-log field as $\exp(\mathrm{LN})$, logged.
+
+\textbf{STY corpus (1,230 records, 109 sources).} Derived from the Suvarna et al.\
+public dataset (CC BY 4.0); 20 DOIs overlap the conversion corpus (declared; treated as
+a same-reaction different-target task). Four rows dropped for invalid target or missing
+source mapping (logged).
+
+\textbf{OCM corpus (1,794 records, 408 sources, 405 leakage groups).} From the Schmack
+et al.\ meta-analysis supplement (CC BY 4.0): 1,802 raw catalyst records over 412
+publication numbers; entries with missing/ambiguous references removed with a row-level
+log; three pairs of identical-citation sources merged. The published corrected dataset
+is used together with the original paper's processing description; it is not claimed to
+be a raw experimental census.
+
+\section{S2 Complete feature definitions}
+\textbf{Methanol/STY operating features:} temperature (K), total pressure (bar),
+H$_2$/CO$_2$ ratio (---), GHSV (L\,g$^{-1}$h$^{-1}$; STY corpus: cm$^3$\,h$^{-1}$g$^{-1}$
+as published), BET surface area (m$^2$g$^{-1}$; methanol corpus only), catalyst amount
+(STY corpus). \textbf{OCM F0:} temperature (K), CH$_4$ partial pressure (bar), O$_2$
+partial pressure (bar), CH$_4$/O$_2$ ratio (---), total pressure (bar), contact time (s).
+\textbf{OCM F1 adds:} up to four cation slots and two support slots with species name,
+``listed'' indicator, known mol-fraction sum (mol\%$/100$), missing-amount count, and an
+explicit unseen-species channel. Feature vocabulary (species names) is fitted on the
+current training partition only; sodium is never treated as a missing marker; unlisted
+species are ``unreported'', not proven absent. Response variables and their derivatives
+are excluded from all feature sets.
+
+\section{S3 Model hyperparameters}
+\textbf{Base-model grid (inner source-grouped 3-fold, inner equal-weight MAE):} ridge
+$\alpha\in\{0.1,1,10,100\}$; gradient-boosted trees $n\in\{100,300\}\times$depth
+$\in\{2,3\}$ (learning rate 0.05, subsample 0.8, min-samples-split 3, seed 42) plus
+$n=500$, depth 8. \textbf{Calibration hyper-parameters} (penalty $\lambda$ for affine,
+$\alpha$ for local ridge, temperature ridge): selected on training-source pseudo-tasks
+(ten pseudo-repeats per training source, five labels each). \textbf{Case-study models:}
+author configurations reproduced as published (Suvarna: XGB colsample 0.5, eta 0.15,
+depth 4, $n$=1000, subsample 1, seed 42; RF depth 40, sqrt, min-split 2, $n$=500; GBT
+lr 0.05, depth 4, $n$=300, subsample 0.5. Xu: Optuna 100-trial tuning with record-level
+cv=5, author's search spaces).
+
+\section{S4 All-$k$ learning curves}
+Source-equal MAE at $k=1,2,3,5,10$ (main cohort, random selector) for the eight display
+methods on all four targets, with 95\% leakage-group bootstrap intervals, are provided in
+the machine-readable registry (\texttt{FINAL\_NUMBER\_REGISTRY.csv},
+\texttt{MASTER\_RESULTS.json}) and summarized in the main-text Table 3 ($k=5$) and
+Table 4 ($k=1,5,10$ paired contrasts). The stacked $R^2$ is the predeclared primary
+caliber; per-row-mean and per-seed calibers are archived alongside.
+
+\section{S5 Low-budget small-source panel}
+Sources whose calibration pool holds 3--9 records (methanol 22, OCM 45, STY 43) are
+reported only at $k\le3$ and never mixed into main-cohort numbers. At $k=3$ the mean
+offset reduces base MAE on this panel, mirroring the main-cohort picture; the corrected
+$k=3$-only panel supersedes the earlier version that mixed pools.
+
+\section{S6 Full paired contrasts}
+Per-source paired contrasts (mean MAE difference, improved/harmed counts, bootstrap CIs)
+for all method pairs at $k=1,5,10$ and all four targets are in
+\texttt{MASTER\_RESULTS.json} (block \texttt{paired\_comparisons}) and the case-study
+result JSONs. At $k=1$ the affine map equals the mean offset by construction and the
+local ridge degenerates to a one-label constant.
+
+\section{S7 Permutation and alignment details}
+Twenty uniform random permutations per $A_k$ (identity allowed), shared between the
+affine and local-ridge diagnostics; losses are computed per permutation and then
+averaged. Real arms use calibration repeats 0--19 (identical to the permuted arms) and
+reproduce the main-protocol cells within $6\times10^{-14}$. The diagnostic is
+retrospective and is not a formal permutation significance test.
+
+\section{S8 Allocation sensitivity}
+Five frozen test-set allocations (0 = the fixed design used in all main tables; 1--4 =
+independent hash-seeded allocations). Main-cohort MAE moves by $\le0.4$ pp (OCM) and
+$\approx8$~mg\,h$^{-1}$g$_{cat}^{-1}$ (STY) at $k=5$; allocation 0 lies on the
+favourable side for OCM-F1 local ridge (reported explicitly). Method rankings are
+two-sided stable but not universally invariant (OCM-F1 local ridge: ranks 1--4).
+
+\section{S9 Boundary sensitivity and negative predictions}
+Primary predictions are never clipped. Bound sensitivity uses target-correct bounds:
+percent targets $[0,100]$, STY $[0,\infty)$. The previous revision's universal
+$[0,100]$ clip was an error (49.35\% of STY labels exceed 100): it inflated the STY
+local-ridge $k{=}10$ MAE to 109.1 instead of 54.5. Negative base predictions were absent
+in all sampled parts.
+
+\section{S10 Suvarna 2022 reproduction details}
+Repository commit \texttt{0dac9383} (MIT). The notebook loads \texttt{Combined
+New\_V1.xlsx}, which is not public; four documented compatibility fixes were applied to
+the published 1,234-row dataset file. Author-committed outputs (XGB test $R^2$ 0.9132,
+RMSE 77.27) are the reference. Our close reproduction with per-fold train-only
+preprocessing: XGB 0.9210 ($+0.008$), RF 0.8806 ($-0.007$), GBT 0.9138 ($+0.012$).
+The controlled record-vs-source contrast (same rows, features, configs; only the split
+differs): XGB source-equal MAE 57.9$\to$124.0, stacked $R^2$ 0.876$\to$0.319; nested 130.3--135.3. The strict F17-vs-F5 paired comparison (same rows/folds; F5 contains no
+categorical columns): record-level splits favour F17 for all three models; under
+source-disjoint evaluation GBT/RF advantages vanish and only XGB retains a significant
+advantage ($-29.6$ [$-42.7,-17.1$]). The earlier ``F5'' that contained four categorical
+columns is renamed F9 (reduced set) and is SI-only; the cross-dataset ``buy back
+$\approx4$ units'' comparison is withdrawn.
+
+\section{S11 Xu 2026 reproduction details}
+Repository commit \texttt{b7291de8}. Dataset: 1,839 rows; 82 rows without DOI are
+excluded from the main audit (fixed record set 1,757 rows / 156 canonical sources;
+157 raw strings normalized, 1 merge). Author flow reproduced unmodified: CatBoost test
+$R^2$ 0.8911 (CV $0.8887\pm0.0121$, log1p space). Leakage auto-test: five checks pass
+(maps/medians/scaler are functions of training rows; unseen categories $\to-1$;
+tampering held-out rows changes nothing). Tiers (log1p space, row-prediction-derived):
+B XGBoost 0.896 (random) $\to$ 0.251 (source-disjoint), CatBoost 0.881 $\to$ 0.267;
+For the corrected matched-five-fold comparison, source-equal MAE is 69.6198$\to$126.3649 (XGB 3.2.0; five common seeds; pool errors within source/seed first). The original 80/20 MAE is separately 62.9776 and is not the five-fold baseline. These values supersede the old weighting claim. The archived model-configuration layers remain separate: C nested XGB 128.2 / CatBoost 129.2; D frozen
+X0-optimal CatBoost parameters (auto-read, hash recorded) 129.6. X5 (SI, exploratory):
+two-stage train-only DOI-fixed-effect residualization with \texttt{fit\_intercept=True}
+(unit test on constant-column/intercept behaviour passes) degrades source-equal MAE to
+160.8 --- no benefit; the earlier concat-dummies implementation and its interpretation
+are withdrawn. Environment divergence: under pandas~3 the author's
+\texttt{dtype=='object'} check silently drops all composition columns; our per-fold
+pipeline detects by intent (non-numeric).
+
+\section{S12 Preprocessing leakage tests}
+Per-fold fitting is verified by an automated test: with held-out rows tampered
+(categories replaced by unseen strings, numerics set to extreme values), refitting the
+preprocessing on the same training rows yields bit-identical category maps and medians;
+unseen test categories encode to $-1$ and do not extend the vocabulary. The test is part
+of the integration suite (sixteen tests) and runs in the clean-run pipeline.
+
+\section{S13 Source registries and provenance summary}
+Per-corpus registries (\texttt{canonical\_source\_id}, \texttt{leakage\_group\_id},
+per-row upstream file/row references) and exclusion logs ship with the reproduction
+package; case-study registries (\texttt{XU\_SOURCE\_REGISTRY.csv},
+\texttt{XU\_ROW\_PROVENANCE.csv}, \texttt{SUVARNA\_*}) record the raw-to-canonical DOI
+normalization (157 raw strings $\to$ 156 canonical, 1 merge) and the 82 DOI-missing rows
+(excluded from the main audit, sensitivity only).
+
+\section{S14 Reproducibility environment}
+Python 3.13.15; numpy 2.5.2; pandas 3.0.5; scikit-learn 1.9.0; xgboost 3.4.1;
+case-study additions: catboost 1.2.10, lightgbm, optuna 5.0.0, shap, seaborn. BLAS
+threads pinned to one. Cluster bootstrap: 100{,}000 draws, seed base 510{,}927,
+chunked. Original-author environments differ (not bit-identical); reproduction classes
+reflect this. All main-script logs end with exit code 0; failed earlier attempts are
+archived under \texttt{history/failed\_runs} and marked FAILED.
+
+\end{document}

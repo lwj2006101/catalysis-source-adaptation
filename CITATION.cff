@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite this software release and the original datasets when using this repository."
+type: software
+title: "Source-disjoint Evaluation and Few-label Adaptation for Literature-derived Catalysis Data"
+version: 0.1.0
+date-released: 2026-10-27
+authors:
+  - family-names: "张"
+    given-names: "君宇"
+  - family-names: "李"
+    given-names: "文杰"
+license: MIT
+abstract: "Code and archived results for publication-disjoint catalysis evaluation, few-label local adaptation, and matched-budget measurement selection."

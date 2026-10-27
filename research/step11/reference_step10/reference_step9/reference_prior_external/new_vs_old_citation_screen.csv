@@ -1,0 +1,122 @@
+new_pub,new_ref,old_pub,old_ref,similarity,numeric_subset
+422,Appl. Catal. A Gen. 219 (2001) 61-68,362.0,Applied Catalysis A: General 211 (2001) 109–121,0.6557377049180327,False
+423,Appl. Catal. A Gen. 354 (2009) 143–152,363.0,Applied Catalysis A: General 213 (2001) 33–45,0.6557377049180327,False
+424,Catal. Lett. 129 (2009) 156–162,396.0,"Catal Lett (2009) 129, 156–162",0.8636363636363636,True
+425,Ind. Eng. Chem. Res. 48 (2009) 641–646,34.0,"Ind. Eng. Chem. Res., (1987) 26, 11.",0.7391304347826086,False
+426,Fuel Processing Technology 90 (2009) 403,360.0,Journal of Chemical Technology and Biotechnology (2000),0.425,False
+427,Energy and Fuels 23 (2009) 613–616,395.0,"Energy & Fuels 2009, 23, 613–616",0.8571428571428571,True
+428,Catal. Today 145 (2009) 45–54,148.0,"Catal. Today, 6 (1990) 409.",0.717948717948718,False
+429,Catal. Commun. 10 (2009) 807–810,105.0,Catalysis Communications 10 (2009) 807–810,0.7931034482758621,True
+430,Mendeleev Commun. 19 (2009) 337–339,324.0,"Chem. Commun., 1997",0.5365853658536586,False
+431,J. Nat. Gas Chem. 19 (2010) 35–42,266.0,"J. MATER. CHEM., 1994, 4(3), 421-427",0.5581395348837209,False
+432,J. Nat. Gas Chem. 19 (2010) 173–178,291.0,"J. MATER. CHEM., 1995,5( l), 175-181",0.5777777777777777,False
+433,Catal. Letters 135 (2010) 26–32,227.0,Catalysis Letters 13 (1992) 95-102,0.72,False
+434,J. Nat. Gas Chem. 19 (2010) 534–538,391.0,Journal of Natural Gas Chemistry 17(2008)59–63,0.5573770491803278,False
+435,J. Nat. Gas Chem. 19 (2010) 25–30,391.0,Journal of Natural Gas Chemistry 17(2008)59–63,0.576271186440678,False
+436,J. Nat. Gas Chem. 19 (2010) 515–521,291.0,"J. MATER. CHEM., 1995,5( l), 175-181",0.5777777777777777,False
+437,Inorg. Chem. 49 (2010) 10244–10246,372.0,"Ind. Eng. Chem. Res. 2002, 41, 6637-6641",0.5384615384615384,False
+438,Ind. Eng. Chem. Res. 49 (2010) 2078–2083,381.0,"Ind. Eng. Chem. Res. 2006, 45, 7077-7083",0.7777777777777778,False
+439,Appl. Catal. A Gen. 375 (2010) 172–178,370.0,Applied Catalysis A: General 237 (2002) 91–101,0.6451612903225806,False
+440,J. Nat. Gas Chem. 19 (2010) 385–392 ,391.0,Journal of Natural Gas Chemistry 17(2008)59–63,0.5901639344262295,False
+441,J. Nat. Gas Chem. 19 (2010) 47–53,266.0,"J. MATER. CHEM., 1994, 4(3), 421-427",0.6046511627906976,False
+442,Fuel Process. Technol. 92 (2011) 541–546,307.0,"J . Chem. Tech. BiotechnoL 1996,67, 164-168",0.45901639344262296,False
+443,Chem. Eng. J. 168 (2011) 1352–1359,11.0,"Chem. Lett.  (1986),  11,  1981.",0.5365853658536586,False
+444,J. Nat. Gas Chem. 20 (2011) 204–213,359.0,"J. Phys. Chem. B 2000, 104, 10133-10143",0.56,False
+445,J. Nat. Gas Chem. 20 (2011) 428–434,385.0,Journal of Natural Gas Chemistry 16(2007)121–129,0.5396825396825397,False
+446,J. Mol. Catal. A Chem. 346 (2011) 46–54,266.0,"J. MATER. CHEM., 1994, 4(3), 421-427",0.5531914893617021,False
+447,Appl. Catal. A Gen. 406 (2011) 1–12,50.0,"Appl. Catal.  (1988),  42(1),  L1.",0.6341463414634146,False
+448,Appl. Catal. A Gen. 391 (2011) 205–214,51.0,"Appl. Catal.  (1988),  39(1-2),  185.",0.6521739130434783,False
+449,J. Catal. 281 (2011) 241–253,160.0,J. Catal. 128 (1990) 512,0.6857142857142857,False
+450,Fuel Process. Technol. 92 (2011) 1164–1168,307.0,"J . Chem. Tech. BiotechnoL 1996,67, 164-168",0.5079365079365079,False
+451,J. Nat. Gas Chem. 21 (2012) 49–55,385.0,Journal of Natural Gas Chemistry 16(2007)121–129,0.5245901639344263,False
+452,Fuel 94 (2012) 433–439,358.0,Fuel 79 (2000) 1487±1491,0.6470588235294118,False
+453,J. Jpn. Petrol. Inst. 55 (2012) 71-72,308.0,"JOURNAL OF CATALYSIS 159, 280–287 (1996)",0.43636363636363634,False
+454,Catal. Commun. 42 (2013) 50–53,365.0,Catalysis Communications 2 (2001) 241.,0.5769230769230769,False
+455,Asian Journal of Chemistry 25 (2013) 9179-9184,385.0,Journal of Natural Gas Chemistry 16(2007)121–129,0.5714285714285714,False
+456,Angew. Chemie - Int. Ed. 52 (2013) 11381–11384 ,11.0,"Chem. Lett.  (1986),  11,  1981.",0.48,False
+457,Appl. Catal. A Gen. 454 (2013) 100–114,362.0,Applied Catalysis A: General 211 (2001) 109–121,0.6349206349206349,False
+458,Appl. Catal. A Gen. 464–465 (2013) 68–77,361.0,Applied Catalysis A: General 205 (2001) 253–262,0.59375,False
+459,Catal. Commun. 42 (2013) 50–53,365.0,Catalysis Communications 2 (2001) 241.,0.5769230769230769,False
+460,Fuel Process. Technol. 115 (2013) 79–87,290.0,"J . Chem. Tech. Biotechnol. 1995,63,190-194",0.4666666666666667,False
+461,Nanoscale 5 (2013) 10844–10848,386.0,"Catal Lett (2008) 125, 348–351",0.4782608695652174,False
+462,Russ. J. Appl. Chem. 86 (2013) 458–461,19.0,"J. Phys. Chem. (1986), 90, 4785.",0.45454545454545453,False
+463,Polish J. Chem. Technol. 15 (2013) 22–26,382.0,"J Chem Technol Biotechnol 81, 208–215 (2006)",0.5483870967741935,False
+464,"ChemCatChem 5,(2013) 146–149",62.0,"Prepr.- Am. Chem. Soc., Div. Pet. Chem., 33 (1988) 445.",0.509090909090909,False
+465,ChemCatChem 5 (2013) 2809–2812,99.0,"Chem. Lett., (1989) 2103.",0.5,False
+466,Appl. Catal. A Gen. 485 (2014) 10–19 ,370.0,Applied Catalysis A: General 237 (2002) 91–101,0.6333333333333333,False
+467,ACS Catal. 4 (2014) 1972–1990,238.0,"J . Catal., 119 (1993) 304.",0.6486486486486487,False
+468,Appl. Catal. A Gen. 484 (2014) 97–107,50.0,"Appl. Catal.  (1988),  42(1),  L1.",0.6511627906976745,False
+469,Inorg. Mater. 50 (2014) 912–916,396.0,"Catal Lett (2009) 129, 156–162",0.5,False
+470,Appl. Catal. A Gen. 472 (2014) 39–46,185.0,"Appl. Catal., 79 (1991) 203.",0.6190476190476191,False
+471,Dokl. Phys. Chem. 455 (2014) 60–63,292.0,"J. Phys. Chem. 1995, 99, 4566-4568",0.5217391304347826,False
+472,Catal. Today 228 (2014) 5–14,149.0,"Catal. Today, (1990) 511.",0.7027027027027027,False
+473,Catal Commu 50 (2014) 54-58,365.0,Catalysis Communications 2 (2001) 241.,0.5490196078431373,False
+474,Catal. Today 228 (2014) 212–218,405.0,"Catal. Today (1994) 21, 289.",0.7619047619047619,False
+475,Catal. Today 236 (2014) 12–22,52.0,"Catal. Today 3 (2-3) 1988, 127",0.7317073170731707,False
+476,React. Kinet. Mech. Catal. 112 (2014) 227–240,331.0,"React. Kinet. Catal. Lett., 61 (1997) 175.",0.6333333333333333,False
+477,J. Nat. Gas Sci. Eng. 20 (2014) 347–356,375.0,Journal of Catalysis 220 (2003) 47–56,0.5925925925925926,False
+478,Dalt. Trans. 43 (2014) 8690–8697,157.0,"J. CHEM. SOC. FARADAY TRANS., 1990, 86(9), 1607-1614",0.4827586206896552,False
+479,Chem. Commun. 50 (2014) 14440–14442,324.0,"Chem. Commun., 1997",0.55,False
+480,Appl. Catal. B Environ. 150–151 (2014) 496–505,256.0,Applied CatalysisA: General 111 ( 1994) 41-62,0.5588235294117647,False
+481,Nanoscale 7 (2015) 2260–2264,135.0,"Catal Lett (2009) 13, 258–265",0.46511627906976744,False
+482,"J. Catal. 329, (2015), 560–573",162.0,"J. C atal , 123 (1990) 130.",0.6285714285714286,False
+483,Appl. Catal. A Gen. 504 (2015) 509–518,354.0,Applied Catalysis A: General 204 (2000) 241–250,0.6349206349206349,False
+484,Chem. Eng. Technol. 38 (2015) 2243–2252,290.0,"J . Chem. Tech. Biotechnol. 1995,63,190-194",0.5423728813559322,False
+485,ACS Catal. 5 (2015) 1663–1674,293.0,"J. Catal., 154 (1995) 163.",0.5945945945945946,False
+486,Pet. Chem. 55 (2015) 163–168 ,291.0,"J. MATER. CHEM., 1995,5( l), 175-181",0.5365853658536586,False
+487,Fuel Process. Technol. 133 (2015) 29–34,290.0,"J . Chem. Tech. Biotechnol. 1995,63,190-194",0.5,False
+488,Appl. Catal. A Gen. 497 (2015) 96–106,322.0,Applied Catalysis A: General 164 (1997) 159-169,0.6451612903225806,False
+489,J. Energy Chem. 24 (2015) 394–400,266.0,"J. MATER. CHEM., 1994, 4(3), 421-427",0.4888888888888889,False
+490,Catal. Letters 145 (2015) 1251–1261,190.0,Catalysis Letters 10 (1991) 111-120,0.6909090909090909,False
+491,Catal. Commun. 85 (2016) 75–78,365.0,Catalysis Communications 2 (2001) 241.,0.5384615384615384,False
+492,Appl. Catal. A Gen. 528 (2016) 175–190,139.0,"Appl. Catal., 67 (1990) 73.",0.6511627906976745,False
+493,Appl. Catal. B Environ. 199 (2016) 252–259,299.0,Applied Catalysis B: Environmental 7 ( 1996) 237-250,0.676056338028169,False
+494,Appl. Catal. A Gen. 524 (2016) 192–199,226.0,"Applied Catalysis A: General, 90 (1992) 199",0.6779661016949152,False
+495,Appl. Catal. A Gen. 525 (2016) 168–179 ,92.0,"Appl. Catal., 50 (1989) 223.",0.6363636363636364,False
+496,RSC Adv. 6 (2016) 34872–34876,419.0,J. Catal. 106 (1987) 394,0.43243243243243246,False
+497,Chem. Eng. J. 306 (2016) 646–654,109.0,"Kor. J. Chem. Eng.  (1989),  6(1),  54.",0.55,False
+498,Fuel Process. Technol. 151 (2016) 148–154,290.0,"J . Chem. Tech. Biotechnol. 1995,63,190-194",0.4838709677419355,False
+499,Catal. Today 278 (2016) 127–134 ,52.0,"Catal. Today 3 (2-3) 1988, 127",0.6976744186046512,False
+500,Appl. Catal. A Gen. 545 (2017) 17–23 ,92.0,"Appl. Catal., 50 (1989) 223.",0.6666666666666666,False
+501,RSC Adv. 7 (2017) 26783–26789 ,124.0,US 4826796 (1989),0.4117647058823529,False
+502,ChemCatChem 9 (2017) 4538–4551,386.0,"Catal Lett (2008) 125, 348–351",0.5217391304347826,False
+503,Appl. Catal. A Gen. 537 (2017) 33–39 ,363.0,Applied Catalysis A: General 213 (2001) 33–45,0.6440677966101694,False
+504,"Sci. Adv. 3, (2017)",52.0,"Catal. Today 3 (2-3) 1988, 127",0.45161290322580644,False
+505,J. Catal. 346 (2017) 57–61 ,200.0,"J. Catal., 130 (1991) 147. ",0.6060606060606061,False
+506,Appl. Catal. A Gen. 544 (2017) 77–83,92.0,"Appl. Catal., 50 (1989) 223.",0.6666666666666666,False
+507,ACS Appl. Mater. Interfaces 9 (2017) 40404−40411,211.0,US Patent 4992 409 (1991).,0.4642857142857143,False
+508,Mol. Catal. 435 (2017) 13–23,92.0,"Appl. Catal., 50 (1989) 223.",0.5945945945945946,False
+509,Mol. Catal. 443 (2017) 155–164 ,396.0,"Catal Lett (2009) 129, 156–162",0.5581395348837209,False
+510,ACS Comb. Sci. 19 (2017) 15–24 ,104.0,"J. Chem. Soc., Chem. Commun.  (1989),   (20),  1526.",0.5,False
+511,ACS Sustain. Chem. Eng. 5 (2017)  3667–3674,372.0,"Ind. Eng. Chem. Res. 2002, 41, 6637-6641",0.5263157894736842,False
+512,Catal. Commun. 117 (2018) 43–48 ,60.0,"J. Catal., 112 (1988) 366.",0.5789473684210527,False
+513,Appl. Catal. A Gen. 562 (2018) 114–119,8.0,"Appl. Catal.  (1986),  28(1-2),  199.",0.6521739130434783,False
+514,ChemNanoMat 4 (2018) 487–495,152.0,"Chem Lett., (1990) 1893-1896.",0.47619047619047616,False
+515,Appl. Catal. A Gen. 552 (2018) 117–128,362.0,Applied Catalysis A: General 211 (2001) 109–121,0.6349206349206349,False
+516,Catal. Today 299 (2018) 60–66 ,403.0,"Catal. Today (1992) 13, 603.",0.8,False
+517,Appl. Catal. B Environ. 230 (2018) 29–35 ,363.0,Applied Catalysis A: General 213 (2001) 33–45,0.6031746031746031,False
+518,Appl. Surf. Sci. 429 (2018) 55–61,50.0,"Appl. Catal.  (1988),  42(1),  L1.",0.45,False
+519,"React. Kinet. Mech. Catal. 125, (2018), 675–688 ",331.0,"React. Kinet. Catal. Lett., 61 (1997) 175.",0.6333333333333333,False
+520,Chinese J. Catal. 39 (2018) 1395–1402,160.0,J. Catal. 128 (1990) 512,0.6046511627906976,False
+521,Front. Chem. 6 (2018) 1–10,11.0,"Chem. Lett.  (1986),  11,  1981.",0.45714285714285713,False
+522,Eur. J. Inorg. Chem. (2018) 1787–1799,35.0,"Ind. Eng. Chem. Res., (1987). 26, 7.",0.4888888888888889,False
+523,Chem. Eng. Sci. 175 (2018) 199–207,31.0,"Chem. Lett.  (1987),   (1),  81.",0.5263157894736842,False
+524,Catal. Today 312 (2018) 10–22 ,407.0,"Catal. Today (1991) 10, 267",0.75,False
+525,React. Chem. Eng. 3 (2018) 151–154 ,109.0,"Kor. J. Chem. Eng.  (1989),  6(1),  54.",0.6190476190476191,False
+526,Mol. Catal. 457 (2018) 74–81 ,419.0,J. Catal. 106 (1987) 394,0.5714285714285714,False
+527,Inorg. Chem. Commun. 100 (2019) 97–100,324.0,"Chem. Commun., 1997",0.6829268292682927,False
+528,ACS Catal. 9 (2019) 4030–4045,244.0,"J . Catal., 142 (1993) 45.",0.6111111111111112,False
+529,Mol. Catal. 470 (2019) 40–47,269.0,J. Catal. 147 (1994) 379.,0.6285714285714286,False
+530,Catalysts 9 (2019) 1–10,188.0,Catalysis Letters 9 (1991) 97-102,0.6976744186046512,False
+531,J. Catal. 375 (2019) 478–492,1.0,"J. Catal., 73 (1982) 9.",0.6875,False
+532,J. Energy Chem. 35 (2019) 1–8,197.0,"Ind. Eng. Chem. Res., Vol. 30, No. 5, 1991",0.5454545454545454,False
+533,J. Catal. 376 (2019) 25–31,1.0,"J. Catal., 73 (1982) 9.",0.6666666666666666,False
+534,Catal. Commun. 128 (2019) 105702,160.0,J. Catal. 128 (1990) 512,0.65,False
+535,Eur. J. Inorg. Chem. 2 (2019) 183–194,339.0,"Ind. Eng. Chem. Res. 1998, 37, 2142.",0.5531914893617021,False
+536,Polyhedron 170 (2019) 602–611,332.0,Polish J. Chem. 71 (1997) 962.,0.46511627906976744,False
+537,Chinese Chem. Lett. 30 (2019) 1141–1146,9.0,"Chem. Lett., (1986) 1165.",0.5777777777777777,False
+538,J. Phys. Chem. C 123 (2019) 1751–1760,359.0,"J. Phys. Chem. B 2000, 104, 10133-10143",0.6153846153846154,False
+539,Ind. Eng. Chem. Res. 58 (2019) 22847–22856,35.0,"Ind. Eng. Chem. Res., (1987). 26, 7.",0.7755102040816326,False
+540,J. Ind. Eng. Chem. 76 (2019) 488–499,40.0,"Ind. Eng. Chem. Res. 1987, 26, 1485.",0.6086956521739131,False
+541,Ind. Eng. Chem. Res. 58 (2019) 2454–2459,40.0,"Ind. Eng. Chem. Res. 1987, 26, 1485.",0.72,False
+542,Eur. J. Inorg. Chem. 2 (2019) 236–1242,40.0,"Ind. Eng. Chem. Res. 1987, 26, 1485.",0.5416666666666666,False

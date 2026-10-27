@@ -1,0 +1,7 @@
+Temperature: original Celsius + 273.15 K. Feed CH4/O2 ratio is reported.
+C2 yield: carbon percent relative to inlet methane, reported directly; labels are not clipped.
+Validation protocol: 270 mm furnace, CH4/O2/N2 21/7/3 mL/min, 50 mg catalyst. Furnace and gas-flow provenance is retained; residence time is not derivable without an appropriate bed/gas-volume definition.
+Total pressure, partial pressures and residence/contact time: not explicitly resolved, so all remain NaN. Historical-only medians are used by the frozen transformer.
+Single-cation oxide supports are mapped to their support-cation symbols to match the historical schema, preserving original formulas in provenance. Oxidation state and support morphology are not inferred.
+Each precursor is loaded at a reported mmol-per-support-mass recipe; no historical mol-percent denominator is asserted, so all mol% fields remain NaN.
+All five phases are one publication/lab family. Same catalyst-condition occurrences are removed in original CSV order, without inspecting prediction errors or averaging responses.

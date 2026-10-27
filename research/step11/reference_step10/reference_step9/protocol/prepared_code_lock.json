@@ -1,0 +1,18 @@
+{
+  "version": "step9-execution-code-lock",
+  "scope": "locked before full-history fit and new cohort evaluation; local checkpoint, not public preregistration",
+  "code_hashes": {
+    "aggregate_results.py": "b3e13d21a4c492b94ad487b9bd4316f89f2234bc132b6f0fd6e4f982d66d2dcd",
+    "audit_results.py": "372e3e6f3ca2c08965bbeea9344d9fb6f6383747b0cd1fe58a380d915070f324",
+    "check_external_data.py": "3e434deafcdccc7bc436cb4dae62477464fa217d791c012cc7d46ed0bcec7698",
+    "evaluate_external_ocm.py": "b5ddf20598551f4b653a62733092b5b95cdc7cc575b3c8af7591a6fc9f38c4a6",
+    "fetch_data.py": "406224eaf6f7ebc86127bb57df76788b6a6c2496f991e4c6d36cf3b5228f5c22",
+    "freeze_full_history.py": "cae935445fd870793cfac56a4b3b66b40ac6a37394e3f23aa90fe5bd4690910b",
+    "run_history.py": "2a5e1b6777c1bc0182d96bc001a3b3b5701e8defa6e70a3e4e11ec95ac142037",
+    "selection_controls.py": "df1ce9cc82673b28d3a7c52672a217a0358d597ce508f9f07ac2b55032ffb62f",
+    "server_guard.py": "a2ca0ace307efa31e2986370f7bc94740d772de2ae1b699772d8e420f85fc2bf",
+    "verify_math.py": "d827c56b01e6e03c397a63178ff8db0f0024ed0b9dbcf239b3530f7cd3553616",
+    "view_selection.py": "032f5a165df4e68084cb6b573d4d09775c8a20f89cfa63126e2811135f378ac8"
+  },
+  "plan_sha256": "7d7d790fb589ad1cb89ec0e2d3739c141fb92d15443eee9068f13a3faad69427"
+}

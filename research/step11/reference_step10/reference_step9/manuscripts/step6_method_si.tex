@@ -1,0 +1,44 @@
+\clearpage
+\section{Source-contrast covariance transfer and matching acquisition}
+\subsection{Why change the uncertainty model?}
+The earlier acquisition risk identity is mathematically correct under its stated working model, but its empirical ordering does not track observed errors well. This is motivation for a distinct candidate, not an identified diagnosis of which earlier assumption failed. The present model directly describes cross-fitted errors of $\gamma f_G$ after removing source levels. It combines existing random-coefficient regression, a flat intercept, functional-response features and a matching integrated-variance objective. None of empirical Bayes, universal kriging, cross-fitting or V-optimality alone is an originality claim.
+
+\subsection{Feature scaling and contrast records}
+For historical source $s$ with at least 15 compatible rows, the unscaled feature vector contains the six preprocessed operating covariates and three ANOVA response functions. Each row's backbone, preprocessing and ANOVA reference set excludes that row's leakage group. Let $a_j=S^{-1}\sum_s\operatorname{mean}_i \phi_{sij}$ and $d_j^2=S^{-1}\sum_s\operatorname{mean}_i\phi_{sij}^2-a_j^2$, floored at $10^{-8}$. Divide by $d_j$; an additional subtraction of $a_j$ is unnecessary because the unrestricted source intercept makes joint feature translations irrelevant. Operating-only covariance uses the first six dimensions. All other variants use nine. These semantic coordinates allow three OOF dictionaries with different composition vocabularies to be combined without merging their full encoded feature vectors.
+
+An outer historical fit has three first-level source-group folds. In tuning fold $j$, the whole held fold is absent from the covariance corpus. Within its complement, three new source-group folds supply OOF predictions for covariance rows. This requires nine secondary backbones per outer fit. Direct in-sample records from the same allowed complement form the in-sample ablation. The final deployment covariance uses the original three first-level OOF dictionaries on the complete historical training set. A fresh full historical fit reproduces the preceding full-fit geometry to numerical precision. The actual outer query groups, additional-publication outcomes and their labels never enter these fits.
+
+\subsection{Stabilized posterior-moment estimation}
+Define $X_s=\Phi_s-\mathbf1\overline\phi_s^\top$ and
+$t_s=(y_s-\gamma f_{G,s})-\mathbf1\operatorname{mean}(y_s-\gamma f_{G,s})$.
+The working prior is zero-mean with covariance $B$. Given current $B$ and $\sigma^2$,
+\begin{align}
+V_s&=(B^{-1}+X_s^\top X_s/\sigma^2)^{-1},\\
+m_s&=V_sX_s^\top t_s/\sigma^2,\\
+\widetilde B&=S^{-1}\sum_s(V_s+m_sm_s^\top),\\
+\sigma_{\rm next}^2&=\frac{\sum_s[\|t_s-X_sm_s\|^2+\operatorname{tr}(X_s^\top X_sV_s)]}{\sum_s(n_s-1)}.
+\end{align}
+The full/operating/in-sample variants set $B_{\rm next}=0.8\widetilde B+0.2\operatorname{diag}(\widetilde B)$; diagonal keeps only its diagonal, and isotropic sets $B_{\rm next}=\operatorname{tr}(\widetilde B)I/p$. Eigendecomposition symmetrizes $B$ and floors its eigenvalues. With $v=\max[S^{-1}\sum_s\operatorname{mean}(t_s^2),10^{-6}]$, initialize $B=vI/p$ and $\sigma^2=v/2$. The common positive floor is $\max(v\times10^{-6},10^{-8})$. Stop after 80 updates or maximum relative covariance/noise change below $10^{-5}$. Every iteration count and final change is released. The procedure is a shrunk posterior-moment fit, not a proven exact REML maximum-likelihood optimizer. Noise pools contrast degrees of freedom, whereas covariance averages posterior second moments per source. Source-equal fitting of every variance term is not claimed.
+
+For each variant, nine pairs $(\gamma,\eta)$ are assessed using ten random pseudo-support orders and budgets $1,2,3,5,10$. MAEs are first averaged over random orders, then equally over budgets and pseudo-sources. The minimum selects one pair for every budget and policy. The final covariance is refitted to allowed historical records at that gamma. This stage's pseudo-query scores are optimization diagnostics. Backbone configuration and original standard-design regularizers are inherited, not independently nested again through a new global configuration search.
+
+\subsection{Established posterior and its information boundary}
+The main-text posterior follows the GP with an explicit constant basis and an infinitely diffuse intercept prior \cite{gpml}. In a coefficient formulation, eliminating the intercept gives
+\[
+V_A=\left[B^{-1}+\frac{\Phi_{A,c}^\top\Phi_{A,c}}{\nu}\right]^{-1},\qquad
+m_A=V_A\Phi_{A,c}^\top(r_A-\overline r_A\mathbf1)/\nu.
+\]
+The predictor is $\gamma f_{G,Q}+\overline r_A+(\Phi_Q-\overline\phi_A)m_A$. For $B=\tau^2I$ this is residual ridge with an unpenalized intercept and $\alpha=\nu/\tau^2$. Thus the isotropic version is an ordinary ridge working model; its mean transfer and its learned feature scaling are also explicit parts of the comparator.
+
+The data information increment is $\Phi_{A,c}^\top\Phi_{A,c}/\nu$, with rank at most $\min(p,k-1)$. A component constant over supports has no independent contrast information. Off-diagonal prior covariance can couple its posterior update to observed directions, but those relationships originate in historical data, not new independent target labels. Bayesian conditioning cannot manufacture missing target information. At one label the posterior coefficient mean is zero and the prediction uses a global-response increment plus the estimated source offset.
+
+With frozen working hyperparameters, additional support observations cannot increase latent posterior covariance in positive-semidefinite order; the flat-intercept limit is well defined for nonempty supports and positive noise. Consequently, the integrated-variance criterion is nonincreasing along the nested greedy sequence. Greedy selection need not be globally optimal, nor does decreasing working variance imply decreasing real MAE. The observation predictor's working variance adds $\nu$ to the latent diagonal. Neither variance includes uncertainty in estimated $B$, gamma, feature dictionary or inherited backbone choice.
+
+\subsection{Controls and statistical estimands}
+Policies are random, inherited linear V-optimal, inherited ANOVA-augmented V-optimal, contrast V-optimal, and contrast pool-only. Candidate pools and query rows are identical across rules. The two standard-design orders are exactly reproduced using the preceding regularizers and component scales. The contrast rule sees known query features; pool-only does not. Random is evaluated with 50 orders per source, deterministic rules once. All predictors share each policy's labels.
+
+The eight noncandidate predictors are global, support mean, frozen local ridge, frozen original blend, re-tuned blend, re-tuned local ridge, re-tuned RBF, and ordinary ANOVA-feature ridge. Re-tuned ridge/residual controls use $\alpha\in\{0.1,1,10,100\}$. RBF uses the preceding nine $(\alpha,\gamma_{\rm RBF})$ combinations. Ordinary ANOVA ridge uses inherited component scales and four alphas. Stronger blend controls first select separate local/residual alphas by source-equal pseudo-query MAE, then select a prior weight in $\{0,0.25,0.5,0.75,1\}$ and shrinkage in $\{\infty,10,2,0.5,0\}$; its evidence scale remains inherited. These controls are tuned separately per policy/budget, whereas every covariance variant keeps one random-tuned pair across all budgets/policies.
+
+All evaluation MAEs first average orders within each source/seed, then seeds within source, then sources. Publication leakage groups are resampled in 20,000 bootstrap draws. Intervals condition on fitted models. The four locked random-query $k=5$ comparisons are contrast-design/contrast-predictor versus linear-design/re-tuned-blend; versus augmented-design/re-tuned-blend; versus contrast-design/re-tuned-blend; and versus augmented-design/the same contrast predictor. Bonferroni percentile tails are $0.05/(2\times4)$ and their complement, adjusted separately within each cohort. All additional contrasts are exploratory. Prior inspection of the same corpora remains a limitation despite this within-stage protocol lock.
+
+Support permutation is a descriptive mechanism diagnostic using repeat-zero five-label supports, twenty permutations per cell. It preserves the support mean but removes its response--input assignment. It does not estimate prospective deployment error, identify causal catalysis mechanisms or add independent sources.

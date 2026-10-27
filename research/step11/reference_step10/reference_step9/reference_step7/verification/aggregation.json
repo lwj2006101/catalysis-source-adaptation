@@ -1,0 +1,52 @@
+{
+  "parts": 125,
+  "endpoints": [
+    "methanol_conversion",
+    "methanol_selectivity",
+    "methanol_sty",
+    "ocm_f0",
+    "ocm_f1"
+  ],
+  "seeds": [
+    42,
+    101,
+    202,
+    303,
+    404
+  ],
+  "methods": [
+    "base",
+    "target_mean",
+    "offset_mean",
+    "affine",
+    "eb",
+    "local_ridge",
+    "temperature_ridge",
+    "residual_ridge",
+    "adaptive_blend",
+    "local_ridge_retuned",
+    "residual_ridge_retuned",
+    "adaptive_blend_retuned",
+    "local_rbf_retuned"
+  ],
+  "policies": [
+    "random",
+    "temperature_cover",
+    "feature_cover",
+    "linear_vopt",
+    "linear_pool_vopt"
+  ],
+  "cells": 330750,
+  "row_values": 31712850,
+  "designs": 66150,
+  "new_backbone_fits": 125,
+  "new_inner_model_fits": 0,
+  "archived_random_cells": 306250,
+  "archived_random_mae_maximum_difference": 2.771441742766001e-09,
+  "base_maximum_difference": 2.2737367544323206e-12,
+  "weighting": "query rows within each cell; draws within source/seed; seeds within source; sources equal. Bootstrap resamples leakage groups conditional on fitted models.",
+  "primary_family_size": 5,
+  "primary_interval": "percentile99 = Bonferroni-adjusted five-member nominal95 family; approximate conditional intervals",
+  "study_status": "retrospective; no fresh independent experimental measurements",
+  "complete": true
+}

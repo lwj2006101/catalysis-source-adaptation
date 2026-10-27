@@ -1,0 +1,18 @@
+{
+  "source": {
+    "key": "hasukawa2024_si",
+    "doi": "10.1021/acs.jpcc.4c07397",
+    "title": "Multidimensional Catalysis Data Representation for Designing Oxidative Coupling of Methane Catalysts",
+    "landing_url": "https://acs.figshare.com/articles/28068057",
+    "verified_download_url": "https://ndownloader.figshare.com/files/51316509",
+    "local_name": "jp4c07397_si_001.pdf",
+    "role": "candidate original experimental validation subset; historical input portions excluded",
+    "status": "publisher metadata, file ID, size and MD5 retrieved; PDF bytes not downloaded"
+  },
+  "downloaded_utc": "2026-10-11T01:27:51.309941+00:00",
+  "sha256": "fe3e0d75d6446ad82f011c00da3b0c70e57546f77f5e76c253d7aa98477cd60e",
+  "bytes": 1702349,
+  "content_type": "application/pdf",
+  "final_url": "https://s3-eu-west-1.amazonaws.com/pstorage-acs-6854636/51316509/jp4c07397_si_001.pdf",
+  "status": "raw candidate only; original measurement provenance and overlap not yet audited"
+}

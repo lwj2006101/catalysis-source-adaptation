@@ -1,0 +1,13 @@
+{
+  "stage3": {
+    "library_file_id": "libfile_ebfcf5e903c08191a3a1e787aa7f8744",
+    "file_id": "file_00000000195481f5a29731473ed69ff0",
+    "sha256": "6441593086b03bb6005b140eb10aca618b6bfee4cdc174948127913be5c4dfb1"
+  },
+  "stage6": {
+    "library_file_id": "libfile_14351d226fb08191a8e26cb2cf06ff44",
+    "file_id": "file_00000000b4c882438bd8b7e348274788",
+    "sha256": "86cb43f33d837f6fdbc15f02fdbcacf57443ae63d42f448cda6b2de276835f27"
+  },
+  "scope": "Current-step full computation, original multi-task frozen parameters/OOF/row ledgers and summaries; prior Step6 evidence summaries and complete manuscript retained. Prior full Step6 raw arrays remain in its numbered release."
+}

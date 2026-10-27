@@ -1,0 +1,6 @@
+control,candidate_mae,control_mae,delta_mae,family_adjusted_ci_low,family_adjusted_ci_high,n_sources,n_leakage_groups,adjusted_support_for_advantage,statistical_status
+composition_vopt,4.792575260529779,4.163840635410837,0.6287346251189421,,,1,1,False,one opened family: point estimate
+kernel_vopt,4.792575260529779,4.293943053003575,0.49863220752620396,,,1,1,False,one opened family: point estimate
+robust_view_vopt,4.792575260529779,4.163840635410837,0.6287346251189421,,,1,1,False,one opened family: point estimate
+pool_vopt,4.792575260529779,3.9781376180078527,0.8144376425219266,,,1,1,False,one opened family: point estimate
+centered_mae,4.792575260529779,5.787695875394618,-0.995120614864839,,,1,1,False,one opened family: point estimate

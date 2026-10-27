@@ -1,0 +1,16 @@
+{
+  "task": "sty",
+  "feature_set": "F0",
+  "features": [
+    "Temperature_K",
+    "Pressure_bar",
+    "H2_CO2_ratio",
+    "GHSV_L_g_h",
+    "SBET_m2_g"
+  ],
+  "use_composition": false,
+  "targets": [
+    "STY_mgMeOH_per_h_per_gcat"
+  ],
+  "input": "C:\\Users\\Administrator\\.zcode\\workspace\\default\\co2_multireaction_v5\\data\\sty_model_input_operating.csv"
+}

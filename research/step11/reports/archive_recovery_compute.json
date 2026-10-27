@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "prediction_npz_original_crc32": "76367c37",
+  "reproduced_crc32": "76367c37",
+  "prediction_npz_bytes": 34446311,
+  "prediction_npz_matches_original_crc_and_size": true,
+  "all_original_cell_metrics_reproduced_exactly": true,
+  "all_partitions_and_geometry_reproduced_exactly": true,
+  "new_scientific_comparison_added": false
+}

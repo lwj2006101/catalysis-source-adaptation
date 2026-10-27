@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "reviewed_utc": "2026-10-11T01:58:03.990131+00:00",
+  "total_pages": 63,
+  "documents": {
+    "manuscripts/manuscript_en.pdf": {
+      "pages": 24,
+      "sha256": "7187fd65560ee7c87db8c5a47d06d133aad53081c5a945d2d40c385c615d4bdc",
+      "visually_reviewed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "layout": "Rendered page review: readable text, no overlapping blocks, clipped tables or cropped figures observed; references resolved."
+    },
+    "manuscripts/supplementary_en.pdf": {
+      "pages": 36,
+      "sha256": "f6a236f812239244c4158e27352573105333ca8477268258695a4d0332db8496",
+      "visually_reviewed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "layout": "Rendered page review: readable text, no overlapping blocks, clipped tables or cropped figures observed; references resolved."
+    },
+    "manuscripts/第9步_真实结果与一区差距.pdf": {
+      "pages": 3,
+      "sha256": "af459b6c3c0d8294b62a8b5c7e2e8a888ff5a6e3f45dcfd0e4fb65ad8fa0b9d9",
+      "visually_reviewed_pages": [
+        1,
+        2,
+        3
+      ],
+      "layout": "Rendered page review: readable text, no overlapping blocks, clipped tables or cropped figures observed; references resolved."
+    }
+  },
+  "final_latex_logs": [
+    "runs/logs/manuscript_en_release_pass_2.log",
+    "runs/logs/supplementary_en_release_pass_2.log"
+  ]
+}

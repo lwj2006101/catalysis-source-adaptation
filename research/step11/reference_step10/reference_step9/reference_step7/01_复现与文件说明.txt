@@ -1,0 +1,34 @@
+复现环境与范围
+
+Python 3.12.14；依赖精确版本在requirements.txt。使用python -m pip install -r requirements.txt。
+数值验证不需要网络。文档重建另需系统pdflatex及LaTeX article、geometry、lmodern、microtype、hyperref、booktabs、tabularx、longtable、graphicx、amsmath、amssymb、placeins、pdflscape。
+PDF视觉复查脚本需要Poppler pdftoppm。字体由PyMuPDF提供，文件在重建时生成，不随发布包存储。
+
+入口行为
+verify：先校验每个发布文件的SHA256，再核验数学、全部当前行预测与来源/选样账本；仅将审计报告写入临时目录。
+smoke：复制必要输入到不存在或空的包外目录，重新拟合ocm_f1 seed42 fold0，重新调参、评估、汇总并核验。
+full：新目录实际重新拟合125个当前骨干，历史调参复用归档OOF，完成全部当前选样和强对照，追加同alpha表示交叉诊断。
+--documents仅能用于full模式，避免单折结果冒充完整全文。
+
+输入与前序记录
+reference_step3/benchmark/source_snapshot：四个原始清洗输入、配置、来源分割账本、组成编码约定。
+reference_step3/benchmark/results/parts：125份done.json、历史training_oof、原zero_all_predictions、重复误差单元及支持重复0行预测。
+历史OOF是第3步已执行来源排除训练输出。每个内层特征预处理器按同一训练组重建，OOF数据来源明确，不声称本轮内层重训。
+reference_step6/ocm_order_reference：旧OCM支持顺序与四个冻结预测器误差，用于当前固定设置配对核验。
+reference_step6/results、verification、protocol：前序协方差结果概要及核验记录；不含所有前序原始数组，也不由本入口重训前序候选。
+protocol/parents.json记录前序完整发布包的准确文件标识及SHA256。前序完整论文/数据审计和外部全部预测在第3步完整包；第5、6步全量方法记录在对应完整包。
+当前根目录中的结果、代码、全文和SI构成第7步可复现范围。投稿公共归档应汇合所有被引用阶段。
+
+当前结果
+results/parts：125份完整支持/查询账本、控制调参分数、固定参数、来源排除记录、输入及几何、每个预算/重复的全部float64 NPZ预测。
+results/all_repeat_cells.csv.gz：所有当前误差单元。
+results/per_source_per_seed.csv.gz、per_source_metrics.csv：重复 -> 种子 -> 来源的正确层级。
+results/primary_family.csv：五项家族调整后的主比较；其余paired_contrasts为普通探索性区间。
+results/label_permutation_*：相同标签集合下对应关系打乱对照。
+results/ocm_geometry：主结果后追加的同alpha表示交叉对照及其行预测、账本和配对结果。
+所有压缩文件与ZIP都检查过完整性。NPZ不含object数组，不依赖pickle，不用数值量化。
+
+图与文档
+build_cross_task_artifacts.py消费真实结果；不生成模拟成绩。
+前序完整全文与SI基础文本保存在reference_step6/manuscripts，当前21页全文与30页SI在manuscripts。
+前序原始章节保留其真实证据出处，当前新增SI为第14节。

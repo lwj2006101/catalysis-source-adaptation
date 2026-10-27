@@ -1,0 +1,9 @@
+{
+  "parts": 1,
+  "prediction_values_reaggregated": 356040,
+  "reconstructed_support_orders": 483,
+  "reconstructed_prediction_rows": 4730,
+  "passed": true,
+  "audited_utc": "2026-10-11T01:23:09.122624+00:00",
+  "independence": "loss aggregation is independent; prediction reconstruction reuses prediction helpers; independent math checks are separate"
+}

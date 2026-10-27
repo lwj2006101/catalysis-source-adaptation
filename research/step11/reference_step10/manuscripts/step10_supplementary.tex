@@ -1,0 +1,61 @@
+\section{Predictor-matched source-local kernel development}
+\subsection{Chronology, estimands and exact controls}
+This extension follows the earlier evaluated publication application. Its twenty-five historical seed/fold comparisons are method development; the same publication is subsequently used for application and stress analysis. A passed one-fold pilot had six predictors. Before the complete grid, a seventh predictor was added: the nine-grid isotropic kernel selected using exactly the same historical random support draws as the expanded kernel family. The pilot's original code and lock are preserved separately. The full-grid code and analysis lock were then fixed; no outcome-based replacement of its covariance-averaged absolute-risk primary candidate was made. All five primary comparisons and all unfavorable results are retained.
+
+The twelve policies comprise random (50 nested draws), operating V, composition V, feature coverage, pool V, the preceding kernel V, robust multi-view V, finite-intercept GP variance, centered squared risk, centered absolute risk, covariance-averaged squared risk, and covariance-averaged absolute risk. The seven predictors are the history-selected expanded local kernel, inherited composition-policy local RBF, frozen blend, local ridge, support mean, unadapted historical model and same-tuning isotropic kernel. The inherited RBF uses its earlier historical budget-specific parameters; these same parameters are applied across all current acquisition policies. The expanded and same-tuning isotropic kernels each use one five-label-selected parameter choice across all policies and budgets. Differences between these tuning schedules are not assigned to kernel structure.
+
+The first seven support sequences are exactly reused from the preceding ledger, preserving paired acquisition comparisons. They are shared across F0 and F1. New support sequences are computed for each prediction representation. Within a representation, all seven predictors receive identical support rows and responses for a policy. F0/F1 differences for a new policy can include different supports and therefore are not a same-support representation ablation. The earlier seven policies supply that ablation. The fixed query inputs enter selection, so this is transductive offline design over a measured finite pool, rather than an experiment with previously unavailable query inputs.
+
+\subsection{Kernel families and historical selection}
+For historical-training-standardized feature vectors, define $d_B(x,x')=\|x_B-x'_B\|^2/\max(1,|B|)$. Operating features occupy the first six coordinates, while F1's remaining coordinates describe reported composition roles, amounts and missingness. Let $K_O=\exp(-\gamma_Od_O)$ and $K_C=\exp(-\gamma_Cd_C)$. The grids are
+\begin{align}
+K_I&=\exp(-\gamma d_{\mathrm{all}}),\\
+K_{\mathrm{add}}&=(K_O+K_C)/2,\quad
+K_{\mathrm{prod}}=K_OK_C,\quad
+K_{\mathrm{ANOVA}}=(K_O+K_C+K_OK_C)/3.
+\end{align}
+Every kernel has diagonal one. Nonnegative sums and products of positive semidefinite kernels give valid covariances \cite{gpml}. The name ANOVA denotes this explicit sum of two block main terms and their product, not an estimated chemical interaction mechanism. Each regularizer and bandwidth is in $\{0.01,0.1,1\}$ and $\{0.1,1,10\}$, respectively. Thus F0 has $3\times3=9$ isotropic candidates; F1 has those nine plus $3\times3\times3\times3=81$ block candidates. Molar percentages missing in the opened cohort are not filled with inferred chemical compositions.
+
+For each outer-training pseudo-source with at least fifteen records and a ten-record support pool, the inherited random query partition is held fixed. Ten deterministic random support orders each supply five labels. Its preprocessing comes from the grouped inner training fold excluding its leakage group. Candidate errors are averaged over draws, then within leakage group and equally across groups. Write the resulting error $\ell_\theta$. The deployed expanded kernel is $\theta^*=\arg\min_\theta\ell_\theta$. The fair isotropic control minimizes $\ell_\theta$ over the first nine candidates with the identical draws, responses and transforms. Neither choice uses outer query or opened-publication outcomes. The complete source-wise candidate errors and chosen parameters are released. Historical outcomes had informed the research question, so this isolation does not make the full development study an unseen confirmation.
+
+\subsection{Free intercept and working risk}
+Kernel ridge with an unpenalized constant intercept has weights
+\begin{equation}\label{eq:si-matchedA}
+A_\theta=K_{QS}C^{-1}+\frac{(\mathbf1_Q-K_{QS}C^{-1}\mathbf1_S)\mathbf1_S^\top C^{-1}}
+{\mathbf1_S^\top C^{-1}\mathbf1_S},\qquad C=K_{SS}+\alpha I.
+\end{equation}
+To see the intercept correction, solve the constant-mean generalized least-squares estimate $\widehat b=(\mathbf1^\top C^{-1}y_S)/(\mathbf1^\top C^{-1}\mathbf1)$ and substitute it into $\widehat b\mathbf1_Q+K_{QS}C^{-1}(y_S-\widehat b\mathbf1_S)$. This standard universal-kriging expression also equals the independently centered kernel-ridge solution. Summing each prediction row gives one, so replacing $y_S$ by $y_S+c\mathbf1$ replaces each prediction by its original value plus $c$. The identity concerns constant shifts, not robustness to all domain changes.
+
+Let a working response be $y=b\mathbf1+g+\epsilon$, with $g$ of zero shape mean and covariance $\overline K$, and independent errors of variance $\nu$. Since the deployed weights preserve constants, $y_Q-A_\theta y_S$ eliminates $b$. Its covariance is
+\begin{equation}
+\overline K_{QQ}+\nu I-A_\theta\overline K_{SQ}
+-\overline K_{QS}A_\theta^\top
++A_\theta(\overline K_{SS}+\nu I)A_\theta^\top.
+\end{equation}
+Its diagonal is $r_q=1+\nu-2(A_\theta\overline K_{SQ})_{qq}+\{A_\theta(\overline K_{SS}+\nu I)A_\theta^\top\}_{qq}$. No labels are required for this working-risk calculation. With Gaussian errors, $E|e_q|=\sqrt{2/\pi}\sqrt{r_q}$; the common constant can be dropped from selection. A nonconstant nonzero working mean, actual source bias, non-Gaussian shape or inaccurate covariance can invalidate that absolute-risk proxy for catalytic performance. Query noise is included in the scored response risk.
+
+Centered squared and absolute risk use $\overline K=K_{\theta^*}$ and $\nu=\alpha_{\theta^*}$. The finite-intercept comparator instead scores mean latent posterior variance using $K_{\theta^*}+100\mathbf1\mathbf1^\top$ and noise $\alpha_{\theta^*}$. Adding the same query noise constant would not change its squared-risk order. Its predictions remain the free-intercept predictor, so this comparator isolates the finite versus free intercept in the selector.
+
+For covariance averaging, set
+\begin{equation}
+T=\max\{\mathrm{median}_\theta|\ell_\theta-\mathrm{median}_{\theta'}\ell_{\theta'}|,10^{-8}\},
+\quad w_\theta=\frac{\exp[-(\ell_\theta-\min\ell)/T]}{\sum_{\theta'}\exp[-(\ell_{\theta'}-\min\ell)/T]},
+\end{equation}
+and $\overline K=\sum_\theta w_\theta K_\theta$, $\nu=\sum_\theta w_\theta\alpha_\theta$. These empirical weights average a working covariance and noise while leaving the deployed $A_{\theta^*}$ unchanged. Covariance averaging gives the averaged second-moment risk of these zero-mean hypotheses for a fixed estimator. Taking $\sqrt{r_q}$ instead uses the absolute risk of a covariance-averaged Gaussian model; it differs from $\sum_\theta w_\theta\sqrt{r_{q,\theta}}$ and is not the exact Gaussian-mixture absolute risk. No distributional-robustness theorem or calibrated probability interpretation is asserted.
+
+Starting from the empty set, each policy adds the pool row giving the smallest chosen score. Pool rows are sorted by their stable identifiers; ties take the first minimum. The same ten-point order supplies prefixes of sizes 1, 2, 3, 5 and 10. Predictors use the chosen labels only after the order is computed. This implementation does not use outcome-adaptive selection, learn weights from the target labels, or optimize chemical discovery yield.
+
+\subsection{Current results and numerical checks}
+\input{tables/step10_primary.tex}
+\input{tables/step10_all_policies.tex}
+\input{tables/step10_secondary.tex}
+\input{tables/step10_kernel_choices.tex}
+\plotfigure{step10_02_risk_ablation}{Five controlled changes in the working selector, evaluated with the same expanded-kernel predictor within each panel. Historical sources are equally weighted; opened-publication panels are one-family point estimates. Finite and free intercepts yield near-identical historical error, whereas covariance averaging does not establish an advantage.}{fig:step10ablation}
+\plotfigure{step10_03_primary_family}{Locked historical development primary family: covariance-averaged absolute-risk selection minus each control under the same selected F1 kernel. Negative differences favor the candidate; conditional 99\% group-bootstrap intervals adjust the five-comparison family. None supports candidate superiority.}{fig:step10primary}
+\plotfigure{step10_04_budget_curves}{Budget curves for the same selected F1 kernel under six fixed acquisition policies. Catalyst holdout uses query identifiers absent from the support pool, within the already opened publication. These applications are stress/development evidence, rather than a new independent source.}{fig:step10budgets}
+
+The mathematical verification compares the free-intercept prediction against an independent centered scikit-learn kernel-ridge implementation and the inherited isotropic implementation at every budget. It checks constant-response shifts of 1000, positive semidefiniteness of all ninety F1 kernels, the working-risk diagonal against a separate joint covariance calculation, and the Gaussian expected-absolute-error identity against 50,000 simulated errors. Simulated errors are numerical checks, not catalytic measurements or empirical uncertainty coverage.
+
+Every stored scalar query loss is independently reaggregated. All support sequences are checked for unique ten-point nesting and pool/query separation; every new selector order is reconstructed. New kernel predictions, the inherited RBF and the same-tuning isotropic predictions are checked with a separate distance/kernel implementation and centered scikit-learn fitting. Frozen blend reconstruction uses the inherited helpers and is identified as such. Deterministic predecessor composition-policy cells are compared exactly with the previous results. Outcome poisoning checks the inherited source partitions; the new selectors have a feature/parameter-only interface. Catalyst identifiers are separately checked for disjointness in the added stress partition. The audit does not claim that reusing a selector implementation is an independent reimplementation of the selector; the independent covariance checks provide separate mathematical evidence.
+
+All frozen Step9 pipeline hashes, current historical-selection hashes and source ledgers are retained. This extension adds no historical or full-history global-backbone refits. Its new work is kernel candidate validation, support selection, prediction, catalyst partitioning and audit. Complete electronic tables contain all twelve policies, seven predictors, both feature representations, both historical scenarios and all three opened-publication scenarios; the displayed tables focus on five-label F1 comparisons without suppressing the remaining cells.

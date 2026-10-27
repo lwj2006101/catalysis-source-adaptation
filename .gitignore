@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+/work/
+/build/
+/dist/
+/research/step11/reference_step10/reference_step9/data/raw/nishimura2023_cads.csv
+/research/step11/reference_step10/reference_step9/data/raw/jp4c07397_si_001.pdf
+/research/step11/reference_step10/reference_step9/data/raw/jp4c07397_si_001.extracted.txt
+# Scientific .gz/.npz/.joblib files and archived run logs are intentional assets.

@@ -1,0 +1,411 @@
+{
+  "files": [
+    {
+      "path": "manuscripts/manuscript_en.pdf",
+      "pages": 21,
+      "page_inventory": [
+        {
+          "page": 1,
+          "characters": 3792,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 2,
+          "characters": 4090,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 3,
+          "characters": 4123,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 4,
+          "characters": 2987,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 5,
+          "characters": 3600,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 6,
+          "characters": 4180,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 7,
+          "characters": 3983,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 8,
+          "characters": 1231,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 9,
+          "characters": 773,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 10,
+          "characters": 1987,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 11,
+          "characters": 3046,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 12,
+          "characters": 1241,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 13,
+          "characters": 997,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 14,
+          "characters": 3445,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 15,
+          "characters": 789,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 16,
+          "characters": 2119,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 17,
+          "characters": 3716,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 18,
+          "characters": 2630,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 19,
+          "characters": 4161,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 20,
+          "characters": 3610,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 21,
+          "characters": 1609,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        }
+      ]
+    },
+    {
+      "path": "manuscripts/supplementary_en.pdf",
+      "pages": 30,
+      "page_inventory": [
+        {
+          "page": 1,
+          "characters": 2662,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 2,
+          "characters": 3309,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 3,
+          "characters": 2864,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 4,
+          "characters": 3883,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 5,
+          "characters": 3363,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 6,
+          "characters": 1796,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 7,
+          "characters": 2009,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 8,
+          "characters": 1900,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 9,
+          "characters": 1883,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 10,
+          "characters": 3417,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 11,
+          "characters": 1503,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 12,
+          "characters": 4059,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 13,
+          "characters": 2793,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 14,
+          "characters": 1486,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 15,
+          "characters": 729,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 16,
+          "characters": 1325,
+          "width": 841.8900146484375,
+          "height": 595.2760009765625
+        },
+        {
+          "page": 17,
+          "characters": 1325,
+          "width": 841.8900146484375,
+          "height": 595.2760009765625
+        },
+        {
+          "page": 18,
+          "characters": 3666,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 19,
+          "characters": 4082,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 20,
+          "characters": 1256,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 21,
+          "characters": 1755,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 22,
+          "characters": 4038,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 23,
+          "characters": 3684,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 24,
+          "characters": 1084,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 25,
+          "characters": 1819,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 26,
+          "characters": 1818,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 27,
+          "characters": 1881,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 28,
+          "characters": 1725,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 29,
+          "characters": 2767,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 30,
+          "characters": 3962,
+          "width": 595.2760009765625,
+          "height": 841.8900146484375
+        }
+      ]
+    },
+    {
+      "path": "manuscripts/第7步_结果与一区差距.pdf",
+      "pages": 3,
+      "page_inventory": [
+        {
+          "page": 1,
+          "characters": 683,
+          "width": 595.280029296875,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 2,
+          "characters": 760,
+          "width": 595.280029296875,
+          "height": 841.8900146484375
+        },
+        {
+          "page": 3,
+          "characters": 842,
+          "width": 595.280029296875,
+          "height": 841.8900146484375
+        }
+      ]
+    },
+    {
+      "path": "figures/step7_01_primary.pdf",
+      "pages": 1,
+      "page_inventory": [
+        {
+          "page": 1,
+          "characters": 276,
+          "width": 656.3995361328125,
+          "height": 339.5995178222656
+        }
+      ]
+    },
+    {
+      "path": "figures/step7_02_budgets.pdf",
+      "pages": 1,
+      "page_inventory": [
+        {
+          "page": 1,
+          "characters": 391,
+          "width": 814.7994995117188,
+          "height": 533.99951171875
+        }
+      ]
+    },
+    {
+      "path": "figures/step7_03_information.pdf",
+      "pages": 1,
+      "page_inventory": [
+        {
+          "page": 1,
+          "characters": 582,
+          "width": 800.3995361328125,
+          "height": 346.7995300292969
+        }
+      ]
+    },
+    {
+      "path": "figures/step7_04_geometry.pdf",
+      "pages": 1,
+      "page_inventory": [
+        {
+          "page": 1,
+          "characters": 209,
+          "width": 526.7994995117188,
+          "height": 332.3995056152344
+        }
+      ]
+    }
+  ],
+  "total_pages": 58,
+  "contact_sheets": [
+    "sheet01.png",
+    "sheet02.png",
+    "sheet03.png",
+    "sheet04.png",
+    "sheet05.png",
+    "sheet06.png",
+    "sheet07.png",
+    "sheet08.png",
+    "sheet09.png",
+    "sheet10.png"
+  ],
+  "render_dpi": 105,
+  "bounds_violations": [],
+  "replacement_glyphs": 0,
+  "preview_storage": "Rendered review images are temporary; verified PDFs are included."
+}

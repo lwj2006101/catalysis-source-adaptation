@@ -1,0 +1,12 @@
+{
+  "status": "completed",
+  "completed_utc": "2026-10-11T06:30:42.999299+00:00",
+  "n_cells": 1830,
+  "n_query_records": 813740,
+  "scalar_predictions": 5696180,
+  "previously_opened_dataset": true,
+  "n_publications": 1,
+  "n_experiment_families": 1,
+  "new_catalyst_holdout": true,
+  "new_wet_lab_experiments": false
+}

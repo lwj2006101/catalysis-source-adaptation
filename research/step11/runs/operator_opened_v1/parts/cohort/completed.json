@@ -1,0 +1,11 @@
+{
+  "cells": 5600,
+  "query_records": 2434600,
+  "scalar_predictions": 9738400,
+  "completed_utc": "2026-10-11T13:30:33.398006+00:00",
+  "new_backbone_fits": 0,
+  "n_partitions": 20,
+  "n_sources": 1,
+  "n_experiment_families": 1,
+  "previously_opened": true
+}

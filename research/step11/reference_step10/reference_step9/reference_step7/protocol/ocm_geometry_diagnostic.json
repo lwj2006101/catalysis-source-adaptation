@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-10-10T18:33:13.436383+00:00",
+  "timing": "added after inspecting the five-endpoint primary results; exploratory, not preregistered",
+  "hypothesis": "Does the OCM feature representation affect acquisition and prediction separately?",
+  "controls": "same F1 alpha schedule, same pools/query rows, F0/F1 frozen predictors crossed with six-feature/full-feature V design",
+  "backbone_refits": 0,
+  "new_hyperparameter_tuning": 0,
+  "primary_results_unchanged": true
+}

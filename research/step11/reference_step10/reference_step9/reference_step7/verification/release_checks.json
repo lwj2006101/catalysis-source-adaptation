@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "gzip_streams_validated": 1310,
+  "compiled_python_files": 12,
+  "reference_snapshot_files": 773,
+  "scope": "Current stage release; predecessor full stages documented separately"
+}

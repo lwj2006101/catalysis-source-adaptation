@@ -1,0 +1,84 @@
+{
+  "scientific_computations_started": false,
+  "pdfs": {
+    "cn": {
+      "file": "01_修订论文/论文中文版_原稿逻辑整合修订.pdf",
+      "pages": 16,
+      "sha256": "1facf7bc933112b5129bf09893423a0de18f4ff5ac5898ededab1667850fd4c7",
+      "out_of_page_text_spans": [],
+      "rotated_pages": []
+    },
+    "en": {
+      "file": "01_修订论文/Manuscript_Original_Logic_Integrated.pdf",
+      "pages": 19,
+      "sha256": "7fe467fbabc3a10333e8a425467a7d8c77db49b7a279ddc25f403e35b70974f8",
+      "out_of_page_text_spans": [],
+      "rotated_pages": []
+    },
+    "si": {
+      "file": "02_补充材料/完整补充材料_A与B.pdf",
+      "pages": 50,
+      "sha256": "665b34c60b2081e2a7508320906f2d147bcadc73e3663991c2ec107471457b83",
+      "out_of_page_text_spans": [],
+      "rotated_pages": [
+        21,
+        22
+      ]
+    }
+  },
+  "document_checks": {
+    "cn": {
+      "main_sections": [
+        "引言",
+        "相关工作",
+        "数据",
+        "评测协议",
+        "结果",
+        "讨论",
+        "局限",
+        "结论"
+      ],
+      "result_subsections": [
+        "记录级与来源隔离评估（研究问题1）",
+        "零标签行为与来源漂移（研究问题2之始）",
+        "跨预算的少标签适配（研究问题2、3）",
+        "表征同时改变预测与适配（研究问题4）",
+        "少标签适配利用了什么？（研究问题3）",
+        "T分配敏感性、排名稳定性与小来源面板（研究问题5）",
+        "两项已发表研究的复现审计（研究问题6）"
+      ],
+      "key_frozen_numbers_present": true
+    },
+    "en": {
+      "main_sections": [
+        "Introduction",
+        "Related work",
+        "Data",
+        "Evaluation protocol",
+        "Results",
+        "Discussion",
+        "Limitations",
+        "Conclusion"
+      ],
+      "result_subsections": [
+        "Record-level versus source-disjoint evaluation (Research Question~1)",
+        "Zero-label behaviour and source shift (Research Question~2, start)",
+        "Few-label adaptation across budgets (Research Questions~2 and~3)",
+        "Representation changes both prediction and adaptation\n(Research Question~4)",
+        "What does few-label adaptation exploit? (Research Question~3)",
+        "T-allocation sensitivity, ranking stability, and the small-source panel\n(Research Question~5)",
+        "Reproducibility audits of two published studies (Research Question~6)"
+      ],
+      "key_frozen_numbers_present": true
+    },
+    "translated_tables_numeric_tokens_match": true,
+    "original_uploaded_pdf_preserved_byte_for_byte": true,
+    "literal_source_dependencies_present": 54,
+    "compiled_all_four_entrypoints": true
+  },
+  "visual_review": {
+    "all_pages_reviewed": true,
+    "total_pages": 85,
+    "review_method": "All rendered pages reviewed on contact sheets; full-size review of dense audit tables and rotated full-factorial table. No clipped content or overlapping text observed."
+  }
+}

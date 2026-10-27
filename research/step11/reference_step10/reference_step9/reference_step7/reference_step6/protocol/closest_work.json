@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Gaussian Processes for Machine Learning",
+    "authors": "Rasmussen and Williams",
+    "year": 2006,
+    "url": "https://gaussianprocess.org/gpml/chapters/RW2.pdf",
+    "relation": "Established random coefficients, GP conditioning, explicit-basis diffuse-prior intercept; section 2.7"
+  },
+  {
+    "title": "Meta-Learning Priors for Efficient Online Bayesian Regression",
+    "authors": "Harrison, Sharma and Pavone",
+    "year": 2018,
+    "url": "https://arxiv.org/abs/1807.08912",
+    "relation": "ALPaCA learns finite-dimensional feature/prior parameters for Bayesian few-shot regression. This candidate does not introduce that family."
+  },
+  {
+    "title": "Learning to learn with Gaussian processes",
+    "authors": "Nguyen, Low and Jaillet",
+    "year": 2021,
+    "url": "https://proceedings.mlr.press/v161/nguyen21c.html",
+    "relation": "Task-distance kernel for GP meta-learning; this candidate uses a common contrast covariance rather than a new task kernel."
+  },
+  {
+    "title": "Scalable Meta-Learning with Gaussian Processes",
+    "authors": "Tighineanu et al.",
+    "year": 2024,
+    "url": "https://proceedings.mlr.press/v238/tighineanu24a.html",
+    "relation": "ScaML-GP combines meta-task posterior information; this candidate is a limited finite-rank residual model, not a reproduction of ScaML-GP."
+  },
+  {
+    "title": "Meta-learning to Calibrate Gaussian Processes with Deep Kernels for Regression Uncertainty Estimation",
+    "authors": "Iwata and Kumagai",
+    "year": 2023,
+    "url": "https://arxiv.org/abs/2312.07952",
+    "relation": "Separate empirical uncertainty calibration is needed; closed-form Bayesian conditioning is not itself a real-data calibration certificate."
+  }
+]

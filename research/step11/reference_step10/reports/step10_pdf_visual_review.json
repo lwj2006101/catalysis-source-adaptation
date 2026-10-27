@@ -1,0 +1,133 @@
+{
+  "passed": true,
+  "total_pages": 76,
+  "files": {
+    "manuscripts/manuscript_en.pdf": {
+      "sha256": "55fbbff142be286f2418517f90a18991996a724ee9bdec8b31aed500770818fb",
+      "pages": 27,
+      "visually_reviewed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    },
+    "manuscripts/supplementary_en.pdf": {
+      "sha256": "147dc60da710acfbb555f7a6d0ab5c7e8ecf1dc2e67a265cd888987312724e40",
+      "pages": 42,
+      "visually_reviewed_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    "manuscripts/第10步_真实结果与一区差距.pdf": {
+      "sha256": "5bf6ad36ce8f6427e43655010273669997d11f0b17682d66beff42e75d0ff9d6",
+      "pages": 3,
+      "visually_reviewed_pages": [
+        1,
+        2,
+        3
+      ]
+    },
+    "figures/step10_01_task_conditioned.pdf": {
+      "sha256": "febd4f8995f36e3ed9a794f407888e0ce1742e300f55eb56415dd43eccbe4801",
+      "pages": 1,
+      "visually_reviewed_pages": [
+        1
+      ]
+    },
+    "figures/step10_02_risk_ablation.pdf": {
+      "sha256": "df6277bfce601bc0178661d923810f8fa260b42cd7f094b649aa6af1341ecc01",
+      "pages": 1,
+      "visually_reviewed_pages": [
+        1
+      ]
+    },
+    "figures/step10_03_primary_family.pdf": {
+      "sha256": "cdc3df298138e9a0d297f00b7ba9d19b1dbf3341057cb1d43d8f33a9d0946e2e",
+      "pages": 1,
+      "visually_reviewed_pages": [
+        1
+      ]
+    },
+    "figures/step10_04_budget_curves.pdf": {
+      "sha256": "885e9960c56a3799f919ce384e733442c25f208cad7eee9ab398c8f3bfe8b040",
+      "pages": 1,
+      "visually_reviewed_pages": [
+        1
+      ]
+    }
+  },
+  "reviewed_utc": "2026-10-11T06:53:19.591319+00:00",
+  "method": "Every page rendered and inspected in contact sheets; Chinese pages, four scientific figures and new equation page inspected at larger resolution; final bibliography reflow reviewed again.",
+  "checks": [
+    "readable formulas and labels",
+    "no overlapping or clipped text/table/figure",
+    "rotated-page bounds",
+    "no undefined references",
+    "all revised pages and final reference layout"
+  ]
+}

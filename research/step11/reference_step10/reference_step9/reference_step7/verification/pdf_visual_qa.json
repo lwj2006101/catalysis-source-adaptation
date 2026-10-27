@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "pdf_count": 7,
+  "pages_reviewed": 58,
+  "method": "All pages rendered105dpi and visually reviewed using ten contact sheets; automated glyph and rotated-page bounds checks.",
+  "bounds_violations": 0,
+  "replacement_glyphs": 0,
+  "latex_overfull_boxes": 0,
+  "latex_warnings": 0,
+  "manuscript_pages": 21,
+  "supplementary_pages": 30,
+  "chinese_pages": 3,
+  "figure_pdfs": 4
+}

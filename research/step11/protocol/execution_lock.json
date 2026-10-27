@@ -1,0 +1,11 @@
+{
+  "locked_utc": "2026-10-11T13:22:37.036581+00:00",
+  "files": {
+    "code/robust_operator.py": "bba3ddc46b0769b394a7a16ec0e7b1dff893133b1219186c6bd53c1d466d7509",
+    "code/run_extension.py": "8940629303966aaac64075ed5df39c7dc16c619c97d85577d5bd5c327418f1f6",
+    "protocol/step11_analysis_plan.json": "a4281ec75a96dd85aab145b8f53fe5b89702c6fe0f79d894730ff4a70f7c7ded"
+  },
+  "smoke_completed_before_lock": true,
+  "outer_history_is_retrospective_development": true,
+  "n_sources_not_seeds_is_inference_unit": true
+}

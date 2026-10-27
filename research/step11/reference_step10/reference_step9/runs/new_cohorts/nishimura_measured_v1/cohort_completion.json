@@ -1,0 +1,17 @@
+{
+  "completed_utc": "2026-10-11T01:38:02.127516+00:00",
+  "passed": true,
+  "cells": 1380,
+  "prediction_rows": 620310,
+  "n_sources": 1,
+  "n_independent_experiment_families": 1,
+  "uncertainty": "one source/family: point estimates only; no population confidence claim",
+  "published_before_method_freeze": true,
+  "prospective_new_experiments": false,
+  "missing_condition_fractions": {
+    "CH4_partial_pressure_bar": 1.0,
+    "O2_partial_pressure_bar": 1.0,
+    "total_pressure_bar": 1.0,
+    "contact_time_s": 1.0
+  }
+}

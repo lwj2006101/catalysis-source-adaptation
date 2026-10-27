@@ -1,0 +1,6 @@
+task,sources,labels,random_mae,query_v_mae,reported_reduction_percent,adjusted_delta_lower,adjusted_delta_upper,unit,source_table
+Conversion,32,5,2.441,2.121,13.1,-0.707,0.068,percentage_points,paper/source/tables/step7_primary_en.tex
+Selectivity,32,5,11.584,10.683,7.8,-2.14,0.615,percentage_points,paper/source/tables/step7_primary_en.tex
+STY,28,5,62.608,50.274,19.7,-25.965,-2.874,mg h^-1 gcat^-1,paper/source/tables/step7_primary_en.tex
+OCM F0,22,5,3.66,3.768,-3.0,-0.355,0.714,percentage_points,paper/source/tables/step7_primary_en.tex
+OCM F1,22,5,3.081,2.708,12.1,-0.746,-0.056,percentage_points,paper/source/tables/step7_primary_en.tex

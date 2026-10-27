@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "identity": "2dd13c6ab2f01338b7590d6c5522f2051914a46bdb72a1d1c9667cfacb1d4f9d",
+  "parts": 25,
+  "full_historical_grid_completed": true,
+  "new_outer_backbone_fits": 0,
+  "data_status": "previously observed historical development",
+  "completed_utc": "2026-10-11T06:22:03.871232+00:00"
+}

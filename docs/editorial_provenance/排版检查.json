@@ -1,0 +1,46 @@
+{
+  "scientific_runs": 0,
+  "compiled": [
+    {
+      "file": "03_可编辑稿件/manuscript_cn.pdf",
+      "pages": 20,
+      "passes": 2,
+      "overfull_boxes": [],
+      "undefined_references_or_glyphs": [],
+      "language_revision": "2026-10-22"
+    },
+    {
+      "file": "03_可编辑稿件/manuscript_en.pdf",
+      "pages": 19,
+      "passes": 2,
+      "overfull_boxes": [],
+      "undefined_references_or_glyphs": []
+    },
+    {
+      "file": "03_可编辑稿件/supplement_A/supplement_A.pdf",
+      "pages": 4,
+      "passes": 2,
+      "overfull_boxes": [],
+      "undefined_references_or_glyphs": []
+    },
+    {
+      "file": "03_可编辑稿件/supplement_B/supplementary_en.pdf",
+      "pages": 45,
+      "passes": 2,
+      "overfull_boxes": [],
+      "undefined_references_or_glyphs": []
+    },
+    {
+      "file": "02_补充材料/完整补充材料_A与B.pdf",
+      "pages": 50,
+      "A_pages": 4,
+      "B_pages": 45
+    }
+  ],
+  "chinese_language_revision_20261022": {
+    "pages": 20,
+    "overfull_boxes": 0,
+    "missing_glyphs": 0,
+    "null_text_characters": 0
+  }
+}

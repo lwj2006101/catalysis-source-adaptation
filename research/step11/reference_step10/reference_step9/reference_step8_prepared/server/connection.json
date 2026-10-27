@@ -1,0 +1,12 @@
+{
+  "host": "172.25.61.195",
+  "port": 22,
+  "username": "upc",
+  "home_directory": "/home/HDD/upc",
+  "output_base": "/home/HDD/upc/lwj",
+  "suggested_project_directory": "/home/HDD/upc/lwj/catalyst_transfer_step8",
+  "connection_command": "ssh upc@172.25.61.195",
+  "environment_manager": "conda",
+  "credentials": "Use existing user-provided credentials; secrets deliberately omitted from deliverable.",
+  "current_access_status": "TCP unreachable from current runtime; no authentication attempted."
+}

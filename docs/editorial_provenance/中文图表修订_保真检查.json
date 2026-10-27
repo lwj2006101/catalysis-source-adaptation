@@ -1,0 +1,71 @@
+[
+  {
+    "figure": "extension_acquisition.pdf",
+    "translated_labels": 8,
+    "numeric_plot_labels_retained": true,
+    "original_vector_paths_retained": true,
+    "remaining_labels": []
+  },
+  {
+    "figure": "extension_crossing.pdf",
+    "translated_labels": 10,
+    "numeric_plot_labels_retained": true,
+    "original_vector_paths_retained": true,
+    "remaining_labels": []
+  },
+  {
+    "figure": "extension_sensitivity.pdf",
+    "translated_labels": 14,
+    "numeric_plot_labels_retained": true,
+    "original_vector_paths_retained": true,
+    "remaining_labels": []
+  },
+  {
+    "figure": "fig2_split_contrast.pdf",
+    "translated_labels": 22,
+    "numeric_plot_labels_retained": true,
+    "original_vector_paths_retained": true,
+    "remaining_labels": []
+  },
+  {
+    "figure": "fig3_learning_curves.pdf",
+    "translated_labels": 17,
+    "numeric_plot_labels_retained": true,
+    "original_vector_paths_retained": true,
+    "remaining_labels": []
+  },
+  {
+    "figure": "fig4_f0_f1_paired.pdf",
+    "translated_labels": 10,
+    "numeric_plot_labels_retained": true,
+    "original_vector_paths_retained": true,
+    "remaining_labels": []
+  },
+  {
+    "figure": "fig5_permutation.pdf",
+    "translated_labels": 14,
+    "numeric_plot_labels_retained": true,
+    "original_vector_paths_retained": true,
+    "remaining_labels": [],
+    "row_labels_relaid_for_readability": true
+  },
+  {
+    "figure": "fig6_allocation.pdf",
+    "translated_labels": 11,
+    "numeric_plot_labels_retained": true,
+    "original_vector_paths_retained": true,
+    "remaining_labels": []
+  },
+  {
+    "figure": "fig7_published_audit.pdf",
+    "translated_labels": 16,
+    "numeric_plot_labels_retained": true,
+    "original_vector_paths_retained": true,
+    "remaining_labels": []
+  },
+  {
+    "figure": "fig1_design.pdf",
+    "recreated_chinese_flow_diagram": true,
+    "measured_data": false
+  }
+]

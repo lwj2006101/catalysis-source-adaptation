@@ -1,0 +1,127 @@
+{
+  "historical_audit": {
+    "passed": true,
+    "parts": 25,
+    "cells": 42525,
+    "query_records": 302400,
+    "scalar_predictions": 1209600,
+    "sklearn_reconstructed_values": 302400,
+    "max_loss_difference": 5.684341886080802e-14,
+    "max_reconstruction_difference": 6.252776074688882e-13
+  },
+  "opened_audit": {
+    "passed": true,
+    "parts": 1,
+    "cells": 5600,
+    "query_records": 2434600,
+    "scalar_predictions": 9738400,
+    "sklearn_reconstructed_values": 2434600,
+    "max_loss_difference": 4.547473508864641e-13,
+    "max_reconstruction_difference": 2.4868995751603507e-13
+  },
+  "actual_new_scalar_predictions": 10948000,
+  "new_backbone_fits": 0,
+  "additional_kernel_acquisition_tuning_actually_executed": true,
+  "risk_penalty_selection_counts": {
+    "0.0": 23,
+    "0.1": 2
+  },
+  "full_history_epsilon": 0.0,
+  "fixed_rbf_history_k5_mae": {
+    "centered_mae": 2.839419268524093,
+    "centered_mse": 2.784204320995092,
+    "composition_vopt": 2.8505511775119623,
+    "feature_cover": 3.05590471461295,
+    "finite_gp_v": 2.7820827746851986,
+    "hedged_mae": 2.9552666469370403,
+    "hedged_mse": 2.946814589038397,
+    "kernel_vopt": 3.1731023434376406,
+    "operating_vopt": 3.718731845737764,
+    "pool_vopt": 3.038735210379191,
+    "random": 3.2875720767063843,
+    "rbf_amplification_robust": 2.913101138144702,
+    "rbf_matched": 2.827623423701205,
+    "robust_view_vopt": 2.843280120747936
+  },
+  "robust_minus_nominal_historical_delta": 0.08547771444349667,
+  "robust_minus_nominal_historical_nominal95_interval": [
+    0.010633623202895858,
+    0.18500917279445706
+  ],
+  "repeated_catalyst": {
+    "random": {
+      "mean_mae": 4.921593829794387,
+      "mean_delta": 0.0,
+      "median_delta": 0.0,
+      "minimum_delta": 0.0,
+      "maximum_delta": 0.0,
+      "mean_relative_gain_percent": 0.0,
+      "improved_partitions": 0,
+      "n_partitions": 20
+    },
+    "composition_vopt": {
+      "mean_mae": 4.106935452417888,
+      "mean_delta": -0.8146583773764984,
+      "median_delta": -0.8873287353289911,
+      "minimum_delta": -1.616079996679023,
+      "maximum_delta": 0.1203024465612419,
+      "mean_relative_gain_percent": 16.403935656952253,
+      "improved_partitions": 19,
+      "n_partitions": 20
+    },
+    "operating_vopt": {
+      "mean_mae": 4.925723161743469,
+      "mean_delta": 0.004129331949083359,
+      "median_delta": -0.01856002536256618,
+      "minimum_delta": -1.0251521891883475,
+      "maximum_delta": 0.7307585173145306,
+      "mean_relative_gain_percent": -0.16473133389682584,
+      "improved_partitions": 11,
+      "n_partitions": 20
+    },
+    "pool_vopt": {
+      "mean_mae": 4.220929653865614,
+      "mean_delta": -0.7006641759287717,
+      "median_delta": -0.8583235562790454,
+      "minimum_delta": -1.2716728957093033,
+      "maximum_delta": 0.20999756762368893,
+      "mean_relative_gain_percent": 14.10158582139368,
+      "improved_partitions": 18,
+      "n_partitions": 20
+    },
+    "expanded_centered": {
+      "mean_mae": 4.48011853937249,
+      "mean_delta": -0.4414752904218962,
+      "median_delta": -0.5131540117653741,
+      "minimum_delta": -1.5451622713083641,
+      "maximum_delta": 0.4980443051126544,
+      "mean_relative_gain_percent": 8.924699510844484,
+      "improved_partitions": 15,
+      "n_partitions": 20
+    },
+    "rbf_matched": {
+      "mean_mae": 4.652087951998834,
+      "mean_delta": -0.2695058777955526,
+      "median_delta": -0.21937139488551916,
+      "minimum_delta": -1.3596305102428503,
+      "maximum_delta": 0.620935011192346,
+      "mean_relative_gain_percent": 5.3917175440439475,
+      "improved_partitions": 13,
+      "n_partitions": 20
+    },
+    "rbf_amplification_robust": {
+      "mean_mae": 4.652087951998834,
+      "mean_delta": -0.2695058777955526,
+      "median_delta": -0.21937139488551916,
+      "minimum_delta": -1.3596305102428503,
+      "maximum_delta": 0.620935011192346,
+      "mean_relative_gain_percent": 5.3917175440439475,
+      "improved_partitions": 13,
+      "n_partitions": 20
+    }
+  },
+  "n_sources_repeated_study": 1,
+  "n_experiment_families_repeated_study": 1,
+  "new_independent_measured_families": 0,
+  "working_risk_rank_spearman_median": 0.5141328089701842
+}

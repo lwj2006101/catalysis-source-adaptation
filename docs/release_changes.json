@@ -1,0 +1,31 @@
+{
+  "source_archive_sha256": "f893b007176cffe4c629b8a406c8cd6a8ba1704eb9a57a83a91a98dfcd67ec71",
+  "changes": [
+    {
+      "path": "research/step11/reference_step10/reference_step9/data/raw/jp4c07397_si_001.pdf.receipt.json",
+      "original_sha256": "3acf88ada65456295709a778ce7338fa62b95fcde8b2323170de32b6da7afc58",
+      "public_sha256": "8aa4e24c937ee90ccb7cbdefdffe8da2b0d2e8b0af4f076e8279ec28086f5e3f",
+      "reason": "Removed expired signed URL query parameters; kept source URLs and original data checksums."
+    }
+  ],
+  "omissions": [
+    {
+      "path": "research/step11/reference_step10/reference_step9/data/raw/nishimura2023_cads.csv",
+      "original_sha256": "9d0620b199b6660a33d4e82aa47be4d752c3450f2cc4f1ac1f623025f3b5334e",
+      "bytes": 257896,
+      "reason": "The anonymous CADS page does not state a separate CSV redistribution licence."
+    },
+    {
+      "path": "research/step11/reference_step10/reference_step9/data/raw/jp4c07397_si_001.pdf",
+      "original_sha256": "fe3e0d75d6446ad82f011c00da3b0c70e57546f77f5e76c253d7aa98477cd60e",
+      "bytes": 1702349,
+      "reason": "Publisher supplementary PDF not used as an accepted independent cohort; no licence notice identified in the archived PDF."
+    },
+    {
+      "path": "research/step11/reference_step10/reference_step9/data/raw/jp4c07397_si_001.extracted.txt",
+      "original_sha256": "8689cb3abb5acbeb9d9c35b75043441ddb192240ccb5ea4812cb076260e4454c",
+      "bytes": 1310,
+      "reason": "Verbatim extraction of the corresponding publisher supplementary PDF."
+    }
+  ]
+}

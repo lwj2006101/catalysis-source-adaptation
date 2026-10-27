@@ -1,0 +1,27 @@
+\subsection{Learning a correction covariance from historical source contrasts}
+The preceding risk construction motivates a second, locked retrospective candidate. We model errors of a partially transferred historical response rather than variability of the response components themselves. The latent target response is
+\begin{equation}
+f_s(x)=\gamma f_G(x)+b_s+\phi(x)^\top\delta_s,\qquad
+\delta_s\sim\mathcal N(0,B),\quad y_s(x)=f_s(x)+\epsilon_s(x),
+\label{eq:contrastmodel}
+\end{equation}
+with an unrestricted source intercept $b_s$ and independent working observation variance $\nu=\eta\sigma^2$. The nine-dimensional $\phi$ contains six operating features and the three inherited ANOVA responses, scaled by historical source-equal moments. This is a finite-rank Gaussian-process/random-coefficient model. Gaussian conditioning, universal kriging and V-optimal selection are established \cite{gpml,alpaca,gpmllearn,scaml}; their equations are not claimed as a new estimator family.
+
+For each historical source, both outcomes and response features are centered to remove its intercept. The correction residual is $y-\gamma f_G$. A stabilized posterior-moment iteration fits $B$ and $\sigma^2$ from these contrasts, with 20\% diagonal shrinkage and positive floors. Crucially, $f_G$ and its components are computed out of leakage group. During historical pseudo-source tuning, a secondary three-fold cross-fit is performed inside the complement of the complete pseudo-validation fold. The covariance records, preprocessing and reference rows exclude that entire fold. All inherited backbone configurations remain fixed. The supplementary information specifies the moment updates and their scope; the residual variance includes lack of fit and is not a measured laboratory-noise variance.
+
+For a support set $A$, define $K_{AA}=\Phi_A B\Phi_A^\top$, $K_{QA}=\Phi_Q B\Phi_A^\top$, $C_A=K_{AA}+\nu I$ and $r_A=y_A-\gamma f_{G,A}$. Then
+\begin{align}
+\widehat b_A&=\frac{\mathbf1_A^\top C_A^{-1}r_A}{\mathbf1_A^\top C_A^{-1}\mathbf1_A},\\
+\widehat f_Q&=\gamma f_{G,Q}+\mathbf1_Q\widehat b_A+K_{QA}C_A^{-1}(r_A-\mathbf1_A\widehat b_A).
+\label{eq:contrastposterior}
+\end{align}
+The working latent covariance is
+\begin{equation}
+\Sigma_Q=K_{QQ}-K_{QA}C_A^{-1}K_{AQ}
++\frac{h_Qh_Q^\top}{\mathbf1_A^\top C_A^{-1}\mathbf1_A},\qquad
+h_Q=\mathbf1_Q-K_{QA}C_A^{-1}\mathbf1_A.
+\label{eq:contrastvariance}
+\end{equation}
+Greedy contrast V-optimal acquisition minimizes $\operatorname{tr}(\Sigma_Q)/n_Q$ using candidate/query features only. A pool-only control uses candidate-pool features as the objective population. Prediction and design share one historically frozen covariance and one $(\gamma,\eta)$ pair throughout the nested budgets. Calibration of meta-learned GP uncertainty requires separate evidence \cite{iwata}; the usual Gaussian posterior does not certify real-data uncertainty. No nominal predictive coverage or laboratory guarantee follows from Eq.~\ref{eq:contrastvariance}.
+
+Five predictor variants test full covariance, diagonal covariance, operating-only covariance, isotropic covariance, and covariance from in-sample rather than cross-fitted responses. Each chooses one pair from $\gamma\in\{0,0.5,1\}$ and $\eta\in\{0.25,1,4\}$ using source- and budget-equal historical pseudo-query MAE under random acquisition. All five budgets contribute to that choice. Five acquisition policies are crossed with thirteen predictors. Strong controls are re-tuned by policy and budget; blend controls additionally re-select both regularizers, prior weight and shrinkage. Four main five-label contrasts are locked before this candidate's outer results, with family-adjusted intervals separately within each cohort. All corpora were already examined in previous development, so these remain retrospective evaluations.

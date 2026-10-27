@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "documents": [
+    {
+      "path": "manuscripts/manuscript_en.pdf",
+      "pages": 12,
+      "sha256": "9760254bd1b4b5302378787fe1f1826920ed3d823c2712eb3b611db3b57b2f4e",
+      "all_pages_rendered": true,
+      "out_of_page_text_blocks": []
+    },
+    {
+      "path": "manuscripts/supplementary_en.pdf",
+      "pages": 45,
+      "sha256": "612583688d0abcea32c9c3ea397a0c96b94a76cfcb87b2555f631bc14cf0353d",
+      "all_pages_rendered": true,
+      "out_of_page_text_blocks": []
+    },
+    {
+      "path": "manuscripts/第11步_成果与投稿说明.pdf",
+      "pages": 3,
+      "sha256": "4eb4d73d8de50db796fe451236ceb548ab4df5c0fd3f4cf7c9fb9a4e7925060d",
+      "all_pages_rendered": true,
+      "out_of_page_text_blocks": []
+    },
+    {
+      "path": "submission/cover_letter.pdf",
+      "pages": 1,
+      "sha256": "6fa8c0c4d8188a003713b9c45556681715bece332e9c1ff98b09767ddf46c8cd",
+      "all_pages_rendered": true,
+      "out_of_page_text_blocks": []
+    },
+    {
+      "path": "submission/graphical_abstract.pdf",
+      "pages": 1,
+      "sha256": "526fb0969e1a4513ed2facf10984be0f63ee4664255483969501b0a64a9bfab4",
+      "all_pages_rendered": true,
+      "out_of_page_text_blocks": []
+    }
+  ],
+  "all_pages_rendered": true,
+  "all_pages_rendered_and_visually_reviewed": true,
+  "visual_review_status": "All 62 pages rendered and reviewed: main 1-12, SI 1-45, Chinese 1-3, cover 1, graphical 1. Corrected graphics and Chinese numerical text additionally reviewed at full resolution.",
+  "rendering_directory": "tmp/pdf_qa",
+  "latex_final_logs_have_no_warnings_or_overfull_boxes": true,
+  "corrections": [
+    "graphical abstract headings and result annotation fit the page",
+    "main Figure 4 legend moved above all bars by extending the axis",
+    "CJK numerical superscript replaced by plain 1e-12",
+    "page rotations respected in landscape bounds checks"
+  ],
+  "recovery_rebuilt_only": [
+    "submission/cover_letter.pdf",
+    "submission/graphical_abstract.pdf"
+  ],
+  "recovery_visual_review": "Rebuilt one-page cover letter and graphical abstract rendered and visually inspected. Original main/SI/Chinese progress PDFs retained byte-for-byte with prior QA hashes."
+}

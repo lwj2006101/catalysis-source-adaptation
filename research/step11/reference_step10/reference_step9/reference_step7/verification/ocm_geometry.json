@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "cells": 2700,
+  "row_values_reaggregated": 172800,
+  "original_composition_orders_matched": 135,
+  "new_backbone_fits": 0,
+  "timing": "exploratory after primary results"
+}

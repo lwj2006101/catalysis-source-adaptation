@@ -1,0 +1,55 @@
+{
+  "revision_date": "2026-10-22",
+  "scientific_runs": 0,
+  "original_pdf_text_matches_editable_source_pdf": true,
+  "main_table_count": 11,
+  "main_figure_count": 10,
+  "table_files": [
+    {
+      "file": "external_k5_body_cn.tex",
+      "numeric_cells_unchanged": true
+    },
+    {
+      "file": "internal_k5_body_cn.tex",
+      "numeric_cells_unchanged": true
+    },
+    {
+      "file": "label_alignment_cn.tex",
+      "numeric_cells_unchanged": true
+    },
+    {
+      "file": "matched_rbf_cn.tex",
+      "numeric_cells_unchanged": true
+    },
+    {
+      "file": "repeated_catalyst_cn.tex",
+      "numeric_cells_unchanged": true
+    },
+    {
+      "file": "step10_matched_cn.tex",
+      "numeric_cells_unchanged": true
+    },
+    {
+      "file": "step10_primary_cn.tex",
+      "numeric_cells_unchanged": true
+    },
+    {
+      "file": "step6_performance_cn.tex",
+      "numeric_cells_unchanged": true
+    },
+    {
+      "file": "step7_primary_cn.tex",
+      "numeric_cells_unchanged": true
+    },
+    {
+      "file": "step9_matched_cn.tex",
+      "numeric_cells_unchanged": true
+    },
+    {
+      "file": "step9_primary_cn.tex",
+      "numeric_cells_unchanged": true
+    }
+  ],
+  "english_manuscript_unchanged": true,
+  "notes": "Only Chinese prose, terminology, captions, table labels and figure text are revised. Original plotted data and numeric table cells are retained."
+}

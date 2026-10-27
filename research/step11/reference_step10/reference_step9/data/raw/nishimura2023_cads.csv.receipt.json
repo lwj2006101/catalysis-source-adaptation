@@ -1,0 +1,19 @@
+{
+  "source": {
+    "key": "nishimura2023_cads",
+    "doi": "10.1039/d3cy00596h",
+    "title": "Leveraging machine learning engineering to uncover insights into heterogeneous catalyst design for oxidative coupling of methane",
+    "landing_url": "https://cads.eng.hokudai.ac.jp/datamanagement/datasources/d84c1e22-ceb9-488a-8d45-4c7cf1c603b5/",
+    "verified_download_url": "https://cads.eng.hokudai.ac.jp/private-media/db128214-60a4-40ac-9fa2-43ddcc87bcc6/d84c1e22-ceb9-488a-8d45-4c7cf1c603b5_Vbx3IYY.csv",
+    "local_name": "nishimura2023_cads.csv",
+    "link_provenance": "anonymous author-platform page href retrieved 2026-10-10; CSV bytes not retrieved in this delivery",
+    "role": "candidate only; distinguish mixed literature/HTS input from new author-measured experiments",
+    "status": "metadata retrieved; raw CSV not retrieved or curated"
+  },
+  "downloaded_utc": "2026-10-11T01:27:41.877896+00:00",
+  "sha256": "9d0620b199b6660a33d4e82aa47be4d752c3450f2cc4f1ac1f623025f3b5334e",
+  "bytes": 257896,
+  "content_type": "text/csv",
+  "final_url": "https://cads.eng.hokudai.ac.jp/private-media/db128214-60a4-40ac-9fa2-43ddcc87bcc6/d84c1e22-ceb9-488a-8d45-4c7cf1c603b5_Vbx3IYY.csv",
+  "status": "raw candidate only; original measurement provenance and overlap not yet audited"
+}

@@ -1,0 +1,11 @@
+{
+  "source_doi": "10.1021/acs.jpcc.4c07397",
+  "raw_si_retrieved": true,
+  "si_bytes": 1702349,
+  "verified_md5": "eb375fb1f7edf3cd141d11d04c144a1c",
+  "pages": 8,
+  "measured_graph": "Figure S8, three catalysts with replicate curves",
+  "admitted": false,
+  "reason": "SI provides plotted experimental results, not a complete numeric table with all required conditions and traceable rows. No plot-digitized approximations are silently treated as original reported numbers.",
+  "next_step": "Obtain original numeric measurement file and confirm feed/loading conditions from the original main article."
+}

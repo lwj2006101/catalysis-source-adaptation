@@ -1,0 +1,12 @@
+{
+  "frozen_utc": "2026-10-11T13:22:43.719515+00:00",
+  "epsilon": 0.0,
+  "new_backbone_fits": 0,
+  "parameters_sha256": "a360849aeba94d19ae85046a023570a96b24056f45c4ff693bec8706008e344a",
+  "parent_frozen_sha256": "0fa37e7da89ccc9c5bdab0aaa40fbc4594eb7746b4412f5bf1887a4a103864b3",
+  "code_sha256": {
+    "run_extension.py": "8940629303966aaac64075ed5df39c7dc16c619c97d85577d5bd5c327418f1f6",
+    "robust_operator.py": "bba3ddc46b0769b394a7a16ec0e7b1dff893133b1219186c6bd53c1d466d7509"
+  },
+  "opened_cohort_used_for_tuning": false
+}

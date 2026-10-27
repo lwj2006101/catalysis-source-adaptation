@@ -1,0 +1,29 @@
+{
+  "raw_update_rows": 4759,
+  "raw_update_sources": 533,
+  "new_numbered_sources": 118,
+  "old_bibliography_unique_numbers": 420,
+  "old_bibliography_max_number": 421,
+  "old_numbering_citation_mismatches": 4,
+  "relisted_old_publications": {
+    "424": 396,
+    "427": 395,
+    "429": 105
+  },
+  "included_external_rows": 2381,
+  "included_external_sources": 91,
+  "main_sources": 52,
+  "high_temperature_sources": 40,
+  "exclusion_counts_overlapping": {
+    "old_or_unverifiable_publication": 1845,
+    "missing_or_nonpositive_CH4_partial_pressure_bar": 393,
+    "missing_or_nonpositive_O2_partial_pressure_bar": 393,
+    "composition_exceeds_frozen_slots": 100,
+    "missing_or_invalid_C2_yield": 44,
+    "full_upstream_duplicate": 21
+  },
+  "upstream_commit": "dbf7be5aadb30323f825e8f7d7f6bd3012c99dd2",
+  "input_sha256": "b6ac80bdaec9e7710b222002a74eff1588ad3ac7ae0dc5d070e24553a0c6aca4",
+  "protocol_sha256": "08eb7d13326a1bf68e9e8c3539afdd0b54e2bd85d243312cdb9d9deb65f92b47",
+  "identity_scope": "Non-overlapping publication citations in an independently released public compilation; not laboratory, batch or prospective independence."
+}

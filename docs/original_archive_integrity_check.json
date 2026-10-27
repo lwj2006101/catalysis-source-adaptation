@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "predecessor_original_files_unchanged": 3290,
+  "predecessor_manifest_unchanged": true,
+  "code_execution_lock_verified": true,
+  "historical_parts": 25,
+  "within_family_partitions": 20,
+  "actual_scalar_predictions": 10948000,
+  "independently_reconstructed_rbf_values": 2737000,
+  "math_and_fresh_portability_passed": true,
+  "pdf_visual_qa_passed": true,
+  "delivered_files_excluding_root_manifest": 3695,
+  "manifest": "every delivered file verified",
+  "scientific_manuscript_complete": true,
+  "author_identity_filled": false,
+  "article_submitted": false
+}

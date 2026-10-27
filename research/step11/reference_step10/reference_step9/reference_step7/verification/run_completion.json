@@ -1,0 +1,8 @@
+{
+  "parts": 125,
+  "identity": "cff8f307a0739c45e344a007a649d38a7323cb666b923b5a8601cdc28dc08fe9",
+  "new_backbone_fits": 125,
+  "new_inner_model_fits": 0,
+  "completed_utc": "2026-10-10T18:29:40.277608+00:00",
+  "python": "3.12.14"
+}

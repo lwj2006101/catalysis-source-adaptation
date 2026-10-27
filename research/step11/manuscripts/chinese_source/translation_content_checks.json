@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "source_sha256": "9760254bd1b4b5302378787fe1f1826920ed3d823c2712eb3b611db3b57b2f4e",
+  "source_pages": 12,
+  "translation_scope": "Complete main manuscript, all six tables and four figure captions; original figures and bibliography retained",
+  "display_equations_identical": 6,
+  "all_inline_math_identical": true,
+  "table_checks": [
+    {
+      "file": "internal_k5_body.tex",
+      "numerical_tokens_identical": true
+    },
+    {
+      "file": "label_alignment.tex",
+      "numerical_tokens_identical": true
+    },
+    {
+      "file": "external_k5_body.tex",
+      "numerical_tokens_identical": true
+    },
+    {
+      "file": "step7_primary.tex",
+      "numerical_tokens_identical": true
+    },
+    {
+      "file": "repeated_catalyst.tex",
+      "numerical_tokens_identical": true
+    },
+    {
+      "file": "matched_rbf.tex",
+      "numerical_tokens_identical": true
+    }
+  ],
+  "citation_order_and_cross_references_identical": true
+}

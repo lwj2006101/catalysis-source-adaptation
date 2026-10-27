@@ -1,0 +1,22 @@
+{
+  "row_values_reaggregated": 6742710,
+  "row_values_recomputed": 624325,
+  "latent_variances_recomputed": 48025,
+  "poisoned_label_orders_recomputed": 12258,
+  "inner_covariance_group_checks": 234,
+  "posterior_parameters_recomputed": 26,
+  "matched_ablation_values_reaggregated": 518670,
+  "matched_ablation_values_recomputed": 48025,
+  "passed": true,
+  "fits": 26,
+  "per_source_rows_reaggregated": 2975,
+  "maximum_mae_reaggregation_difference": 1.0658141036401503e-14,
+  "maximum_mse_reaggregation_difference": 2.2737367544323206e-13,
+  "maximum_prediction_reconstruction_difference": 7.993605777301127e-14,
+  "maximum_latent_variance_reconstruction_difference": 0.0,
+  "query_outcome_poison_value_range": [
+    -1000000000.0,
+    1000000000.0
+  ],
+  "query_outcomes_absent_from_frozen_design_interfaces": true
+}

@@ -1,0 +1,17 @@
+{
+  "task": "methanol",
+  "feature_set": "F0",
+  "features": [
+    "Temperature_K",
+    "Pressure_bar",
+    "H2_CO2_ratio",
+    "GHSV_L_g_h",
+    "BET_surface_area_m2_g"
+  ],
+  "use_composition": false,
+  "targets": [
+    "CO2_conversion_percent",
+    "Methanol_selectivity_percent"
+  ],
+  "input": "C:\\Users\\Administrator\\.zcode\\workspace\\default\\co2_revision_work\\data\\model_input_revision.csv"
+}

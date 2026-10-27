@@ -1,0 +1,99 @@
+{
+  "version": "step8-view-gate-1",
+  "prepared_utc": "2026-10-10T19:12:47.042371+00:00",
+  "status": "implementation prepared; no Step 8 formal experiment has run",
+  "scope": "source-local OCM acquisition representation choice; published-measurement external test",
+  "candidate": {
+    "meta_regression": "fixed alpha 10 Ridge on eight label-free contexts",
+    "risk_difference": "chemistry-acquisition MAE minus operating-acquisition MAE, frozen F0 blend, k=5",
+    "threshold": "80th percentile of mean absolute group-held-out meta error; empirical, not certified",
+    "default": "composition acquisition",
+    "nested_support": "one view chosen at five-label objective; keep one order for all budgets 1,2,3,5,10"
+  },
+  "new_strong_controls": [
+    "kernel V-optimal; gamma grid 0.1,1,10 using history only",
+    "robust multi-view V-optimal; minimize maximum remaining fraction of working variance across two views"
+  ],
+  "mechanism_controls": [
+    "fixed historical best view",
+    "plain gate without empirical margin",
+    "composition row-correspondence shuffle; 10 draws",
+    "cross the same acquired supports with frozen F0 and F1 predictors"
+  ],
+  "historical_grid": {
+    "seeds": [
+      42,
+      101,
+      202,
+      303,
+      404
+    ],
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "outer_backbone_origin": "reuse Step7 archived bases and geometry; no new outer backbone fit",
+    "new_fitting": "gate, group-held-out gate margins, historical controls",
+    "policy_count": 11,
+    "predictors_per_view": 12,
+    "budgets": [
+      1,
+      2,
+      3,
+      5,
+      10
+    ],
+    "random_draws": 50,
+    "history_random_draws": 10
+  },
+  "primary_family": {
+    "predictor": "F0 frozen adaptive blend",
+    "scenario": "random query",
+    "budget": 5,
+    "comparisons": [
+      "composition_vopt",
+      "operating_vopt",
+      "kernel_vopt",
+      "robust_view_vopt",
+      "fixed_best_view"
+    ],
+    "inference": "source-equal; average draws and seeds before group bootstrap; 20000 resamples, 99% percentile intervals; conditional on fitted pipelines"
+  },
+  "full_history_freeze": {
+    "source_group_folds": 3,
+    "backbone_candidates_per_view": 9,
+    "views": 2,
+    "anticipated_complete_fit_calls": 56,
+    "actual_fit_calls_completed_in_this_delivery": 0,
+    "adapter_selection": "history-only source-disjoint OOF; original finite grids",
+    "external_feature_transform": "historical fitting only"
+  },
+  "external_rules": {
+    "provenance": "original measured yields only; separately audit literature/HTS/reused data",
+    "measurement_unit": "C2 yield =100 * C2 product carbon / inlet CH4 carbon",
+    "minimum_source_rows": 15,
+    "overlap": "historical and previously evaluated external source IDs, DOIs, records, lab/batch/replicates",
+    "one_lab_or_publication": "not multiple independent sources; one group gives no population CI",
+    "publication_dates": "new paper date does not imply new measurements",
+    "prospective_wet_lab": "not executed; a separately measured future campaign is a different claim"
+  },
+  "development_disclosure": {
+    "historical_outcomes_seen_before_step8": true,
+    "public_article_conclusions_seen_in_screening": true,
+    "candidate_CADS_page_downloaded_before_final_code_freeze": true,
+    "candidate_row_responses_manually_inspected": false,
+    "new_cohort_prediction_performance_computed": false,
+    "public_preregistration": false
+  },
+  "server": {
+    "host": "172.25.61.195",
+    "user": "upc",
+    "base": "/home/HDD/upc/lwj",
+    "suggested_project": "/home/HDD/upc/lwj/catalyst_transfer_step8",
+    "status": "private network unreachable from current cloud runtime; no authentication attempted"
+  },
+  "success_interpretation": "A better gate requires measured improvement over strong fixed controls and a new audited cohort; code and a generic regret inequality alone do not establish original algorithm advantage."
+}

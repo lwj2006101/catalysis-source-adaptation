@@ -1,0 +1,18 @@
+{
+  "step7": {
+    "library_file_id": "libfile_d29267389fe8819198f76872d167deca",
+    "file_id": "file_00000000086881f588f5aae5983d1e9d",
+    "filename": "第7步_跨任务选样验证与论文更新包.zip",
+    "bytes": 284019519,
+    "sha256": "9fbb3f51138b07d05d4968023a1960845a3e82a5335ec4f4082705eec1c8c125",
+    "included": "verified complete extracted predecessor in reference_step7"
+  },
+  "step3": {
+    "library_file_id": "libfile_ebfcf5e903c08191a3a1e787aa7f8744",
+    "file_id": "file_00000000195481f5a29731473ed69ff0",
+    "filename": "第3步_完整论文与独立验证复现包.zip",
+    "bytes": 83616980,
+    "sha256": "6441593086b03bb6005b140eb10aca618b6bfee4cdc174948127913be5c4dfb1",
+    "included": "previous external normalized inputs and selected provenance files only; original full release remains separate"
+  }
+}

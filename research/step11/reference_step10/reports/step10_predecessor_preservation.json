@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "unchanged_original_manifest_files": 2868,
+  "original_archive_bytes": 376884755,
+  "original_archive_sha256": "1db4a170fdc35ca054765841ef8f060c92e4c86cf0e18fbebdcaeecfabacc7bb",
+  "refreshed_source_file_id": "file_00000000d36881f59e8532e7b866dbd3",
+  "refreshed_source_library_identity": "libfile_d1f011949ea08191ab0ea40143a61c36",
+  "source_manifest_sha256": "243863481e199202d31dbe4482078705393feea065008df800475e320e5f38eb",
+  "checked_utc": "2026-10-11T06:53:21.879370+00:00",
+  "mapping": "Every original Step9 path -> reference_step9/<same path>; complete Step7 and Step8 provenance remain nested unchanged."
+}

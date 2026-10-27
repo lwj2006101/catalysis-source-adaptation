@@ -1,0 +1,16 @@
+{
+  "parts": 25,
+  "scalar_values_reaggregated": 4099200,
+  "support_orders_checked": 16470,
+  "new_design_orders_reconstructed": 1350,
+  "independent_kernel_query_values_reconstructed": 345600,
+  "frozen_blend_query_values_reconstructed": 115200,
+  "legacy_locked_rbf_cells_matched": 1350,
+  "actual_poisoned_source_frames": 270,
+  "maximum_independent_prediction_error": 6.821210263296962e-13,
+  "maximum_scalar_loss_error": 5.684341886080802e-14,
+  "passed": true,
+  "audited_utc": "2026-10-11T06:25:23.965439+00:00",
+  "independence": "All scalar losses independently reaggregated. New kernel and locked RBF predictions reconstructed by a separate kernel implementation and sklearn; frozen blend uses inherited helpers. New design orders reuse selector; mathematical risk checks are separate.",
+  "new_backbone_refits": 0
+}

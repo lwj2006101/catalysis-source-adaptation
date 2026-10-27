@@ -1,0 +1,86 @@
+{
+  "created_protocol_version": "step6_contrast_v1",
+  "code_sha256": {
+    "contrast_transfer.py": "33b0a8ee610979a905ef69be8b10f255c85c22ae9c940fcc5822e03ff794d5a8",
+    "run_contrast_benchmark.py": "5ad325f248d4c91e9be98ca3144ae0fb8d1a3dc393d81d6b374c645d3663278c"
+  },
+  "inputs_sha256": {
+    "ocm_paired_raw_chemistry.csv": "4f19d033b1aeb5e709bec0e068991b59acee593357c3b28f6177ed231a60ef9b",
+    "ocm_model_input_operating.csv": "8a644837707edf5fc1d4f32e3bfabcb7e9e35536801d0e9768b3fae8bacafe0a"
+  },
+  "split_sha256": "f3aef8fa01f83dab27c7cac81abd931374f43f13a7aecd90112dd991baa68299",
+  "external_sha256": "b6ac80bdaec9e7710b222002a74eff1588ad3ac7ae0dc5d070e24553a0c6aca4",
+  "policies": [
+    "random",
+    "linear_vopt",
+    "augmented_vopt",
+    "contrast_vopt",
+    "contrast_pool"
+  ],
+  "methods": [
+    "base",
+    "target_mean",
+    "local_ridge",
+    "adaptive_blend",
+    "adaptive_blend_retuned",
+    "local_ridge_retuned",
+    "local_rbf_retuned",
+    "anova_feature_ridge",
+    "contrast_transfer",
+    "contrast_diagonal",
+    "contrast_operating",
+    "contrast_isotropic",
+    "contrast_in_sample"
+  ],
+  "gammas": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "noise_multipliers": [
+    0.25,
+    1.0,
+    4.0
+  ],
+  "budgets": [
+    1,
+    2,
+    3,
+    5,
+    10
+  ],
+  "random_repeats": 50,
+  "pseudo_repeats": 10,
+  "covariance_iterations": 80,
+  "covariance_shrinkage": 0.2,
+  "parameter_selection": "random pseudo-sources; equal-source equal-budget MAE",
+  "primary_budget": 5,
+  "primary_scenario": "random",
+  "primary_family": [
+    [
+      "contrast_vopt",
+      "contrast_transfer",
+      "linear_vopt",
+      "adaptive_blend_retuned"
+    ],
+    [
+      "contrast_vopt",
+      "contrast_transfer",
+      "augmented_vopt",
+      "adaptive_blend_retuned"
+    ],
+    [
+      "contrast_vopt",
+      "contrast_transfer",
+      "contrast_vopt",
+      "adaptive_blend_retuned"
+    ],
+    [
+      "contrast_vopt",
+      "contrast_transfer",
+      "augmented_vopt",
+      "contrast_transfer"
+    ]
+  ],
+  "status": "retrospective; all corpora inspected in prior method development"
+}

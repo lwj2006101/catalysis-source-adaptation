@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "status": "post-hoc exploratory diagnostic",
+  "budget": 5,
+  "gamma": "main candidate historically selected",
+  "total_noise": "main candidate historically fitted",
+  "row_prediction_values": 518670,
+  "main_error_values_matched": 12258,
+  "maximum_main_error_difference": 3.552713678800501e-15,
+  "target_query_outcomes_used_for_parameter_selection": false
+}

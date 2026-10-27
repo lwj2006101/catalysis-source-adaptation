@@ -1,0 +1,5 @@
+Few target labels reveal response level, correspondence and measurement geometry.
+Matched local controls distinguish calibration from historical response reuse.
+Chemistry can improve acquisition without entering the deployed predictor.
+Composition design improves 19 of 20 partitions from one measured publication.
+Query identity and covariance sensitivity limit acquisition gains.

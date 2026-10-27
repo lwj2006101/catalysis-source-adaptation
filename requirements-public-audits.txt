@@ -1,0 +1,8 @@
+# Optional only: re-running the published author workflows.
+-r requirements.txt
+xgboost==3.2.0
+catboost
+lightgbm
+openpyxl
+optuna
+# Read each upstream repository requirements file before the original-flow audit.

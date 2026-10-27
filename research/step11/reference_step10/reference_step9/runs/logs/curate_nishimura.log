@@ -1,0 +1,17 @@
+{
+  "raw_rows": 2928,
+  "eligible_resource_rows": 1904,
+  "final_measured_rows": 1739,
+  "unique_catalysts": 116,
+  "n_sources": 1,
+  "n_experiment_family_groups": 1,
+  "exclusion_counts": {
+    "excluded_control_or_unresolved_origin_phase": 1024,
+    "no_complete_reported_temperature_ratio_and_response": 120,
+    "repeated_catalyst_condition_first_occurrence_retained": 45
+  },
+  "n_possible_rounded_fingerprint_matches": 9,
+  "C2_sum_max_disagreement_pp": 0.10000000000000142,
+  "carbon_balance_max_disagreement_pp": 0.20000000000000212,
+  "curated_utc": "2026-10-11T01:33:26.434592+00:00"
+}

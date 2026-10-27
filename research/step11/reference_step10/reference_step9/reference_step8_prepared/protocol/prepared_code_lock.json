@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-10-10T19:19:19.171480+00:00",
+  "status": "prepared_not_run",
+  "code_hashes": {
+    "aggregate_results.py": "b3e13d21a4c492b94ad487b9bd4316f89f2234bc132b6f0fd6e4f982d66d2dcd",
+    "audit_results.py": "372e3e6f3ca2c08965bbeea9344d9fb6f6383747b0cd1fe58a380d915070f324",
+    "check_external_data.py": "3e434deafcdccc7bc436cb4dae62477464fa217d791c012cc7d46ed0bcec7698",
+    "evaluate_external_ocm.py": "b5ddf20598551f4b653a62733092b5b95cdc7cc575b3c8af7591a6fc9f38c4a6",
+    "fetch_data.py": "3c5bb4663d8b48d431dc3ab5aa79c0a5c2192df78aeed06dc77b0faa2675618f",
+    "freeze_full_history.py": "cae935445fd870793cfac56a4b3b66b40ac6a37394e3f23aa90fe5bd4690910b",
+    "run_history.py": "75756571690488cd454a62ba5d383a7a0c1e6bd44be9ababe655be20c82216a7",
+    "selection_controls.py": "df1ce9cc82673b28d3a7c52672a217a0358d597ce508f9f07ac2b55032ffb62f",
+    "server_guard.py": "b9750ef19b95a6e247c1d5429e235e0a3eb8343c32428db6a64dd84fc4419a07",
+    "verify_math.py": "743bfb4c8a95c9abe81064cd5f549ba3ddb619211019e96ebf99a328b28718f4",
+    "view_selection.py": "032f5a165df4e68084cb6b573d4d09775c8a20f89cfa63126e2811135f378ac8"
+  },
+  "plan_sha256": "05ef533f6d0f26e24ad781b44cd68475be30e626816409d25362d64124a90050",
+  "public_preregistration": false,
+  "formal_fits_completed": 0
+}

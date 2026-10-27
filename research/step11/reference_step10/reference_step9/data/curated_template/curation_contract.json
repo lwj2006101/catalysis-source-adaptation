@@ -1,0 +1,14 @@
+{
+  "status": "TEMPLATE_NOT_VALIDATED",
+  "reaction": "OCM",
+  "yield_definition": "100 * C2 product carbon / inlet CH4 carbon",
+  "source_publication_dois": [],
+  "raw_assets": [],
+  "original_measurements_only": false,
+  "historical_overlap_review_complete": false,
+  "previous_external_overlap_review_complete": false,
+  "units_review_complete": false,
+  "batch_and_replicate_review_complete": false,
+  "model_development_did_not_use_rows": false,
+  "required_explanation": "Complete against original tables; retain inclusion/exclusion and overlap reviews. Missing conditions stay missing and are reported."
+}

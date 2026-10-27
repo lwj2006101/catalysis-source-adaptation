@@ -1,0 +1,177 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=23mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,booktabs,graphicx,tabularx,hyperref,placeins}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\emergencystretch=2em
+\newcommand{\pp}{\,pp}
+\newcommand{\styunit}{mg\,MeOH\,h$^{-1}$\,g$_{cat}^{-1}$}
+\newcommand{\plotfigure}[3]{\begin{figure}[htbp]\centering\includegraphics[width=\linewidth]{../figures/#1.pdf}\caption{#2}\label{#3}\end{figure}}
+\input{result_macros.tex}
+\title{What few target labels learn under publication shift in catalysis}
+\author{}\date{}
+\begin{document}\maketitle
+\begin{abstract}
+A few measurements from a target publication can improve catalytic prediction, but the improvement does not identify which information was transferred. We separate response level, input--response correspondence, historical response structure and measurement location in source-disjoint studies of methanol synthesis and oxidative coupling of methane (OCM). Four outcomes and two OCM representations give five analysis panels. A support-conditioned projection identity distinguishes target-local fitting from historical response reuse; permuting support labels then isolates correspondence while preserving their mean. At five labels, established query-directed V-optimal design reduces an unchanged blend's source-equal mean absolute error from 62.608 to 50.274 in native methanol productivity units and from 3.081 to 2.708 percentage points for composition-enriched OCM. Both gains survive adjustment of the earlier five-panel primary family. Chemistry also improves acquisition for a predictor using only operating conditions. Frozen deployment on 91 additional literature publications supports calibration value, while 1739 author-reported measurements show that a strong support-local RBF can exceed historical-response blending. Across twenty catalyst-disjoint partitions of that publication, composition-directed acquisition reduces mean RBF error from 4.922 to 4.107 and improves nineteen partitions. A prediction-operator risk formulation and its exact spectral-covariance sensitivity bound clarify why nominally informative locations need not minimize actual error. The resulting benchmark identifies when labels supply a source level, a local response relation or useful measurement geometry, and gives the corresponding limits of transfer claims.
+\end{abstract}
+
+\section{Introduction}
+Literature-derived catalytic data combine materials, operating conditions, reactors and measurement practices from many publications. This heterogeneity provides broad experimental coverage, but it also makes the deployment target decisive. Predicting another record from a represented publication and predicting a new publication are different tasks: related training records can convey a source's response level and characteristic trends. Grouped validation is therefore necessary when estimating performance on unrepresented sources \cite{roberts}. The same distinction applies when new target-source measurements become available. Their value is conditional on what is measured and how those responses enter the predictor.
+
+Recent methanol and OCM resources make these questions experimentally accessible \cite{toldy,yan,suvarna,schmack,mine}. Small target label budgets are attractive because catalytic measurements require preparation, reactor time and analytical effort. Calibration transfer provides established tools for adapting a response relation \cite{feudale}, while regression blending can stabilize the choice between local responses and historical corrections \cite{breiman,efron}. Nevertheless, a large improvement over an unadapted historical model is insufficient evidence that its learned response structure transfers. An output mean or a simple regressor fitted to the same support labels may provide most of the improvement.
+
+The measurement locations introduce a second issue. Experimental-design methods direct measurements toward informative inputs \cite{yubi,gorodetsky2016}. Their benefit depends on the predictor that consumes the acquired labels and the queries for which prediction is required. More detailed chemistry can improve measurement selection without entering the deployed predictor. Conversely, an acquisition rule suited to ordinary interpolation may behave differently when all queried catalyst identities are excluded from the support pool. Recent analyses of active learning emphasize such workflow dependence \cite{nair2026,tang2026}. We study it through controlled response and geometry interventions in measured catalytic datasets.
+
+Our contribution is an information-resolved, source-disjoint evaluation framework with three linked components. First, matched support-local and residual predictions expose the historical response component left unresolved by the support fit. Second, label permutation and acquisition--prediction representation crossing distinguish correspondence from a response level and selection geometry from prediction inputs. Third, a factorial design holds label budgets, query populations and predictors fixed when comparing measurement locations. A working-risk calculation for the actual prediction operator, together with a covariance sensitivity bound, gives a testable explanation for the limits of nominal acquisition risk. The contribution is the integrated mechanism analysis and its empirical scope; ridge regression, kernel regression, blending and V-optimal design are established ingredients.
+
+\section{Data and evaluation}
+\subsection{Reaction systems and source identity}
+The historical corpora contain 1245 paired methanol conversion/selectivity records from 82 publication sources and 80 leakage groups, 1230 methanol space-time-yield (STY) records from 109 sources, and 1794 OCM records from 408 publication entries and 405 leakage groups. Methanol conversion/selectivity combines TheMeCat and a methanol retrospective \cite{toldy,yan}; STY uses the Suvarna dataset \cite{suvarna}; OCM uses the Schmack supplement \cite{schmack}. Conversion, selectivity and C$_2$ yield are evaluated in percentage points. STY uses \styunit. These are two reaction systems and four outcomes. OCM operating-only (F0) and composition-enriched (F1) views are paired representations of the same records, giving five panels rather than five independent reaction datasets. Twenty methanol publication identities occur in both outcome collections.
+
+A source denotes a publication entry, not a laboratory or physical batch. Duplicate citations and identified upstream overlaps are assigned to leakage groups, which remain intact across outer splits. Methanol operating inputs are temperature, pressure, H$_2$/CO$_2$, GHSV and BET area. OCM operating inputs are temperature, CH$_4$ and O$_2$ partial pressures, their ratio, total pressure and contact time. F1 adds order-invariant, role-specific composition descriptors, known molar amounts and missing-amount indicators. Chemical vocabularies, unseen-species channels, imputation and scaling are fitted using the allowed historical training data. The composition encoding retains reported roles and missingness; it does not reconstruct preparation or surface structure. The SI gives row identities, input quality, units and provenance.
+
+\subsection{Historical splits, labels and fixed populations}
+Five leakage-group folds are repeated with seeds 42, 101, 202, 303 and 404. Global backbones are selected by three-fold grouped out-of-fold, source-equal MAE inside the outer training partition. Candidates are ridge regression with $\alpha\in\{0.1,1,10,100\}$ and gradient boosting with 100 or 300 depth-2/3 trees or 500 depth-8 trees. Adapter regularization and blend priors use historical sources as pseudo-targets, with ten label-blind support draws per eligible source and budget. Outer query labels do not enter model selection or preprocessing. A separate split audit refits fixed ridge and boosting settings under record-random and source-disjoint splits, isolating split choice from tuning.
+
+For a held-out source with $n_s$ rows, a stable identifier shuffle assigns $\max(5,\lceil n_s/4\rceil)$ rows to queries and the remainder to a support pool. Complete budget curves require at least ten pool rows. The same population is retained at $k\in\{1,2,3,5,10\}$: 32 sources for each paired methanol outcome, 28 for STY and 22 for OCM. Fifty random support orders provide nested prefixes. Deterministic acquisitions also provide nested prefixes. Each comparison shares its query set; predictor comparisons within an acquisition use the same actual labels. Separate factorials retain their archived support-draw seeds, so their random point estimates can differ slightly; paired claims always use the matched comparator within that factorial. Query inputs are known to the selector, but query responses are unavailable until scoring.
+
+Secondary high-temperature queries use an entire upper temperature block, with every support temperature below every query temperature. Eligible source counts are 23 for paired methanol, 21 for STY and five for historical OCM. The five-source OCM stress is exploratory. The SI also reports methanol name-stratum holdout; a reported catalyst name is not a certificate of a novel physical catalyst.
+
+\subsection{Additional literature and measured-publication applications}
+The Mine OCM update \cite{mine}, at the archived repository commit, contains 4759 records from 533 publication numbers. Bibliographic screening against the complete historical bibliography and removal of three re-listed old publications precede prediction scoring. Compatible thermal OCM records must have attributable additional citations, valid measured yields, consistent units and a supported composition schema. Every exclusion retains its reason. The admitted set comprises 2381 records from 91 additional publications, with 52 eligible for the complete random budget curve and 40 for high-temperature queries. It establishes publication non-overlap in a separately released compilation; shared laboratories and upstream extraction errors are not excluded. Historical fitting and tuning precede target support/query scoring.
+
+A second application uses author-reported validation measurements from Nishimura \emph{et al.} \cite{nishimura2023new}. The original 2928-row CADS file mixes study stages. Excluding 1024 ineligible-stage records, 120 records missing required temperature or response, and 45 duplicated catalyst--condition records gives 1739 measurements for 116 catalyst identifiers. These belong to one publication and one experiment family, not five independent datasets because they arose from five validation stages. Four operating inputs and composition amounts are unavailable and remain missing under the frozen historical preprocessing. No physical values are guessed to fill them. This publication was first evaluated with a historical-only frozen pipeline. Later risk-method comparisons and the repeated catalyst partitions use the already opened publication and are development sensitivities.
+
+\subsection{Estimands and uncertainty}
+MAE and MSE are first averaged over queries for a fixed support draw, then over draws and repeated seeds within each source. Sources have equal weight. A source with many queries or random support draws therefore does not dominate the result. Paired contrasts use source-level differences; bootstrap resampling preserves leakage groups and conditions on the fitted historical models. The earlier five-panel primary acquisition family uses adjusted intervals. Subsequent analyses retain their original development or exploratory status. Neither repeated folds nor repeated catalyst partitions increase the number of independent publications. For the single measured experiment family, we report point estimates and conditional partition distributions, without a source-population confidence interval.
+
+\section{Methods: resolving the information in target labels}
+\subsection{Local fitting and historical response reuse}
+Let $f_G$ be the frozen historical predictor, $S$ the labelled support and $Q$ the disjoint queries. Training-fitted features are $z(x)$. A local ridge fits the support responses:
+\begin{equation}
+q_L(x)=b_L+z(x)^\top\beta_L,\qquad
+(b_L,\beta_L)=\arg\min_{b,\beta}\sum_{i\in S}(y_i-b-z_i^\top\beta)^2+\alpha\|\beta\|_2^2.
+\end{equation}
+A residual ridge instead fits $y_S-f_G(S)$ and adds back $f_G(Q)$. With the same regularization and unpenalized intercept, the response-to-query ridge operator $R_{S,\alpha}$ is linear, so
+\begin{equation}\label{eq:projection}
+q_R(Q)-q_L(Q)=f_G(Q)-R_{S,\alpha}[f_G(S)](Q).
+\end{equation}
+The right side is the historical response structure not reconstructed by the support-conditioned fit. It does not guarantee improved error. Independently tuned local and residual regularization also changes the operator, so the SI includes a matched-$\alpha$ ablation. At one label, local ridge is the support response and residual ridge is a global prediction plus one residual offset.
+
+The shrinkage blend is $q_M=(1-w)q_L+wq_R$. Let $l_{-i}$ and $r_{-i}$ be support leave-one-out predictions and $d_i=r_{-i}-l_{-i}$. A historical prior supplies $w_0$ and disagreement scale $D^2$; the support-only estimate is
+\begin{equation}\label{eq:blend}
+\widehat w=\operatorname{clip}_{[0,1]}
+\frac{\sum_i d_i(y_i-l_{-i})+cD^2w_0}{\sum_i d_i^2+cD^2}.
+\end{equation}
+The prior grid is $w_0\in\{0,0.25,0.5,0.75,1\}$ and $c\in\{\infty,10,2,0.5,0\}$. Priors exclude a pseudo-source's leakage group during its training selection. One-label or degenerate cases use the relevant frozen prior. Other controls are the unadapted global predictor, support mean, residual offset, penalized affine correction, empirical-Bayes offset and temperature-only ridge. Strong local RBF controls use historical-selected hyperparameters. Target query responses enter none of these prediction interfaces.
+
+\subsection{Label correspondence and acquisition representation}
+Permuting responses within a fixed support set preserves the response multiset and its mean, while breaking alignment with the input rows. Mean-only predictions are consequently unchanged. A deterioration in a feature-dependent prediction isolates the value of correspondence, conditional on the support and historical fitting. Permutation is an information intervention, not a claim that chemical composition acts causally on the measured response.
+
+For acquisition, query-directed linear V-optimal design greedily minimizes posterior variance at the specified queries, using a fixed finite intercept prior and frozen regularization. Standard comparisons include random acquisition, feature coverage, pool-directed V design, kernel V design and a robust maximum across operating and composition views. In representation crossing, operating-only and composition-enriched acquisition are each paired with F0 and F1 prediction, holding each acquired support set fixed across the two predictors. Shuffling chemistry row correspondence only in acquisition provides an additional control. The full matrices and policy-specific tuning comparisons appear in the SI; the principal location contrasts keep predictor parameters fixed.
+
+\subsection{Prediction-operator risk and covariance sensitivity}
+For a fixed free-intercept kernel predictor, let $K_{SS}$ and $K_{QS}$ be the support and query kernels and $C=K_{SS}+\alpha I$. Its response weights are
+\begin{equation}\label{eq:weights}
+A=K_{QS}C^{-1}+
+\frac{(\mathbf1-K_{QS}C^{-1}\mathbf1)\mathbf1^\top C^{-1}}
+{\mathbf1^\top C^{-1}\mathbf1},\qquad \widehat y_Q=Ay_S.
+\end{equation}
+Each row of $A$ sums to one; a constant target-source response shift therefore cancels from prediction error. This is established centered kernel ridge or universal kriging \cite{gpml}. The kernel atlas includes isotropic RBF and additive, product and ANOVA combinations of operating and composition blocks. Historical random-support validation fixes the deployed kernel across acquisition rules. A same-tuning isotropic control separates expanded kernel families from changed tuning data.
+
+Write $B=[-A\ I]$ for the error operator on stacked support/query responses, and let $\Sigma_0$ be a working observed-response covariance. For a correctly represented constant mean,
+\begin{equation}\label{eq:risk}
+\mathcal R_0(S)=|Q|^{-1}\operatorname{tr}(B\Sigma_0B^\top).
+\end{equation}
+With unit kernel diagonal and independent working noise $\nu$, this equals the mean of $1+\nu-2(A\overline K_{SQ})_{qq}+[A(\overline K_{SS}+\nu I)A^\top]_{qq}$. The covariance may be the deployed kernel or a historical empirical average of kernel hypotheses. Its square-root version is a Gaussian absolute-loss proxy. Averaging covariances is not a calibrated posterior and does not give the exact absolute risk of a Gaussian mixture.
+
+For covariance error bounded by $\|\Sigma-\Sigma_0\|_2\leq\varepsilon$, the fixed-operator sensitivity is
+\begin{equation}\label{eq:bound}
+|\mathcal R_\Sigma(S)-\mathcal R_0(S)|\leq
+\varepsilon\left(1+\frac{\|A\|_F^2}{|Q|}\right).
+\end{equation}
+Moreover, the worst risk over this spectral ball with $\Sigma\succeq0$ is exactly the nominal risk plus the right side, attained by $\Sigma=\Sigma_0+\varepsilon I$. This elementary robust-design identity makes support-noise amplification explicit. A nonconstant mean discrepancy adds a separate squared-bias term. The bound assumes a specified covariance radius; it does not establish that real catalysis lies inside that radius.
+
+We evaluate nominal RBF-matched acquisition and acquisition minimizing this penalized risk, using the same strong five-label historical-selected RBF. The penalty $\varepsilon\in\{0,0.1,1,10\}$ is selected by source/group-equal five-label MAE on historical pseudo-sources only. Its zero value provides an exact nominal control. All five budgets use that fixed RBF parameterization; comparisons with earlier budget-specific controls coincide at five labels. Earlier finite-intercept, centered squared/absolute and covariance-averaged acquisitions are retained in the full fourteen-policy historical comparison.
+
+\subsection{Repeated catalyst identity exclusion}
+For the measured publication, twenty stable, label-blind shuffles each assign 29 of the 116 catalyst identifiers to queries and the other 87 to the support pool. All rows of an identity remain on one side. Random acquisition uses fifty nested orders per partition; operating V, composition V, pool V, expanded-kernel risk and the two RBF-matched rules use their complete deterministic orders. Frozen historical parameters are shared across partitions and all partitions are reported. These repetitions measure sensitivity to query composition within one experiment family, rather than replication across twenty sources.
+
+\section{Results}
+\subsection{Target labels recover more than a source response level}
+The controlled split audit shows that record-random performance and source-disjoint performance answer materially different prediction questions (Fig.~\ref{fig:split}). Keeping configurations fixed makes this difference attributable to validation design rather than choosing a more favorable model. It motivates source-disjoint evaluation of label-assisted deployment.
+\plotfigure{fig1_split_audit}{Controlled split audit with fixed model settings and training-fitted preprocessing. Record-random and leakage-group-disjoint errors are reported separately by outcome and model family. Percentage outcomes and STY retain distinct native units. This figure reproduces the audited historical fits.}{fig:split}
+
+At five randomly acquired labels, a support mean improves on the global predictor in all five historical panels, but local feature-dependent fitting supplies a further gain (Table~\ref{tab:information}). For composition-enriched OCM, MAE changes from 4.527 for the unadapted model to 3.693 for the support mean and 3.374 for local ridge. For STY the corresponding values are 139.258, 91.993 and 65.210. These comparisons separate the value of a target response level from the value of a local response relation.
+\begin{table}[htbp]\centering\small
+\caption{Five-label historical information controls, with the same random supports within each panel. Errors are source-equal MAE; the global control consumes zero target labels. STY is in \styunit; other outcomes are in percentage points.}\label{tab:information}
+\input{tables/internal_k5_body.tex}
+\end{table}
+
+Permutation provides a direct correspondence diagnostic. Under query-directed V acquisition, breaking input--response alignment increases blend MAE by 2.015 points for conversion, 6.040 for selectivity, 30.671 native STY units and 0.840 points for OCM F1 (Table~\ref{tab:alignment}). Nominal group-bootstrap intervals exclude zero for those four contrasts. The OCM F0 increase is only 0.047 points, with an interval spanning zero. The intervention preserves the same support mean: labels can convey a relation unavailable from their marginal response level, and the detectable value of that relation depends on representation.
+\begin{table}[htbp]\centering\small
+\caption{Support-label permutation under the same five-label query-V designs. Intervals are exploratory conditional 95\% group-bootstrap intervals, without a new family-adjusted claim.}\label{tab:alignment}
+\input{tables/label_alignment.tex}
+\end{table}
+
+Residual and blended fitting do not universally exceed local fitting. The historical F1 blend improves on local ridge, whereas several other panels show little gain or harm. Matched-$\alpha$ contrasts isolate Eq.~\ref{eq:projection}; their intervals include zero in every panel. Thus a substantial gain from acquiring labels can coexist with limited incremental value from the historical response function.
+
+\subsection{Additional sources retain calibration value}
+On the 91-publication extension, the fixed random-query complete-curve population contains 52 sources. The F1 global MAE is 6.120 points at five labels, compared with 4.490 for the support mean, 3.593 for local ridge and 3.552 for the blend (Table~\ref{tab:additional}). This confirms useful source-conditional calibration in additional publications. The small blend--local increment does not confirm the larger historical increment. The original contrast status and its conditional interval are retained in the SI; the additional-source application is not converted into a universal transfer claim.
+\begin{table}[htbp]\centering\small
+\caption{Frozen application on additional literature publications at five random support labels. Random queries use 52 sources and high-temperature queries use 40. Native MAE is in percentage points.}\label{tab:additional}
+\input{tables/external_k5_body.tex}
+\end{table}
+
+The measured-publication application makes the same distinction with author-reported validation data. On composition-V supports, the F1 unadapted model has MAE 5.869, support mean 5.959, local ridge 4.170, blend 4.213 and historical-tuned local RBF 3.813. A feature-dependent response fit is useful, while historical-response blending is not the strongest predictor. Missing operating fields and composition amounts limit this application; a local fit using historical preprocessing still uses historical input knowledge, even when it does not consume a fitted historical response function.
+
+\subsection{Equal-budget measurement locations have practical value}
+Standard query-directed V design improves the unchanged blend across several historical panels (Table~\ref{tab:acquisition}). STY decreases from 62.608 to 50.274, a 19.7\% point reduction; OCM F1 decreases from 3.081 to 2.708, a 12.1\% reduction. Both adjusted difference intervals exclude zero in the earlier five-panel primary family. Conversion and selectivity have favorable point estimates but do not survive that adjustment. OCM F0 does not improve. The benefit is therefore established for specified representations and outcomes rather than uniformly across all panels.
+\begin{table}[htbp]\centering\small
+\caption{Earlier five-panel primary family: query-V versus random acquisition, using the same frozen blend and five-label budget. Adjusted intervals refer to native-unit MAE differences.}\label{tab:acquisition}
+\input{tables/step7_primary.tex}
+\end{table}
+\plotfigure{step7_01_primary}{Same-budget query-V increments across five panels. Native-unit adjusted intervals are rescaled by each panel's fixed observed random MAE for display. They are not bootstrap ratio intervals or a pooled effect across reaction systems.}{fig:primary}
+
+Acquisition chemistry and prediction chemistry play distinct roles. In a matched representation crossing over the 22 historical OCM sources, composition V changes an operating-only blend's MAE from 3.705 under random supports to 3.370; the predictor never receives composition as an input. Shuffling acquisition chemistry raises this to 3.647. For F1, corresponding composition-V and shuffled-chemistry errors are 2.708 and 3.039. These results identify geometry useful for choosing measurements independently of the features used in response fitting (Fig.~\ref{fig:crossing}).
+\plotfigure{step9_01_matched_geometry}{Acquisition--prediction representation crossing. Each acquired support set is shared by F0 and F1 prediction. Different acquisition rules use different supports at the same budget. Both historical and measured-publication values are retained; the favorable acquisition view depends on the deployed predictor and source.}{fig:crossing}
+
+In the first measured-publication application, composition V reduces the F1 blend MAE from 4.787 under random acquisition to 4.213, a 12.0\% point improvement. For F0, operating V is better than composition V. The learned view gate nearly always falls back to composition on historical episodes and does not establish superiority over fixed controls. These findings support an acquisition-representation mechanism while retaining its deployment dependence.
+
+\subsection{Query identity and working risk constrain acquisition gains}
+The initial catalyst holdout queries 435 rows from 29 identities, with 1304 pool rows from the other 87 identities. For the same strong local RBF and five labels, expanded-kernel matched selection gives MAE 3.689, versus 4.818 for random and 4.680 for composition V. Its 23.4\% point improvement is conditional on that partition. In ordinary random queries, the same expanded-risk selection worsens RBF MAE to 5.145, compared with 4.792 for random and 3.813 for composition V. Identical budgets and predictor settings therefore do not prevent an acquisition ranking reversal when the query task changes.
+
+The twenty additional identity-disjoint partitions summarize how sensitive that finding is to query composition (Table~\ref{tab:repeated}; Fig.~\ref{fig:sensitivity}). Each random comparator averages fifty actual support orders within the same partition. The displayed range is a conditional spread across partitions, not an uncertainty interval for unseen publications.
+\begin{table}[htbp]\centering\small
+\caption{Twenty new catalyst-disjoint partitions of the already opened measured publication. All results use the same fixed historical-selected RBF and five labels. $\Delta$ denotes method minus partition-matched random MAE, in percentage points.}\label{tab:repeated}
+\input{tables/repeated_catalyst.tex}
+\end{table}
+\input{repeated_results_text.tex}
+\plotfigure{task_sensitivity}{Acquisition depends on the query task. Panel A displays all twenty catalyst-partition differences from a matched random comparator, with box plots summarizing their conditional distribution. Panel B retains the earlier ordinary-query and initial catalyst-holdout results. Partitions share measurements and comprise one experiment family.}{fig:sensitivity}
+
+Matching acquisition to a strong isotropic RBF yields historical five-label MAE \RbfMatchMae\ points; the historical-selected penalized rule yields \RobustMae\ (Table~\ref{tab:matched}). Historical pseudo-source tuning selects zero penalty in 23 of 25 outer fits and 0.1 in two; full-history tuning selects zero. Penalization therefore does not provide a stable new advantage. The earlier covariance-averaged absolute-risk primary also does not outperform its five strong controls after family adjustment. Finite-intercept, centered squared and centered absolute selectors can choose identical five-point supports, so their shared catalyst-holdout gain cannot identify one risk formula as its cause. These controls show why Eq.~\ref{eq:bound} is useful as a sensitivity explanation rather than empirical certification of a superior algorithm.
+\begin{table}[htbp]\centering\small
+\caption{Historical random-query F1 comparison with the fixed strong RBF, five labels and 22 eligible sources. Working risks are dimensionless proxies, not estimates of actual MAE in percentage points.}\label{tab:matched}
+\input{tables/matched_rbf.tex}
+\end{table}
+
+\section{Discussion}
+Target labels improve the conditional problem $\widehat f(Q\mid X_Q,X_S,y_S,\mathcal D_H)$. They reveal information about the target source absent from the historical training set $\mathcal D_H$. One response can calibrate a level; several aligned responses can resolve a local relation; deliberately placed responses can better cover the queries. None of these changes establishes better zero-label prediction for arbitrary future sources. Nor must a few-label budget curve decrease at every prefix: a newly measured response can alter a noisy fit or the relative weight of competing corrections.
+
+The distinction in Eq.~\ref{eq:projection} is operationally important. A support-local response fit is a required comparator when an adaptation method claims reuse of historical response knowledge. A representation used only in acquisition can still be valuable because selecting measurements and predicting from their responses are different information paths. These insights suggest experiments with explicit source identity, strong local controls, shared support labels and acquisition--prediction crossing before attributing gains to transfer.
+
+Risk alignment adds a third practical condition. Minimizing a working variance is meaningful for a specified predictor, query population and covariance hypothesis. A free source level cancels for a constant-preserving predictor, but response-shape mismatch and support amplification remain. The spectral bound isolates one contribution to sensitivity; real covariance errors and nonconstant mean bias have not been certified. Increasing method complexity without validating those assumptions is not a substitute for task-specific evidence. The repeated catalyst partitions and full historical factorial make that dependence inspectable.
+
+The scope is retrospective analysis of measured catalytic outcomes, not new wet-laboratory validation or autonomous catalyst discovery. Bibliographic source non-overlap does not certify independent laboratories, extraction pipelines or physical batches. Historical OCM high-temperature evidence is based on only five eligible sources. Missing fields in the author-measured application and publication selection restrict representativeness. Repeated seeds, source sizes, catalyst partitions and millions of scalar predictions do not enlarge the independent-source population. Bootstrap intervals condition on fitted pipelines; they do not include all uncertainty from re-estimating historical models. Prospective measurement campaigns with recorded catalyst batches, reactor metadata and pre-specified acquisition would directly test the deployment conclusions.
+
+\section{Conclusion}
+Few target labels have separable scientific roles: estimating a source response level, learning an aligned local response and improving query coverage through measurement placement. Source-disjoint comparisons establish useful conditional calibration, while paired information interventions show why its gain should not automatically be attributed to historical response transfer. Equal-budget acquisition produces supported benefits for methanol productivity and composition-enriched OCM, and representation crossing demonstrates chemistry's value for selection beyond its value as a prediction input. Query-identity sensitivities and prediction-operator risk identify the conditions under which those acquisition gains change. The released benchmark provides a reproducible basis for choosing measurements and making transfer claims at the level supported by the evidence.
+
+\section*{Author information and declarations}
+Author identities, affiliations, contribution statements, funding and conflict disclosures are supplied in the accompanying author-information record for completion by the submitting authors. This scientific manuscript is the author-neutral submission master.
+
+\section*{Data availability}
+The accompanying computational archive contains source and row ledgers, analysis code, frozen model parameters and fitted objects, machine-readable metrics, all evaluated per-query predictions and reproduction instructions. Original data sources are cited above; their provenance and reuse terms are described in the SI. No new wet-laboratory measurements were generated. A persistent repository record and identifier are to be supplied by the authors when arranging the journal deposit; no repository DOI is asserted in this manuscript.
+
+\input{references_main.tex}
+\end{document}

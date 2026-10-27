@@ -1,0 +1,18 @@
+{
+  "attempted_utc": "2026-10-11T01:27:51.325938+00:00",
+  "pipeline_frozen_before_download_attempts": true,
+  "attempts": [
+    {
+      "source": "nishimura2023_cads",
+      "returncode": 0,
+      "stdout": "Retrieved raw candidate asset: nishimura2023_cads.csv 257896 bytes\n",
+      "stderr": ""
+    },
+    {
+      "source": "hasukawa2024_si",
+      "returncode": 0,
+      "stdout": "Retrieved raw candidate asset: jp4c07397_si_001.pdf 1702349 bytes\n",
+      "stderr": ""
+    }
+  ]
+}

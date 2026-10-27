@@ -1,0 +1,48 @@
+\section{Prediction-operator covariance sensitivity}
+The following derivation is a fixed-design working-risk identity. It does not assert that an empirical covariance radius contains actual catalytic errors.
+Write the stacked observed response as $Y=(Y_S^\top,Y_Q^\top)^\top$, with mean $m$ and covariance $\Sigma$. For a fixed response-linear predictor $\widehat Y_Q=AY_S$, define $B=[-A\ I]$. Its mean squared observed-query risk is
+\begin{equation}
+\mathbb E\|BY\|_2^2/|Q|=
+\operatorname{tr}(B\Sigma B^\top)/|Q|+\|Bm\|_2^2/|Q|.
+\end{equation}
+If $A\mathbf1=\mathbf1$, a common source mean $m=c\mathbf1$ gives $Bm=0$. This removes a source level, not a general source-dependent mean function.
+
+For $\Delta=\Sigma-\Sigma_0$ and $G=B^\top B\succeq0$, a spectral bound gives
+\begin{align}
+|\operatorname{tr}(G\Delta)|&\leq\|\Delta\|_2\operatorname{tr}(G),\\
+\operatorname{tr}(G)/|Q|&=1+\|A\|_F^2/|Q|.
+\end{align}
+Thus the stated sensitivity bound follows for $\|\Delta\|_2\leq\varepsilon$. The upper bound is achieved by $\Delta=\varepsilon I$; $\Sigma_0+\varepsilon I$ remains positive semidefinite. It is therefore the exact worst covariance risk over the stated positive-semidefinite spectral ball, for the fixed prediction operator. The additive constant $\varepsilon$ does not change which design minimizes the objective. A nonconstant mean discrepancy contributes $\|Bm\|_2^2/|Q|$ separately. Neither its size nor the covariance radius is certified empirically in this study.
+
+The response coefficients in the main kernel equation solve centered kernel ridge with an unpenalized intercept. Their rows sum to one. Numerical checks independently construct the full joint covariance, its worst spectral perturbation and 1000 random symmetric perturbations. A 50000-draw Gaussian calculation confirms the numerical second moment within its Monte Carlo error. These are algebra checks and simulations, not measured catalysis records. All check inputs, seed and output are archived in \texttt{analysis/verify\_operator\_math.py} and the corresponding JSON report.
+
+\section{Additional matched-RBF and penalized-risk comparisons}
+Two additional acquisitions are applied with the same fixed strong isotropic RBF parameterization: nominal deployed-operator risk and nominal risk plus the amplification penalty. The RBF is the five-label strong control previously selected using historical pseudo-source composition-V supports. Its parameters are held fixed across all acquisition policies and all five budgets in this extension. At $k=5$, this predictor equals the preceding budget-specific strong-RBF control; at other budgets, those earlier parameters can differ, so they are not identified with this fixed control.
+
+For each of the 25 outer seed/fold fits, the four penalty values $\{0,0.1,1,10\}$ are evaluated using only the allowed historical training sources as pseudo-targets. Their query/pool assignment uses a stable source/row identifier shuffle, and the acquisition functions receive transformed input arrays but no outcomes. Each candidate is scored at five support labels. Losses are averaged equally within leakage groups before candidate selection. Historical transforms exclude each pseudo-source group through the inherited grouped inner folds. This is retrospective method development on the historical program; local execution locks are not independent preregistration.
+
+The selected penalty is zero in 23 outer fits and 0.1 in two. The full-history choice is zero. Historical random-query F1 MAE is \RbfMatchMae\ for nominal RBF matching and \RobustMae\ for the selected penalized rule. The exploratory source-paired difference is $+0.0855$ points, with a nominal conditional 95\% interval $[0.0106,0.1850]$. The penalty therefore worsens this historical comparison on average; its exact covariance-ball interpretation does not establish predictive superiority. Its opened-publication supports coincide with the nominal RBF rule because the full-history penalty is zero. Both columns remain present so this equality is traceable.
+
+The complete historical extension includes all twelve preceding acquisitions and the two additions, four frozen response controls, five budgets, and eligible random/high-temperature source populations. There are \HistoricalCells\ new evaluation cells. The original seven-predictor factorial remains intact in the preceding computational archive; it is not reclassified as newly fitted. No global backbone is refitted in this extension. Kernel validation, penalty tuning, acquisitions and target predictions are actually evaluated.
+
+\section{Twenty catalyst-disjoint partitions}
+The measured-publication row-to-catalyst mapping is inherited from the curated author file. Each of twenty label-blind stable shuffles assigns 29 catalyst identifiers to queries and 87 to the support pool. All rows for an identifier stay on one side, and identity overlap is checked for every partition. Missing rows mean the query row counts can vary slightly. Query labels are used only for scoring. Random support acquisition averages fifty actual orders within each partition, with nested prefixes at budgets 1, 2, 3, 5 and 10. The same support prefix is shared by the fixed RBF, frozen blend, support mean and zero-label control. The latter control consumes no support labels.
+
+All twenty partitions are retained. Metrics are averaged over queries and support draws within a partition, then equally over the twenty partitions. The partition table's minimum and maximum differences and its box plots describe this conditional distribution, not a sampling interval for twenty independent publications. The original initial identity holdout and ordinary-query results are preserved separately. No best partition is selected to support the conclusion.
+
+\begin{table}[htbp]\centering\small
+\caption{Twenty additional identity-disjoint partitions at five labels, using the same fixed historical-selected RBF. MAE and differences from matched random acquisition are in percentage points.}\input{tables/repeated_catalyst.tex}
+\end{table}
+\input{repeated_results_text.tex}
+
+The historical nominal risk and actual MSE rankings are also compared within sources at five labels; this removes arbitrary cross-source response scales from a pooled rank analysis. Their median source-level Spearman correlation is 0.514. This descriptive diagnostic does not calibrate the risk in outcome units or validate the covariance radius. The full per-source diagnostic values are in the electronic tables.
+
+\section{Independent verification and reproducibility}
+The new computations produce \NewScalarCount\ scalar query predictions: 1209600 across 25 historical parts and 9738400 in the opened-publication sensitivity. All scalar losses are reaggregated independently. Every one of the 2737000 fixed-RBF query values is reconstructed using independently generated Euclidean distances, scikit-learn RBF kernels, \texttt{KernelCenterer}, and \texttt{KernelRidge}. Maximum absolute reconstruction differences are below $10^{-9}$; detailed tolerances and the actual maxima are reported in the archived audit JSON. Support/query row disjointness, ten unique support positions and every query ordering are checked. Source repetitions and these counts do not increase the inferential sample size.
+
+\texttt{code/run\_extension.py} computes the extension; \texttt{analysis/audit\_extension.py} independently verifies predictions and losses; \texttt{analysis/build\_results.py} produces presentation tables and figures without recomputing scientific predictions. All original input data, source/group allocations, fitted objects, prior complete results and code are preserved under \texttt{reference\_step10/}. The release includes dependency versions and a single reproduction entry point. Reproduction does not require a private server or a GPU. Saved fitted objects require a compatible scikit-learn environment.
+
+\section{Investigation of additional measurement resources}
+The public CADS table linked to Nguyen \emph{et al.}, ACS Catalysis 2021, DOI \href{https://doi.org/10.1021/acscatal.0c04629}{10.1021/acscatal.0c04629}, contains 300 catalyst entries, of which 291 have complete reported response/condition fields. Related author documentation identifies this table as best-yield conditions selected across multiple reaction settings. Such response-selected operating conditions change the estimand and do not supply a directly comparable fixed-condition few-label application. The dataset also explicitly restricts redistribution. It is not evaluated as an additional confirmation dataset and its raw file is not included in this release.
+
+The open methanol kinetics study DOI \href{https://doi.org/10.1039/d5re00330j}{10.1039/d5re00330j} describes a 500-point measured dataset. Attempts to retrieve a compatible SI table failed in this runtime. No values were inferred from figures or fabricated. The 2025 OCM author study DOI \href{https://doi.org/10.1080/14686996.2025.2454219}{10.1080/14686996.2025.2454219} was inspected through its open full-text XML, but its supplementary CSV was not successfully retrieved and validated. It is likewise excluded. These investigations add no new independent measured experiment family to the reported evaluation.

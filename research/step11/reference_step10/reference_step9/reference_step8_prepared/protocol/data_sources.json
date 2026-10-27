@@ -1,0 +1,49 @@
+{
+  "screened_utc": "2026-10-10T19:12:47.042371+00:00",
+  "status": "sources located, measurements not yet curated or evaluated",
+  "sources": [
+    {
+      "key": "nishimura2023_cads",
+      "doi": "10.1039/d3cy00596h",
+      "title": "Leveraging machine learning engineering to uncover insights into heterogeneous catalyst design for oxidative coupling of methane",
+      "landing_url": "https://cads.eng.hokudai.ac.jp/datamanagement/datasources/d84c1e22-ceb9-488a-8d45-4c7cf1c603b5/",
+      "verified_download_url": "https://cads.eng.hokudai.ac.jp/private-media/db128214-60a4-40ac-9fa2-43ddcc87bcc6/d84c1e22-ceb9-488a-8d45-4c7cf1c603b5_Vbx3IYY.csv",
+      "local_name": "nishimura2023_cads.csv",
+      "link_provenance": "anonymous author-platform page href retrieved 2026-10-10; CSV bytes not retrieved in this delivery",
+      "role": "candidate only; distinguish mixed literature/HTS input from new author-measured experiments",
+      "status": "metadata retrieved; raw CSV not retrieved or curated"
+    },
+    {
+      "key": "sudo2026_reanalysis",
+      "doi": "10.1039/d6cy00228e",
+      "title": "Importance of consistent and well-dispersed catalyst datasets for machine learning in oxidative coupling of methane",
+      "landing_url": "https://pubs.rsc.org/en/content/articlehtml/2026/cy/d6cy00228e",
+      "verified_download_url": null,
+      "local_name": "sudo2026.pdf",
+      "role": "reference 22 traces the bulk dataset to Nishimura2023; do not count a second independent corpus",
+      "status": "bibliographic/source-history review complete; no new cohort claimed"
+    },
+    {
+      "key": "hasukawa2024_si",
+      "doi": "10.1021/acs.jpcc.4c07397",
+      "title": "Multidimensional Catalysis Data Representation for Designing Oxidative Coupling of Methane Catalysts",
+      "landing_url": "https://acs.figshare.com/articles/28068057",
+      "verified_download_url": "https://ndownloader.figshare.com/files/51316509",
+      "local_name": "jp4c07397_si_001.pdf",
+      "role": "candidate original experimental validation subset; historical input portions excluded",
+      "status": "publisher metadata, file ID, size and MD5 retrieved; PDF bytes not downloaded"
+    },
+    {
+      "key": "niquini2026_methanol",
+      "doi": "10.1039/d5re00330j",
+      "title": "Kinetics of CO2 hydrogenation to methanol on Cu/ZnO/ZrO2 based on an extensive dataset",
+      "landing_url": "https://pubs.rsc.org/en/content/articlelanding/2026/re/d5re00330j",
+      "institutional_url": "https://publikationen.bibliothek.kit.edu/1000193201",
+      "verified_download_url": null,
+      "local_name": "niquini_methanol_si.pdf",
+      "role": "candidate extra independent laboratory application; manuscript reports 500 points but compatible rows must be counted after curation",
+      "status": "data availability established; SI link resolution/download blocked by publisher HTTP403 in current runtime; no rows acquired or evaluated",
+      "schema_note": "only comparable CO2 conversion/selectivity endpoints; audit inlet CO/H2O/MeOH, total/outlet flows, GHSV and catalyst mass; do not equate mole fraction with yield"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "locked_utc": "2026-10-11T06:30:11.282287+00:00",
+  "freeze_sha256": "c07464aec81f86ca76a173882d3935eb853be8cf4e62677786b1a86d7bfe7a7d",
+  "normalized_data_sha256": "72fb18f92d38d442ac47755c8d8c4dd7e321d6c9001fea4d635fabc6d8916d86",
+  "data_previously_evaluated": true,
+  "n_publications": 1,
+  "n_experiment_families": 1,
+  "prospective_measurements": false,
+  "catalyst_holdout_defined_using_ids_only": true,
+  "inference": "point estimates; no independent-source confidence interval"
+}

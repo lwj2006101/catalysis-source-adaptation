@@ -1,0 +1,66 @@
+Source attribution and snapshot scope
+Retrieved/verified for this release: 2026-10-08
+Exact byte hashes: retrieved_asset_hashes.json and the root MANIFEST.csv.
+
+mine_ocm.xlsx; mine_readme.txt
+Mine S. et al., An Analysis of Updated Literature Data up to 2019 on the Oxidative
+Coupling of Methane Using an Extrapolative Machine-Learning Method to Identify Novel
+Catalysts. ChemCatChem (2021). DOI: https://doi.org/10.1002/cctc.202100495
+Author repository: https://github.com/mts-uw/OCM
+Pinned commit: dbf7be5aadb30323f825e8f7d7f6bd3012c99dd2
+The update reports 4,759 rows and 533 publication numbers. The release retains the
+public workbook and README unchanged; our mapped input, exclusions and citation
+alias corrections are separate files in results/external_ocm/.
+No explicit repository-wide reuse license was identified in this snapshot. Original
+data and third-party rights remain applicable; this research package does not grant
+a new blanket license for the upstream material.
+
+schmack_original.xls; schmack_si.pdf
+Schmack R. et al., A meta-analysis of catalytic literature data reveals property-
+performance correlations for the OCM reaction. Nature Communications 10, 441 (2019).
+Article: https://www.nature.com/articles/s41467-019-08325-8
+Data: https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-019-08325-8/MediaObjects/41467_2019_8325_MOESM3_ESM.xls
+SI: https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fs41467-019-08325-8/MediaObjects/41467_2019_8325_MOESM1_ESM.pdf
+The article is distributed under CC BY 4.0 subject to its third-party-material notice.
+License: https://creativecommons.org/licenses/by/4.0/
+These files are unchanged upstream snapshots, used to audit prior publication
+identities, measurement duplicates and units. The old bibliography has 420 unique
+numbers up to 421. The frozen protocol contains a preliminary “412-publication”
+count. Executed screening uses the complete workbook bibliography, and the corrected
+count is recorded in the inclusion report and SI. The frozen protocol is retained
+unchanged; that preliminary count is not used as an eligibility threshold.
+
+suvarna_author_data.xlsx
+Suvarna M., An A., Pérez-Ramírez J., A general machine learning framework to predict
+the space-time yield of methanol from thermocatalytic CO2 hydrogenation.
+Applied Catalysis B: Environmental 315, 121530 (2022).
+DOI: https://doi.org/10.1016/j.apcatb.2022.121530
+Author-provided numerical supplementary workbook; the file in the supplied research
+archive matches this release’s verified snapshot hash. It is retained for provenance.
+The historical adapter benchmark uses its separately frozen cleaned input.
+Suvarna comparison metrics in this release are reaggregated archived predictions;
+we do not claim a new refit of the complete original published workflow.
+Apply the source publisher/data terms; this package does not change them.
+
+xu_author_data.xlsx
+Xu W.H. et al., A natural language processing to causality framework for robust
+knowledge extraction of CO2 hydrogenation with batch effect control.
+npj Computational Materials 12, 191 (2026).
+Article/author supplementary data: https://www.nature.com/articles/s41524-026-02065-2
+Unchanged author-provided workbook, verified against the supplied archive snapshot.
+The current fixed-configuration grouping audit uses 1,757 DOI-known rows and 156
+DOI sources. DOI-missing rows are explicitly excluded from that matched comparison.
+The article’s CC BY 4.0 and third-party-material notice apply to its covered content.
+This release does not claim bitwise reproduction of the original software environment.
+
+Historical frozen benchmark and archived prediction/code files
+Derived from the user-supplied PAPER1_FINAL_RELEASE_V2 research archive and the
+executed Stage-2 research release. The Stage-2 scientific engine remains byte-for-
+byte unchanged. Original extraction is inherited, not independently redone here.
+References to TheMeCat, Yan and other related primary studies are given in the paper;
+their data are not falsely counted as independent external tests.
+
+Other retrieval candidate
+The public Ru CO2-methanation dataset DOI 10.17632/8snvr84df4.2 was investigated.
+The metadata/download endpoint did not provide usable access in this run. It was
+not tested, contributes no results, and is not counted as another validation system.

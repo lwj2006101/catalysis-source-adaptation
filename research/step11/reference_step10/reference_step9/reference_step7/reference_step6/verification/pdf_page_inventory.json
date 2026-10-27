@@ -1,0 +1,284 @@
+[
+  {
+    "document": "manuscript_en.pdf",
+    "page": 1,
+    "rotation": 0,
+    "first_text": "Few-label calibration under publication shift in catalysis: target information, residual u"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 2,
+    "rotation": 0,
+    "first_text": "local response fit persist on additional publications from an independently released compi"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 3,
+    "rotation": 0,
+    "first_text": "2.3 Source-disjoint adaptation benchmark The adaptation study uses the same five outer see"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 4,
+    "rotation": 0,
+    "first_text": "3 Adaptation methods and information content 3.1 Support-local and global residual respons"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 5,
+    "rotation": 0,
+    "first_text": "3.3 Functional responses and support identifiability The acquisition extension represents "
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 6,
+    "rotation": 0,
+    "first_text": "integrated posterior-variance (V-optimal) selection with linear and component-augmented fe"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 7,
+    "rotation": 0,
+    "first_text": "covariance records, preprocessing and reference rows exclude that entire fold. All inherit"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 8,
+    "rotation": 0,
+    "first_text": "Record Source 0.0 0.2 0.4 0.6 0.8 Stacked out-of-fold R2 CO2 conversion Record Source 0.0 "
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 9,
+    "rotation": 0,
+    "first_text": "1 2 3 5 10 Label budget k 2 3 4 5 MAE (pp) CO2 conversion 1 2 3 5 10 Label budget k 10 12 "
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 10,
+    "rotation": 0,
+    "first_text": "4.3 Additional publications confirm calibration value, not blend superiority On 52 additio"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 11,
+    "rotation": 0,
+    "first_text": "1 2 3 5 10 Label budget k 3.5 4.0 4.5 5.0 5.5 6.0 MAE (pp) Operating inputs; n = 52 1 2 3 "
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 12,
+    "rotation": 0,
+    "first_text": "−1.5 −1.0 −0.5 0.0 0.5 Composition-enriched minus operating-only MAE (pp) Global Local rid"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 13,
+    "rotation": 0,
+    "first_text": "−0.4 −0.2 0.0 0.2 MAE difference from local ridge (pp) Internal OCM (22) Additional OCM (5"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 14,
+    "rotation": 0,
+    "first_text": "4.6 Better label locations improve a fixed existing predictor The acquisition factorial se"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 15,
+    "rotation": 0,
+    "first_text": "−0.6 −0.4 −0.2 0.0 0.2 MAE difference from random (pp) Linear V-optimal Augmented V-optima"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 16,
+    "rotation": 0,
+    "first_text": "4.8 Acquisition benefits have a defined stress-test scope For 40 additional high-temperatu"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 17,
+    "rotation": 0,
+    "first_text": "The Xu main audit uses 1,757 DOI-attributable rows from 156 sources. We refit the same fix"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 18,
+    "rotation": 0,
+    "first_text": "0.0 0.2 0.4 0.6 0.8 1.0 1.2 Candidate minus comparator MAE (pp) vs retuned blend + linear "
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 19,
+    "rotation": 0,
+    "first_text": "5 Discussion 5.1 What does it mean for labels to improve generalization? Few-label calibra"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 20,
+    "rotation": 0,
+    "first_text": "6 Conclusion Under publication shift, a small support set can substantially improve cataly"
+  },
+  {
+    "document": "manuscript_en.pdf",
+    "page": 21,
+    "rotation": 0,
+    "first_text": "[9] Feudale, R. N. et al. Transfer of multivariate calibration models: a review. Chemometr"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 1,
+    "rotation": 0,
+    "first_text": "Supplementary information Few-label calibration under publication shift in catalysis 1 Ana"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 2,
+    "rotation": 0,
+    "first_text": "2 Chronology and claim scope The historical adaptation study is retrospective: archived ou"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 3,
+    "rotation": 0,
+    "first_text": "5. Empirical-Bayes offset: q = pT + µ + ηk(¯r −µ), ηk = kτ 2 σ2 + kτ 2 . Historical OOF re"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 4,
+    "rotation": 0,
+    "first_text": "6 Additional OCM source reconstruction The public updated workbook has 4,759 rows and 533 "
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 5,
+    "rotation": 0,
+    "first_text": "No. Citation n Local Blend ∆ 470 Appl. Catal. A Gen. 472 (2014) 39–46 23 5.613 5.432 -0.18"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 6,
+    "rotation": 0,
+    "first_text": "8 Complete budget tables Values below are source-equal raw MAEs. Units are pp for percent "
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 7,
+    "rotation": 0,
+    "first_text": "Historical / methanol / Methanol_selectivity_percent / random Strategy k=1 k=2 k=3 k=5 k=1"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 8,
+    "rotation": 0,
+    "first_text": "Historical / ocm_f0 / C2_yield_percent / temperature_high Strategy k=1 k=2 k=3 k=5 k=10 Gl"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 9,
+    "rotation": 0,
+    "first_text": "Historical / sty / STY_mgMeOH_per_h_per_gcat / temperature_high Strategy k=1 k=2 k=3 k=5 k"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 10,
+    "rotation": 0,
+    "first_text": "Additional OCM / ocm_f1 / temperature_high Strategy k=1 k=2 k=3 k=5 k=10 Global 5.140 5.14"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 11,
+    "rotation": 0,
+    "first_text": "independently contains all experiments in Section 13, including their inputs, predecessor "
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 12,
+    "rotation": 0,
+    "first_text": "12 Acquisition extension: derivation, choices and complete factors 12.1 Fixed-correction r"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 13,
+    "rotation": 0,
+    "first_text": "12.4 Predictors and historical retuning The thirteen predictors are: global; support mean;"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 14,
+    "rotation": 0,
+    "first_text": "Local ridge Original blend ANOVA transfer Retuned blend Retuned RBF ANOVA + ridge Random T"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 15,
+    "rotation": 0,
+    "first_text": "12 14 16 Working latent-error risk (pp²) 13 14 15 16 17 18 19 20 21 Observed squared error"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 16,
+    "rotation": 90,
+    "first_text": "Table 3: Historical random queries, 22 sources. Five-label MAE (pp), all factors. Predicto"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 17,
+    "rotation": 90,
+    "first_text": "Table 4: Additional random queries, 52 sources. Five-label MAE (pp), all factors. Predicto"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 18,
+    "rotation": 0,
+    "first_text": "13 Source-contrast covariance transfer and matching acquisition 13.1 Why change the uncert"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 19,
+    "rotation": 0,
+    "first_text": "diagnostics. Backbone configuration and original standard-design regularizers are inherite"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 20,
+    "rotation": 0,
+    "first_text": "assignment. It does not estimate prospective deployment error, identify causal catalysis m"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 21,
+    "rotation": 0,
+    "first_text": "Table 5: Historical, 22 sources. Five-label random-query MAE (pp), all 65 factors. Predict"
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 22,
+    "rotation": 0,
+    "first_text": "Table 7: Post-hoc parameter-matched covariance diagnostic. Linear-design supports at five "
+  },
+  {
+    "document": "supplementary_en.pdf",
+    "page": 23,
+    "rotation": 0,
+    "first_text": "[7] Wu, W., Yang, M., Cheng, P. & Wang, Y. Reliable Machine Learning Screening of Adsorpti"
+  },
+  {
+    "document": "第6步_结果与原创性判断.pdf",
+    "page": 1,
+    "rotation": 0,
+    "first_text": "第6步研究记录 | 回顾性实证 | 不作录用保证 1 第6步：来源残差协方差迁移 结论：方法修补已完成，但这个候选不能作为一区论文的核心算法。 这次把“模型的不确定性”和“按不确定"
+  },
+  {
+    "document": "第6步_结果与原创性判断.pdf",
+    "page": 2,
+    "rotation": 0,
+    "first_text": "第6步研究记录 | 回顾性实证 | 不作录用保证 2 新增5个协方差模型变体与2个选样规则。完整比较是5种选样 × 13个预测器，共65个组合，并不是65 种独立算法。 标签为什么"
+  },
+  {
+    "document": "第6步_结果与原创性判断.pdf",
+    "page": 3,
+    "rotation": 0,
+    "first_text": "第6步研究记录 | 回顾性实证 | 不作录用保证 3 后续优先级 第一，扩展同预算标准选样到已有甲醇转化率、选择性、STY以及OCM F0，检查科学结论能否跨任务 成立。这能增加覆"
+  }
+]

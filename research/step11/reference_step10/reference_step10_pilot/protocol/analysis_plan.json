@@ -1,0 +1,96 @@
+{
+  "version": "step10-predictor-matched-1",
+  "locked_utc": "2026-10-11T06:15:46.001952+00:00",
+  "status": "historical development, locked before new runs; prior outcomes already known",
+  "research_question": "Does acquisition improve when its working risk matches the deployed free-intercept local kernel, target MAE and source-varying kernel hypotheses?",
+  "candidate": "hedged_mae",
+  "candidate_covariance": "convex kernel covariance average; weights from group-equal historical random-support MAE; empirical MAD temperature",
+  "new_policies": [
+    "finite_gp_v",
+    "centered_mse",
+    "centered_mae",
+    "hedged_mse",
+    "hedged_mae"
+  ],
+  "baseline_policies": [
+    "random",
+    "operating_vopt",
+    "composition_vopt",
+    "feature_cover",
+    "pool_vopt",
+    "kernel_vopt",
+    "robust_view_vopt"
+  ],
+  "predictor_grid": {
+    "ocm_f0": "9 isotropic kernels",
+    "ocm_f1": "9 isotropic plus 81 additive/product/ANOVA block kernels",
+    "alpha": [
+      0.01,
+      0.1,
+      1.0
+    ],
+    "gamma": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "tuning_budget": 5,
+    "random_history_draws": 10,
+    "source_group_equal": true
+  },
+  "deployment": "One history-chosen kernel held fixed across every policy and every budget; primary isolates acquisition under identical prediction formula. Other frozen local and mixed predictors crossed with every support set.",
+  "budgets": [
+    1,
+    2,
+    3,
+    5,
+    10
+  ],
+  "historical_grid": {
+    "seeds": [
+      42,
+      101,
+      202,
+      303,
+      404
+    ],
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "backbone_refits": 0,
+    "origin": "Reuse verified Step9/Step7 archived outer models and transforms; new kernel tuning, orders and predictions actually run"
+  },
+  "primary_family": {
+    "task": "ocm_f1",
+    "method": "matched_kernel",
+    "scenario": "random",
+    "budget": 5,
+    "controls": [
+      "composition_vopt",
+      "kernel_vopt",
+      "robust_view_vopt",
+      "pool_vopt",
+      "centered_mae"
+    ],
+    "inference": "20,000 leakage-group paired bootstrap; draws then seeds then equal sources; 99% conditional intervals for five comparisons; development diagnostics, not unseen confirmation"
+  },
+  "external_application": {
+    "dataset": "Nishimura2023 measured1739",
+    "previously_evaluated": true,
+    "scenarios": [
+      "random",
+      "temperature_high",
+      "catalyst_holdout"
+    ],
+    "new_catalyst_partition": "25% catalyst identities selected by deterministic RNG from sorted catalyst IDs, no outcomes",
+    "independent_publications": 1,
+    "independent_families": 1,
+    "population_confidence_interval": false
+  },
+  "novelty_boundary": "Free-intercept KRR/universal kriging, covariance averaging, block kernels and Gaussian absolute risk are established ideas. Test their coupled source-local design; no invented theorem or performance guarantee.",
+  "execution": "current runtime; no private network; output under current project root"
+}

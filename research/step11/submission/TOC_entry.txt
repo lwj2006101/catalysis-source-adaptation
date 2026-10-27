@@ -1,0 +1,1 @@
+Matched few-label controls separate source-level calibration, response correspondence and measurement geometry in catalytic prediction. Equal-budget design gains depend on the predictor and query task.

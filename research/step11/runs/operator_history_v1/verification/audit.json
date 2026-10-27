@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "parts": 25,
+  "cells": 42525,
+  "query_records": 302400,
+  "scalar_predictions": 1209600,
+  "sklearn_reconstructed_values": 302400,
+  "max_loss_difference": 5.684341886080802e-14,
+  "max_reconstruction_difference": 6.252776074688882e-13
+}

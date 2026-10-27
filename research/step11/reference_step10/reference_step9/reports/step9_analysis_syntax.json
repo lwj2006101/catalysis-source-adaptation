@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-11T02:03:25.783485+00:00",
+  "parsed_files": [
+    "audit_target_isolation.py",
+    "build_chinese_progress.py",
+    "build_step9_results.py",
+    "curate_nishimura.py",
+    "verify_release.py"
+  ],
+  "scope": "Syntax only; scientific execution is independently recorded in completed runs and audits."
+}

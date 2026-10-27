@@ -1,0 +1,47 @@
+第11步投稿操作说明（2026-10-11）
+
+当前科学稿和附件已经完成；实际投稿尚未发生。
+主文12页，SI45页，均有可编辑LaTeX源和全部图表依赖。推荐先核读主文。
+
+1. 填写真实作者元数据
+编辑submission/author_metadata.json。authors格式示例仅为字段结构：
+[{"name": "真实英文姓名", "affiliation": "真实英文单位"}]
+填写corresponding_email、contributions、conflicts_of_interest、funding、acknowledgements。
+基金不存在时使用作者核实的无资助声明。all_authors_approved及
+originality_and_exclusive_submission_confirmed由作者本人确认后再置true。
+repository_url仅填实际保存成功的公开或审稿访问仓库地址。
+运行python3 analysis/finalize_author_info.py生成单独命名的署名稿，再查排版。
+
+2. 候选期刊
+Computers & Chemical Engineering：适配计算方法、系统分析和化学工程问题。
+官方范围：https://www.sciencedirect.com/journal/computers-and-chemical-engineering
+官方作者指南：https://www.sciencedirect.com/journal/computers-and-chemical-engineering/publish/guide-for-authors
+投稿信为submission/cover_letter.txt/.pdf；Highlights、图文摘要和可复现附件齐备。
+当前指南直接访问曾返回403，未将不可读的要求猜成已完成检查。
+具体文件格式、AI披露、上传顺序、匿名审稿或额外声明，在正式投稿入口核查。
+当前JCR/CAS分区未取得可引用的官方数据库核定结果；不能据主题适配宣称一区。
+官方索引核查入口：https://mjl.clarivate.com/search-results?issn=0098-1354
+
+Digital Discovery：主题适配备选。
+官方页面：https://www.rsc.org/publishing/journals/digital-discovery
+官方指南：https://www.rsc.org/publishing/publish-with-us/publish-a-journal-article/digital-discovery
+官方页面目前明确列出Web of Science ESCI，不能作为已达到SCI一区的证明。
+保留单独适配信cover_letter_Digital_Discovery_ESCI.txt。
+
+一区含义可能是JCR学科Q1，也可能是中科院一区，两者不能互换。
+最终目标期刊需明确学科、分区系统及年份，并按所在单位认可的口径核对。
+
+3. 准备并上传
+署名主文、完整SI、highlights.txt、graphical_abstract、投稿信；按期刊需要提交
+编辑源文件与独立图件。代码/数据/预测证据完整留在第11步ZIP中，不能只交PDF。
+投稿信中的署名和作者信息待真实信息填写后生成；不要保留中性草稿的提示语。
+数据代码的持久化存证需真实产生记录再写入仓库链接和DOI。期刊审稿时应能访问
+可复现代码及合规数据。本包未公开发布或替作者发起投稿。
+
+4. 研究声明和范围
+20次催化剂划分来自一个已打开实验家族，报告条件性分布；新增预测条数
+并不增加独立实验来源数量。两个新对照已实际执行，谱风险惩罚未占优。
+本稿为信息机制与测量设计实证研究，不能改写成通用新算法获胜或已达到一区。
+现有历史数据来源与许可说明沿用完整前序包。新下载的Nguyen最佳条件数据
+受再分发限制并改变任务定义，故未收入交付原始数据，也没有用于计分。
+AI协助事实性声明在元数据中；所有催化响应来自已归档实测数据，非LLM生成。

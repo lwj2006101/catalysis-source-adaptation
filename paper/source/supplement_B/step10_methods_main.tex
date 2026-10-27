@@ -1,0 +1,21 @@
+\subsection{Matching acquisition to a source-local kernel predictor}
+The predictor dependence above motivates a second, historical-development experiment. It separates the kernel used for prediction, its treatment of an unknown source level, and the working acquisition loss. For each outer-training history, ten random five-label draws per eligible pseudo-source choose one local kernel by group-equal MAE. That kernel is then held fixed across every acquisition policy and every budget. F0 has nine isotropic RBF candidates; F1 adds 81 additive, product and ANOVA combinations of operating and composition kernels. A separate isotropic control uses exactly the same historical draws and its nine-candidate subset. These are established kernel constructions \cite{gpml}; extra flexibility is an ablation, not a new kernel theorem.
+
+Let $S$ be the support set, $Q$ the fixed query inputs, and $C=K_{SS}+\alpha I$. A free source intercept gives the prediction matrix
+\begin{equation}\label{eq:matchedA}
+A_\theta=K_{QS}C^{-1}+
+\frac{(\mathbf1_Q-K_{QS}C^{-1}\mathbf1_S)\mathbf1_S^\top C^{-1}}
+{\mathbf1_S^\top C^{-1}\mathbf1_S},\qquad \widehat y_Q=A_\theta y_S.
+\end{equation}
+This is centered kernel ridge regression, equivalently universal kriging with a constant mean, and $A_\theta\mathbf1_S=\mathbf1_Q$. It preserves an arbitrary constant response shift. We do not claim this established identity as original. Given a unit-diagonal working covariance $\overline K$ and observation noise $\nu$, the working variance of the actual deployed estimator's error at query $q$ is
+\begin{equation}\label{eq:matchedrisk}
+r_q(S)=1+\nu-2(A_\theta\overline K_{SQ})_{qq}
++\{A_\theta(\overline K_{SS}+\nu I)A_\theta^\top\}_{qq}.
+\end{equation}
+Greedy, nested acquisition minimizes either mean $r_q$ or mean $\sqrt{r_q}$. The latter is proportional to expected absolute error under the zero-mean Gaussian working error model. It is not a guarantee for measured catalytic errors.
+
+Five added policies isolate the assumptions: finite-intercept GP variance with prior variance 100; free-intercept mean squared risk; free-intercept Gaussian absolute risk; and covariance-averaged versions of the latter two. For covariance averaging, historical random-support errors supply empirical exponential weights across candidate kernels and noise values. These weights are neither posterior probabilities nor coverage calibration. The absolute-risk variant uses a Gaussian model with the averaged covariance; it is not the exact absolute risk of a Gaussian mixture. All selectors receive features and frozen parameters, without target outcomes. The SI gives the full grids, weights and algebra.
+
+Twelve acquisition policies are crossed with seven predictors: the fixed selected kernel, an inherited strong local RBF, the earlier frozen blend, local ridge, support mean, zero-label global prediction, and the same-tuning isotropic control. The earlier seven acquisitions retain their exact support orders. The five added policies use the relevant F0 or F1 representation; within a representation every policy shares the same selected prediction kernel. The primary development family fixes F1, five labels and random queries, comparing the covariance-averaged absolute-risk candidate with five controls using conditional 99\% group-bootstrap intervals. This family was locked before the new full grid, after historical outcomes were already known.
+
+After historical execution and audit, the resulting historical parameters are frozen and applied to the already evaluated Nishimura cohort. In addition to the earlier random and high-temperature queries, an outcome-free shuffle assigns 29 of 116 reported catalyst identifiers to query and 87 to the support pool. This tests prediction for catalyst identities without support labels within the same publication. It does not add a second experiment family or restore unseen validation status. Contemporary robust acquisition methods address distribution uncertainty and misspecification \cite{takeno2025,tang2026}; our controls are explicit ingredient ablations, rather than claimed reproductions of those methods.

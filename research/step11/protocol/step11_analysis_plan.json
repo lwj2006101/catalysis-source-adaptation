@@ -1,0 +1,44 @@
+{
+  "version": "step11-operator-risk-1",
+  "created_utc": "2026-10-11T13:20:51.318940+00:00",
+  "historical_seeds": [
+    42,
+    101,
+    202,
+    303,
+    404
+  ],
+  "historical_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "budgets": [
+    1,
+    2,
+    3,
+    5,
+    10
+  ],
+  "new_policies": [
+    "rbf_matched",
+    "rbf_amplification_robust"
+  ],
+  "epsilon_candidates": [
+    0.0,
+    0.1,
+    1.0,
+    10.0
+  ],
+  "tuning": "historical pseudo-sources only, equal-group mean five-label MAE; same frozen strong isotropic RBF",
+  "primary_diagnostics": [
+    "historical F1 random-query k5 robust versus nominal with matched fixed RBF",
+    "opened cohort 20 label-blind catalyst-disjoint partitions; report partition distribution without source-population CI"
+  ],
+  "cohort_status": "Nishimura source already opened in Step9; all repeated partitions are sensitivity within one experimental family",
+  "extra_data_status": "Nguyen2021 CADS table acquired but not evaluated: optimal conditions are response-selected, not directly comparable; redistribution restricted",
+  "claims": "robust objective has an exact covariance-ball working-risk interpretation; empirical general advantage is to be determined, not assumed",
+  "parent_manifest_sha256": "b151c2db87f6100ab11c82c1e7fbb173a5dbee051f30ed2dcfdcbb0bd37049ad"
+}

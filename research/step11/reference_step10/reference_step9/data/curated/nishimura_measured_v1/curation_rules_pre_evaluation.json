@@ -1,0 +1,31 @@
+{
+  "locked_utc": "2026-10-11T01:33:25.329686+00:00",
+  "pipeline_freeze_sha256": "0fa37e7da89ccc9c5bdab0aaa40fbc4594eb7746b4412f5bf1887a4a103864b3",
+  "cohort": "nishimura_measured_v1",
+  "included_resource_phases": [
+    "SVR-1",
+    "SVR-2",
+    "Bayesian-1",
+    "Bayesian-2",
+    "Bayesian-3"
+  ],
+  "excluded_resource_phases": "STD, Refernce/reference, Unpublished: controls or insufficient origin specificity",
+  "non_response_rows": "temperature missing or nonnumeric yield: exclude; these include water-summary lines",
+  "numeric_parsing": "decimal comma to dot; reported Celsius plus 273.15",
+  "repeated_condition_rule": "retain first original CSV occurrence, using only furnace, feed ratio, sorted metals, support and temperature; no averaging labels",
+  "same_publication_grouping": "all five validation phases are one source and one experiment family",
+  "support_token_mapping": {
+    "SiO2": "Si",
+    "TiO2": "Ti",
+    "MgO": "Mg",
+    "CaO": "Ca",
+    "BaO": "Ba",
+    "ZnO": "Zn",
+    "La2O3": "La",
+    "Y2O3": "Y"
+  },
+  "loading": "no mol% denominator inferred from mmol loading per support mass",
+  "unreported_conditions": "leave partial pressures, total pressure and contact time missing; no assumed 1 bar",
+  "physical_outcome_rule": "exclude reported yields outside 0..100, never clip",
+  "external_prediction_performance_computed_before_this_lock": false
+}

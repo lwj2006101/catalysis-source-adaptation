@@ -1,0 +1,8 @@
+HISTORY DONE 42 0 0.0 2205 13545
+{
+  "passed": true,
+  "fresh_directory": "tmp/portable_smoke_v1",
+  "actual_fresh_predictions": 54180,
+  "all_saved_arrays_identical": true,
+  "cached_completion_not_reused": true
+}

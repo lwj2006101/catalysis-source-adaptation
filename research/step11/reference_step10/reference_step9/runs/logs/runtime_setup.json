@@ -1,0 +1,10 @@
+{
+  "checked_utc": "2026-10-11T01:21:41.526732+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "logical_cpus": 9,
+  "cgroup_memory_max_bytes": 8589934592,
+  "cgroup_cpu_max": "800000 100000",
+  "predecessor_manifest_files_verified": 2356,
+  "source_zip_sha256": "4c26ef0092f14103633d2819fe4c3c73818c870763a1cbc2cdd091995e4d8fc0"
+}

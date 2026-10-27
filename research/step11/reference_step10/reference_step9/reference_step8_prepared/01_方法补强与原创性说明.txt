@@ -1,0 +1,29 @@
+本步候选：历史来源驱动的选样视图门控
+
+研究问题是：组成描述可能适合选择需要测量的实验，即使最终预测器只使用工况。第7步的交叉探索提示这种可能，但不能推出组成信息总是有益，也不能直接称为原创算法优势。
+
+本步提供一个具体的决策层。每个历史伪目标来源在相同池/查询划分、相同五个标签预算和相同F1选样正则化下，分别生成工况V-optimal、工况加组成V-optimal顺序。固定F0预测器的查询MAE差值作为训练目标。历史来源提供训练目标，真正目标来源只提供特征。
+
+上下文固定为八项：池大小、查询大小、工况变异、组成变异、查询组成相对于池的最近距离、组成中工况不能线性解释的部分、池与查询组成均值差、两种视图的五点顺序分歧。这些均不含目标标签。
+
+使用固定alpha=10的Ridge预测两种视图的MAE差。正差表示组成视图预期更差；只有正差超过历史来源留组预测误差的80%经验分位数时，保守门控选择工况视图，否则使用组成视图。视图一次选定，预算1/2/3/5/10使用同一个顺序的前缀。小于六个历史组时回退到组成视图。
+
+新增对照
+核函数V-optimal：用RBF工作核的查询平均后验方差选样；gamma只从历史来源选。它是经典核实验设计的一种有限池贪心实现，不是对既有论文完整优化算法的逐位复现。
+双视图稳健V-optimal：每一步比较两个视图中剩余工作方差的比例，并最小化其最大值。它是常规稳健设计思路的实现，本步不将其命名为新发明。
+固定历史最佳视图检验“是否只需始终用一种视图”。去掉经验阈值检验保守门槛的作用。组成行打乱检验有效对应信息和单纯维度增加。F0/F1使用相同支持集，将选择阶段和预测阶段的作用分开。
+
+为什么标签可能有帮助
+标签是目标来源的真实实验响应。它能提供响应水平和局部趋势信息；5个标签经去均值后的独立趋势信息最多4维。因此它改变的是“给定目标来源测量后”的预测问题，不自动提高完全不测量的新来源零样本泛化。旧数据上的标签对应关系打乱分析已经检验了超出标签均值的信息，本步进一步研究测量位置如何匹配预测器。
+
+原创性边界
+多视图学习、学习选样策略、主动选择小样本上下文和按后验方差设计实验都有先例。本候选的可检验增量是：在出版来源转移的催化校准中，用来源间可迁移的、标签盲的上下文来选择实验设计表示，并检验它是否胜过固定视图、非线性核设计和稳健设计。
+这仍属于候选方法；Ridge门控和常规误差不等式本身不能证明SCI一区方法原创性。若最终没有超越强对照，合理定位是有机制证据的催化评测/实验设计研究，而不是声称已有领先的新算法。
+
+已核实的近邻文献
+Yu, Bi & Tresp, Active Learning via Transductive Experimental Design, ICML 2006. https://doi.org/10.1145/1143844.1143980
+Gorodetsky & Marzouk, Mercer Kernels and Integrated Variance Experimental Design, SIAM/ASA JUQ 2016. https://doi.org/10.1137/15M1017119
+Pang et al., Meta-Learning Transferable Active Learning Policies by Deep Reinforcement Learning, 2018. https://arxiv.org/abs/1806.04798
+Bae, Wang & Sutherland, Exploring Active Learning in Meta-Learning: Enhancing Context Set Labeling, ECCV 2024. https://arxiv.org/abs/2311.02879
+Tang, Sloman & Kaski, Representative, Informative, and De-Amplifying: Requirements for Robust Bayesian Active Learning under Model Misspecification, AISTATS 2026. https://proceedings.mlr.press/v300/tang26d.html
+这些先例明确限制了“首次多视图选样”“首次学习策略”“工作后验方差就是实际误差”等表述。代码比较的是透明的常规准则和当前候选，而非声称复现了以上每个复杂原算法。

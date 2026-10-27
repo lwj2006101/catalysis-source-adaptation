@@ -1,0 +1,16 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+# Preserve byte-for-byte historical scientific evidence on Windows as well.
+research/** -text
+paper/** -text
+results/** -text
+*.npz binary
+*.gz binary
+*.joblib binary
+*.pdf binary
+*.png binary
+*.ttf binary
+*.otf binary
+*.zip binary

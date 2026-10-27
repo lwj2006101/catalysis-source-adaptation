@@ -1,0 +1,23 @@
+{
+  "version": "step9-executed-1",
+  "execution_mode": "current_runtime",
+  "private_server_connection_attempted": false,
+  "completed_utc": "2026-10-11T02:03:25.773200+00:00",
+  "historical_parts_completed": 25,
+  "new_outer_backbone_fits_in_history_comparison": 0,
+  "actual_final_backbone_fits": 56,
+  "other_gate_and_local_fit_calls_excluded_from_backbone_count": true,
+  "frozen_before_new_cohort": "2026-10-11T01:27:08.092771+00:00",
+  "pipeline_freeze_sha256": "0fa37e7da89ccc9c5bdab0aaa40fbc4594eb7746b4412f5bf1887a4a103864b3",
+  "external_measured_rows": 1739,
+  "external_catalysts": 116,
+  "external_publication_sources": 1,
+  "external_experiment_families": 1,
+  "new_wet_lab_experiments": false,
+  "cohort_now_opened": true,
+  "primary_gate_superiority_supported": false,
+  "measured_facts_path": "reports/step9_measured_facts.json",
+  "historical_completion_path": "runs/history_v1/run_completion.json",
+  "external_completion_path": "runs/new_cohorts/nishimura_measured_v1/cohort_completion.json",
+  "original_plan_explanation": "The original analysis plan remains locked with anticipated counts and pre-evaluation status; this record reports actual execution."
+}

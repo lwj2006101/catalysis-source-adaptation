@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "fresh_directory": true,
+  "actual_new_backbone_fits": 1,
+  "new_inner_model_fits": 0,
+  "reused_archived_oof": true,
+  "mae_mse_bounded_values_checked": 73710,
+  "maximum_metric_difference": 0.0,
+  "scalar_predictions_checked": 150930,
+  "maximum_prediction_difference": 0,
+  "scope": "one-fold fresh-directory smoke; not a second complete125-fit run"
+}

@@ -1,0 +1,25 @@
+{
+  "locked_utc": "2026-10-11T01:34:49.145393+00:00",
+  "cohort_audit": {
+    "passed": true,
+    "validated_utc": "2026-10-11T01:34:48.510075+00:00",
+    "cohort": "nishimura_measured_v1",
+    "normalized_sha256": "9853bd81cacc6ee7c1de5e605feadb72862cb290337a518045ac2e58f227f2e0",
+    "provenance_sha256": "6a6f3491ad85221e85d67b2a7e7363a06562f2b904b5c7572e397eec35ae93c3",
+    "contract_sha256": "70be8544a80356321987dc7315cb87b6b954dc3795c122b1ac47d0ef72f0cfdc",
+    "n_records": 1739,
+    "n_sources": 1,
+    "n_experiment_family_groups": 1,
+    "eligible_sources": 1,
+    "condition_missing_fractions": {
+      "CH4_partial_pressure_bar": 1.0,
+      "O2_partial_pressure_bar": 1.0,
+      "total_pressure_bar": 1.0,
+      "contact_time_s": 1.0
+    },
+    "caveat": "Curator attestation is required for semantic provenance; row identifiers alone do not establish independent measurements"
+  },
+  "pipeline_freeze_sha256": "0fa37e7da89ccc9c5bdab0aaa40fbc4594eb7746b4412f5bf1887a4a103864b3",
+  "primary": "F0 frozen adaptive_blend; k=5; view_gate versus same five fixed controls",
+  "type": "retrospective published measurements; not a prospective wet-lab campaign"
+}

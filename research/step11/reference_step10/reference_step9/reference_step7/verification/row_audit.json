@@ -1,0 +1,19 @@
+{
+  "row_values_reaggregated": 31712850,
+  "row_values_recomputed": 2936375,
+  "poisoned_label_orders_recomputed": 66150,
+  "source_group_checks": 500,
+  "prior_ocm_orders_matched": 6885,
+  "prior_ocm_maes_matched": 137700,
+  "passed": true,
+  "fits": 125,
+  "maximum_row_mae_difference": 6.821210263296962e-13,
+  "maximum_row_mse_difference": 1.862645149230957e-09,
+  "maximum_prediction_reconstruction_difference": 3.581135388230905e-12,
+  "per_source_rows_reaggregated": 6125,
+  "poison_value_range": [
+    -1000000000.0,
+    1000000000.0
+  ],
+  "query_outcomes_absent_from_prediction_and_acquisition_interfaces": true
+}

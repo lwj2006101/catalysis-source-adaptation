@@ -1,0 +1,370 @@
+{
+  "identity": "cff8f307a0739c45e344a007a649d38a7323cb666b923b5a8601cdc28dc08fe9",
+  "created_utc": "2026-10-10T18:26:38.682454+00:00",
+  "config": {
+    "version": "step7-cross-task-1",
+    "endpoints": {
+      "methanol_conversion": [
+        "methanol",
+        "CO2_conversion_percent"
+      ],
+      "methanol_selectivity": [
+        "methanol",
+        "Methanol_selectivity_percent"
+      ],
+      "methanol_sty": [
+        "sty",
+        "STY_mgMeOH_per_h_per_gcat"
+      ],
+      "ocm_f0": [
+        "ocm_f0",
+        "C2_yield_percent"
+      ],
+      "ocm_f1": [
+        "ocm_f1",
+        "C2_yield_percent"
+      ]
+    },
+    "seeds": [
+      42,
+      101,
+      202,
+      303,
+      404
+    ],
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "budgets": [
+      1,
+      2,
+      3,
+      5,
+      10
+    ],
+    "policies": [
+      "random",
+      "temperature_cover",
+      "feature_cover",
+      "linear_vopt",
+      "linear_pool_vopt"
+    ],
+    "methods": [
+      "base",
+      "target_mean",
+      "offset_mean",
+      "affine",
+      "eb",
+      "local_ridge",
+      "temperature_ridge",
+      "residual_ridge",
+      "adaptive_blend",
+      "local_ridge_retuned",
+      "residual_ridge_retuned",
+      "adaptive_blend_retuned",
+      "local_rbf_retuned"
+    ],
+    "random_draws": 50,
+    "pseudo_random_draws": 10,
+    "label_permutations": 20,
+    "control_alpha_grid": [
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "rbf_grid": [
+      {
+        "alpha": 0.01,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 10.0
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 10.0
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 10.0
+      }
+    ],
+    "blend_grid": [
+      [
+        0.0,
+        "inf"
+      ],
+      [
+        0.0,
+        10.0
+      ],
+      [
+        0.0,
+        2.0
+      ],
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.25,
+        "inf"
+      ],
+      [
+        0.25,
+        10.0
+      ],
+      [
+        0.25,
+        2.0
+      ],
+      [
+        0.25,
+        0.5
+      ],
+      [
+        0.25,
+        0.0
+      ],
+      [
+        0.5,
+        "inf"
+      ],
+      [
+        0.5,
+        10.0
+      ],
+      [
+        0.5,
+        2.0
+      ],
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.0
+      ],
+      [
+        0.75,
+        "inf"
+      ],
+      [
+        0.75,
+        10.0
+      ],
+      [
+        0.75,
+        2.0
+      ],
+      [
+        0.75,
+        0.5
+      ],
+      [
+        0.75,
+        0.0
+      ],
+      [
+        1.0,
+        "inf"
+      ],
+      [
+        1.0,
+        10.0
+      ],
+      [
+        1.0,
+        2.0
+      ],
+      [
+        1.0,
+        0.5
+      ],
+      [
+        1.0,
+        0.0
+      ]
+    ],
+    "primary": "frozen adaptive_blend: linear_vopt minus random MAE; random-query scenario, k=5, five endpoint family",
+    "uncertainty": "source-equal; draws then seeds averaged; leakage-group cluster bootstrap; nominal95 and Bonferroni99 intervals for five primary endpoints; endpoints not independent",
+    "secondary": "retuned controls, budgets, coverage and pool V, stress and label permutation are exploratory",
+    "status": "retrospective extension: these corpora and outcomes have already informed method design",
+    "training": "backbones and original adapters frozen Step3; new policy controls tuned only on archived historical source-disjoint OOF; acquisition regularizers inherited random-design local alpha",
+    "data_hashes": {
+      "methanol": "2a2414085b593f9834eeedcb0f5fdacd010265ed1026035b266df081e42672fc",
+      "ocm_f0": "8a644837707edf5fc1d4f32e3bfabcb7e9e35536801d0e9768b3fae8bacafe0a",
+      "ocm_f1": "4f19d033b1aeb5e709bec0e068991b59acee593357c3b28f6177ed231a60ef9b",
+      "sty": "0d21c3886174046a7b8eb44cb07683cfad881b211390f2f082018a43b4921018"
+    },
+    "split_hashes": {
+      "methanol": "d43d2a210b535d2995a159057078abb650f72920990ce7f70b4d5db8dd8da1e8",
+      "ocm_f0": "1d22fa270b5350f8811baed0cda67b90531aff63850b03bce1b2d5df6f71e170",
+      "ocm_f1": "f3aef8fa01f83dab27c7cac81abd931374f43f13a7aecd90112dd991baa68299",
+      "sty": "a98ca53dbd4cbcc93e14799ce86d060b52d19661d392a0e073cd47b6a2324aff"
+    },
+    "code_hashes": {
+      "run_cross_task.py": "370dd79d468c2e34c2645379923bd21681b76290c0dee38feeb7133c579cf321",
+      "acquisition.py": "76cac0fbf8a8b0874b3420e7ebbf0cdffe5486e4525cb7e57ece39bc5cec9872",
+      "component_transfer.py": "a2c2320ce0d957104866b39191905ac6b3517b892178245cfce6ca5ddfcc9546"
+    },
+    "inherited_parts": {
+      "methanol_42_1_CO2_conversion_percent": "24a539504580158a28dce334db6e27a27549975b2ef4940d6ee80f7a6b9c7b0d",
+      "sty_101_1_STY_mgMeOH_per_h_per_gcat": "76953d7902541f7fe5c6b6b06848542b574a57b7324810de013a306248d6d813",
+      "methanol_42_4_Methanol_selectivity_percent": "71011d324a53ada4c882627923339d855674f5a48ba3b8ce1042d487b8958d9c",
+      "methanol_404_3_CO2_conversion_percent": "345eba3906fc49c72f5060dfdf08bfdd6777d4fe795aa90a8b2eb5ab011f96c2",
+      "sty_404_2_STY_mgMeOH_per_h_per_gcat": "05343d0cb842153f23361c0497451c15616a8871670ed2f7eef5ff21eca7b826",
+      "ocm_f0_303_1_C2_yield_percent": "cffef592e752b0a8a2b31d3613429c9c5181ac788d4218b134131bcfc2b1ab20",
+      "methanol_202_2_Methanol_selectivity_percent": "4187618559d8e0821cd5b73f7e608de142b46822f23a4dedb047d3683191249e",
+      "methanol_101_1_CO2_conversion_percent": "3e0a1e52dd97874f82979a2010aa3eecebdb6a3d339709a15c846fb40461ace2",
+      "ocm_f0_42_2_C2_yield_percent": "fcc02c1abf4f256f972921e15283e371cb64d9abacf2e1cc43ec0a5c10ed510d",
+      "methanol_202_2_CO2_conversion_percent": "09de2855bb2a4a47e4d9ae908d32970885c7d6b507c1cbea506345782cab384d",
+      "methanol_404_2_Methanol_selectivity_percent": "38ac47f1f1781a0c3a05cfc2b6e19f42483b3564218f4bb1e62be5623caa964f",
+      "methanol_101_2_Methanol_selectivity_percent": "3886e7b3e3f01ff5616606e71d3916e611020e376092f9be9a6d001f92f344c0",
+      "ocm_f0_101_0_C2_yield_percent": "06baa8874c46667a6fbaec0efe62f31b9cf36db39f43cd8cc8fd3176900f17d5",
+      "methanol_101_3_CO2_conversion_percent": "48741ace10e813d6f89f207b9061aee40c5b722d77dc8374c5548c06dca2bce3",
+      "ocm_f0_42_0_C2_yield_percent": "45b3c79aef7920fae3ddb3184db31316e2e1848255e6c34c81e896356e986981",
+      "methanol_303_4_Methanol_selectivity_percent": "cbe96a876ce3dab57cf6ce54f904bcfb3995e8748874158f33f7f63b1bbb50f0",
+      "sty_303_4_STY_mgMeOH_per_h_per_gcat": "f81d52fbf2e39a9d67ef0e16681eed4f991be592d4253baf6ef1573012cadd3c",
+      "sty_404_4_STY_mgMeOH_per_h_per_gcat": "07c5b20fe3c26d61e31881f65726f90eb0dd1816efde5b57fda6507087eb5d00",
+      "methanol_303_2_Methanol_selectivity_percent": "a8123f507662ca8a9ddad20dbcb7bddc32efb05ab74f304b6fa2b3a5eb561707",
+      "ocm_f1_404_2_C2_yield_percent": "ccf9e0969e61a5f9e06dce345d7dbdff9076b4053b4e5f58eae07f2f89041316",
+      "sty_42_3_STY_mgMeOH_per_h_per_gcat": "d45d28cef66ceebcd06269729404ae5b09605c61fc5e04989e1b0bc5745085d6",
+      "ocm_f0_303_2_C2_yield_percent": "43b829d443e8fd1bfcf59255ba2a51dbeebe235a922c2e835e01cefebb1de5fd",
+      "methanol_101_0_CO2_conversion_percent": "1a39902492e347c72091523b818714066a6a6ee3bfb987613ef80690836027ec",
+      "sty_404_3_STY_mgMeOH_per_h_per_gcat": "699c572b3bc1b65594def29d3e59d3d8ae4101115003f265a2d62b1ded116a1c",
+      "methanol_303_4_CO2_conversion_percent": "49ca918711c152c4b0b78a1393c46fbaf85a7c057ef4eabba87855012c042a85",
+      "ocm_f1_202_4_C2_yield_percent": "7d143ef2474cfe6c5fa0621dc44b61fa462dfb6cf61416d3d8805c329dad5d7e",
+      "sty_202_2_STY_mgMeOH_per_h_per_gcat": "0e8f5b074569323825114eedc0addf785111c656ad4786c6146cb699df4e9ca1",
+      "ocm_f1_303_0_C2_yield_percent": "fb4f84f134094f0b26561591176c6abbd3f99c6292af6c0f49f6765d793c28e1",
+      "methanol_42_4_CO2_conversion_percent": "33b5516ca4c753fcccc57ace067bcba10134325ad6e1ad84ef1aa48d9fee9c80",
+      "ocm_f1_101_2_C2_yield_percent": "378ef3df24ade8674ed6eb041163678dbcf2a454e6fe9e9936e64e3d92e923d0",
+      "ocm_f0_404_4_C2_yield_percent": "6fc2cbd67b45109f1630d2c160fd334dab30c4282579dae2f8919294c15abf36",
+      "ocm_f1_404_3_C2_yield_percent": "ccc71dd589f722c1a9bb2b2060163b1ad25e02b96e50d3f2a1a5cd2265a42ded",
+      "ocm_f1_202_3_C2_yield_percent": "6ad981d0a103d55303224c4f93cc5aea89d742df0c073fc280b3aa35c47012a0",
+      "ocm_f1_42_4_C2_yield_percent": "540780f38c22666f2ef9914919822816a4e7516b9ae186a057311a9dd383dc78",
+      "ocm_f0_101_2_C2_yield_percent": "5f0af1b1259d852870487692649a17edc41d081f1f2b2bba45689989598d10ce",
+      "sty_404_0_STY_mgMeOH_per_h_per_gcat": "c39bb3b7c23100e10710348c165e7b34a068d4db2c9c138f5567f8dce248a500",
+      "ocm_f1_101_1_C2_yield_percent": "99c0cdc2b29381199572afd59ac77c74a559018d57974eb41c107baff840c86c",
+      "methanol_42_0_CO2_conversion_percent": "48dde48af39c1bf3cc169201193c074ae0100b234093b5acefcc4479ca0182c4",
+      "methanol_404_2_CO2_conversion_percent": "2eed48669214cdfd5beb72f3610e9cd154bee042fd0d087b2ef29336162bf071",
+      "ocm_f1_202_1_C2_yield_percent": "ee1c335db520416451f370d00764e3faad23d9e0a9f4635bb7dc7460cb42e77f",
+      "methanol_42_2_CO2_conversion_percent": "428623eb58d9a48919ac22f72c493015e43eafa3cf1eb24aee2439a53c0b631d",
+      "methanol_101_4_Methanol_selectivity_percent": "54c28e628f39987c6d9756f2209c4e180be6204537bbb85e9136f00fa6f1eb96",
+      "sty_202_1_STY_mgMeOH_per_h_per_gcat": "fb8bfcd58fd2caab586db661ba7b94546147c980ba122b195b4a8b4ff327b4b9",
+      "sty_303_2_STY_mgMeOH_per_h_per_gcat": "a6b11c931ce9438167bb04239406a2c17d8e1fa128e9d646c187d7da80969a93",
+      "sty_42_1_STY_mgMeOH_per_h_per_gcat": "7a5e2854cb01a38155ddd22247d89838e19409c10453ed958394b62d1eac08c2",
+      "ocm_f1_202_2_C2_yield_percent": "9f68ed1d1d837f5b0b9392e8712e2a1de0ebf05a852a44d9855bcd98a62498da",
+      "ocm_f1_404_1_C2_yield_percent": "cdf57ee449f8fa7d0e942ce69fdf5d4c335737270933c75f49dcf750b4df827d",
+      "ocm_f0_303_4_C2_yield_percent": "08ec8f9090c8115869756a954edef348618e6491d58502b48b9f2feb87bfcb87",
+      "methanol_101_4_CO2_conversion_percent": "7dcd5e4f8991d17a384dd1540c0ae1b3a3010a1b9772eb749ca5948d2a2daa71",
+      "methanol_202_0_Methanol_selectivity_percent": "98f348eb58d74243eb859d1bfd2caa875f1112110f5d1e8edef823370617dca2",
+      "methanol_42_3_CO2_conversion_percent": "fde267b2e70d70058ef8aa785499d7825ec70cc6f317f3ebac64027f59ee9cde",
+      "ocm_f0_202_0_C2_yield_percent": "6575ae29510034011a2e8b1874403fc49053c1c82f8746c0a8a20c208f679c1a",
+      "sty_303_3_STY_mgMeOH_per_h_per_gcat": "b1aa231baf1b172d59d30e620e98acef1a8bbcd348acf7348c12f57bb82e9666",
+      "ocm_f0_404_1_C2_yield_percent": "c8566a91a4ba4bcf3ed07d915334babdbbbd57673affa8c6f3f80b22d8f38a33",
+      "methanol_202_1_CO2_conversion_percent": "466704b384da9f0feedabd2e2bdf16229403688b351715c4a1621c1ca148a7ed",
+      "sty_101_4_STY_mgMeOH_per_h_per_gcat": "f0dc21c36cdb27cb9fa60439a1bd07c340485399d6d1b66ea2b90cfc375d2730",
+      "ocm_f1_303_4_C2_yield_percent": "0fa389c0541af578874f198825ac46b9470ed8b1aa4de68ab535168f5340576d",
+      "methanol_404_0_Methanol_selectivity_percent": "d8fe685268a8d622ae97c1179e80b751cdcdccc71b3d1a9db51f8b12fd081752",
+      "methanol_101_2_CO2_conversion_percent": "47491098ace2ba05f9a15188b0ea932898374450a35f0d801d9bb0f63c893e10",
+      "ocm_f0_101_1_C2_yield_percent": "85a0b8b25e83c6409defd9baae3b43193f4972d3a1b8fae2e089e17cb9e0fe36",
+      "sty_42_0_STY_mgMeOH_per_h_per_gcat": "093285fa920ff18aa5fdd5e52ddf7322c7201b477d57ebd084e33dc9ad3321cf",
+      "methanol_101_0_Methanol_selectivity_percent": "7a1f02b02d84ca6b78b72ccec1461433ae596bd12ea0589953bf8f985dbebc3e",
+      "ocm_f1_202_0_C2_yield_percent": "a866c0c2f1ca7da1713745fc192eed572021b34fb6fdba60e7100e9cdfe776df",
+      "methanol_303_0_Methanol_selectivity_percent": "28db324ec39478ce4b237f09b2523066c070d993339f0767639fe49089f5580d",
+      "ocm_f0_42_4_C2_yield_percent": "4df64186443658074cacdd2de8dcd7941587135bddf5bb855f2bbed0a291475b",
+      "methanol_404_1_CO2_conversion_percent": "0e8a44f610baf1e4d649bc2917aed5ed64e18a78074394f179fc1733f136040f",
+      "ocm_f1_404_4_C2_yield_percent": "e3c509ae9c9568154668ccbbabe963486127560a937c2daebae0bebfc11722b5",
+      "methanol_303_3_Methanol_selectivity_percent": "19f2c53c436d76743609a828b00be26eaeedea0525b0fce587526829524684da",
+      "methanol_101_1_Methanol_selectivity_percent": "1ec476c563b81f0a2561c20025d234b2c49cd4a3c9008f5785464c62ba2b9a3e",
+      "sty_303_0_STY_mgMeOH_per_h_per_gcat": "cfffb53a89d00acd7f73fcbdb59da6b15a589ccc9ff030ea1b9c617a9d865329",
+      "ocm_f0_404_0_C2_yield_percent": "4a796d2308c01006e546830fb698584f20dc06f76e9e3d31accb8554f06547ea",
+      "methanol_404_1_Methanol_selectivity_percent": "caa34f6caeb06f207cf8292a808fc66837e7b9f569f4c20fca8db389d5720d93",
+      "ocm_f0_404_2_C2_yield_percent": "27a6580bd22f98f44f111e7626eacf9c4b1916ec10a0075ef50874902f992c7b",
+      "ocm_f0_303_0_C2_yield_percent": "4ea9c8c31acb2859d372d832d7eda8996c03f2ea9fa027c27e36df0f08311805",
+      "sty_303_1_STY_mgMeOH_per_h_per_gcat": "7715299c6ea1d3643953b18a89b6681fbaf252c004c7e3a682f7b46ab7efc9aa",
+      "ocm_f1_42_3_C2_yield_percent": "716b98e1251d4950258c111cee293104da88d4e21315d209f378fb5866cc671e",
+      "ocm_f0_101_4_C2_yield_percent": "f7dbd4ec59e064158a82ec2c617026fc1d9a04e56843771d9df27b7c7243bf49",
+      "methanol_42_1_Methanol_selectivity_percent": "f94686f7f7520d397d4db00f3bd21eeb717b75186c30d7f1e323785863f9c8bf",
+      "ocm_f1_404_0_C2_yield_percent": "66c32f5cc3675a37ba1334b56c49246b2402199ea16fef9c664532b5896536ba",
+      "ocm_f0_202_1_C2_yield_percent": "c6f1955f878ad57a07824b790c524d39cf0bddd3ee67c14f78de69ec878e6f57",
+      "ocm_f0_42_3_C2_yield_percent": "d6742fc8b7331bbd3f9af119c01103b2f347241b7e96c8375bafc2e7ef5c58e6",
+      "methanol_202_3_CO2_conversion_percent": "51ccfd9da45d744d033c46e189820af5c727e0405d92bef9457746b8b5464701",
+      "ocm_f1_303_1_C2_yield_percent": "b205f4735760863b0241778bbef6fadcd8a64c0f899bd9ccfcbf415fb2a0149b",
+      "ocm_f0_42_1_C2_yield_percent": "215f1498397930347f6f46df7133c72a8b40e43b6c47524f5e90bebbb2952c38",
+      "methanol_404_4_CO2_conversion_percent": "049692bfaf300962958888ddd39b65ee28698dff7675b45dfde8d4f4e54d8766",
+      "sty_42_2_STY_mgMeOH_per_h_per_gcat": "151513f4fde680a91d4c25e032b515298c2c2cf5f7046a451bb34a6671f0b20f",
+      "sty_202_0_STY_mgMeOH_per_h_per_gcat": "a1cf39c3f127cc7752f1736de6f80f95d6e14064c15aeb5038eb8379be21f49f",
+      "methanol_303_1_Methanol_selectivity_percent": "4927e0e2ee57e454b3e32bbaed6ebee9954febb8f3c7d86eb6cf5d08aa202ebc",
+      "sty_202_3_STY_mgMeOH_per_h_per_gcat": "fdc58eb7c54058dd3b9c97b37d2f95ad132ee09b1d34e005866e780c29d70ada",
+      "methanol_303_1_CO2_conversion_percent": "dfc2cc1835add937e6d9f877f10cef0d24719b35023d1d27739a29ed1c059331",
+      "sty_101_2_STY_mgMeOH_per_h_per_gcat": "30c8ee5b2871e0d631821c70d7c63151bea949b77040fc584e69f4afbb8a9f99",
+      "methanol_202_4_Methanol_selectivity_percent": "9f65fe1f303d3583a5481d493d80b9318f1eef90541f2dadebdd31c5ed2d9daa",
+      "methanol_303_0_CO2_conversion_percent": "74b9a2e38e6b621d655a0d813db10162c4197c60138413ca83f0fa9568368d70",
+      "ocm_f0_202_3_C2_yield_percent": "0864133e81aebe9c1004b9ffa5466bf23cade20fa45bf24baac89b48b849ab91",
+      "methanol_404_4_Methanol_selectivity_percent": "26676d91184c8377da892e4d22247014cca1f96451d7210c41cd7505b9fcabcb",
+      "ocm_f1_42_1_C2_yield_percent": "fa743042cf131686d7fb5e6fe163bf57ab65fcefab641653409f07ca2c257d14",
+      "ocm_f1_303_3_C2_yield_percent": "8f590b211f53e2503e2a09662a6e86a33f28e1ba2e2989fadff6d1dff2861ee5",
+      "methanol_101_3_Methanol_selectivity_percent": "d21866d1d6027e22dfc3be82b296c01c7fd097df481241707b8dbf8549f5492b",
+      "methanol_404_3_Methanol_selectivity_percent": "2fd6d8d188e1c63011c7e71320e62a02a711e1097d4cad8016a85bfceb7dd97a",
+      "ocm_f1_101_0_C2_yield_percent": "2de53363042be2cbdb53a80176677b4b448e8e07307df4a0bd849d75c69fc756",
+      "sty_101_0_STY_mgMeOH_per_h_per_gcat": "60fa093c17fea9617461223322f8466a8fc778586239db7629daca7220907877",
+      "sty_202_4_STY_mgMeOH_per_h_per_gcat": "2c4e873fda6eaebd55110471d0f7aed15722426e2caa9808f6b76f835746021c",
+      "sty_404_1_STY_mgMeOH_per_h_per_gcat": "128851038fa3b9a67355a2293e974fa51f9d8936a84d9c9778e06a48cba6e64b",
+      "methanol_202_1_Methanol_selectivity_percent": "3ec7429b4a09f73a67430db357745eeefe6ace50fbaf412832ee0a25301c6db8",
+      "ocm_f0_202_2_C2_yield_percent": "627c3df7c8e22b571da3b0323c939aab86b9ff989c5d337859eeff7522df6e54",
+      "methanol_303_2_CO2_conversion_percent": "047874e029a9a2f47177d1540d3edb9d77e5d926cb3c01887229f5b13757212f",
+      "methanol_202_3_Methanol_selectivity_percent": "dfe5a1d428f7dede5f493b926a1cba91bb91881f4554b9d7705ada70fa1a3e6a",
+      "methanol_404_0_CO2_conversion_percent": "6abd48938d6c3aab547147de80206572eaa37fdaa106a782e1245ec744d5111c",
+      "methanol_202_4_CO2_conversion_percent": "6e1f41a8aca382920b42fd098bfa775c583da039b2dccc5c41b777b34aceaf58",
+      "ocm_f1_101_3_C2_yield_percent": "8b958add34ab9582c3f7928a9a3cae57720e98600280cf3549d60a7dc0da893a",
+      "ocm_f0_404_3_C2_yield_percent": "d93ced678101a31ff62f52d41117cb25c1b1cb2a6c89f483f9c4ed34bd7a9e7e",
+      "ocm_f0_101_3_C2_yield_percent": "edf91b08b8c8f1d7dd13d7fedbd5cd21cab7c2bd39fae307485210974587632a",
+      "methanol_42_2_Methanol_selectivity_percent": "d59f37a0131f6d28f9bad8afdf4c7cc777b60ddeab3dc12aa3e5b7aa52864777",
+      "ocm_f1_42_0_C2_yield_percent": "207048b4c7bd8b716b1b802d728feb1c93d58b9ae8398a7b32653b25a75ee86f",
+      "methanol_42_0_Methanol_selectivity_percent": "1b3269c039dbecc20f947c8e1270d26077492aa3b915f684454b2ba1522d2cc7",
+      "ocm_f1_42_2_C2_yield_percent": "9864c02ad4818c7ef2a44d42f95729162391b121ae3a0dcc4bb7bd0f69845ee9",
+      "ocm_f0_202_4_C2_yield_percent": "c319f7b15a7694aa9793a0a943f245fdb365ba6ab807da77d3575d9f57a1a249",
+      "sty_42_4_STY_mgMeOH_per_h_per_gcat": "4ab5aae316d84d8142442dad01a173986085f0c58a535c6987cce519c7e3bd3d",
+      "methanol_42_3_Methanol_selectivity_percent": "8b69878e0f7d4c5e517c64326126258e95aa6f2a75f0f6a65557b40e8a74327e",
+      "ocm_f1_303_2_C2_yield_percent": "f1efa8f8a7ee008e2a8de012e73bba686cc625295e19ab26d14809ea3305ed3f",
+      "sty_101_3_STY_mgMeOH_per_h_per_gcat": "dff35a815ed751e1830baa5e47fe5d670c7301ced2d4a6abc78b601eefbd60b5",
+      "ocm_f1_101_4_C2_yield_percent": "bfd92580b6823220e3fae369269662e3cd666b43101d3bdaf716e0fa245c4f76",
+      "methanol_303_3_CO2_conversion_percent": "64b9cade03948c5556c08969026f1eca10c81b3ad6f97abd43a371f3bc146f40",
+      "ocm_f0_303_3_C2_yield_percent": "bc9f5dcca49740f8674c9bde17913369d573debed61696dfaf77b6c06d1c074c",
+      "methanol_202_0_CO2_conversion_percent": "c0790de29d1605e328febd204239726851bc23ccc46ade81590a776bcaa69c29"
+    }
+  }
+}

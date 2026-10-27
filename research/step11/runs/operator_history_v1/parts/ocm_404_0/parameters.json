@@ -1,0 +1,17 @@
+{
+  "epsilon": 0.0,
+  "scores": {
+    "0.0": 2.753276082269129,
+    "0.1": 2.784950504492908,
+    "1.0": 3.0232162540319045,
+    "10.0": 3.1109766661735265
+  },
+  "fixed_rbf": {
+    "alpha": 0.01,
+    "gamma": 10.0
+  },
+  "selection": "historical pseudo-source/group-equal five-label MAE",
+  "n_training_sources": 21,
+  "n_training_groups": 21,
+  "query_outcomes_used_for_tuning": false
+}

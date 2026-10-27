@@ -1,0 +1,243 @@
+{
+  "passed": true,
+  "new_model_fits": 0,
+  "new_predictions_generated": 0,
+  "verified_scalar_predictions": 10948000,
+  "parts": [
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_101_0",
+      "cells": 1890,
+      "query_prediction_rows": 10395,
+      "scalar_predictions": 41580,
+      "max_mae_difference": 1.7763568394002505e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_101_1",
+      "cells": 1260,
+      "query_prediction_rows": 6615,
+      "scalar_predictions": 26460,
+      "max_mae_difference": 1.7763568394002505e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_101_2",
+      "cells": 1260,
+      "query_prediction_rows": 7560,
+      "scalar_predictions": 30240,
+      "max_mae_difference": 8.881784197001252e-16,
+      "max_mse_difference": 7.105427357601002e-15,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_101_3",
+      "cells": 3150,
+      "query_prediction_rows": 28035,
+      "scalar_predictions": 112140,
+      "max_mae_difference": 2.6645352591003757e-15,
+      "max_mse_difference": 5.684341886080802e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_101_4",
+      "cells": 945,
+      "query_prediction_rows": 7875,
+      "scalar_predictions": 31500,
+      "max_mae_difference": 3.552713678800501e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_202_0",
+      "cells": 2205,
+      "query_prediction_rows": 16695,
+      "scalar_predictions": 66780,
+      "max_mae_difference": 2.6645352591003757e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_202_1",
+      "cells": 630,
+      "query_prediction_rows": 3465,
+      "scalar_predictions": 13860,
+      "max_mae_difference": 8.881784197001252e-16,
+      "max_mse_difference": 1.4210854715202004e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_202_2",
+      "cells": 1890,
+      "query_prediction_rows": 14490,
+      "scalar_predictions": 57960,
+      "max_mae_difference": 3.552713678800501e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_202_3",
+      "cells": 1575,
+      "query_prediction_rows": 8190,
+      "scalar_predictions": 32760,
+      "max_mae_difference": 1.7763568394002505e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_202_4",
+      "cells": 2205,
+      "query_prediction_rows": 17640,
+      "scalar_predictions": 70560,
+      "max_mae_difference": 3.552713678800501e-15,
+      "max_mse_difference": 1.4210854715202004e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_303_0",
+      "cells": 2520,
+      "query_prediction_rows": 18900,
+      "scalar_predictions": 75600,
+      "max_mae_difference": 1.7763568394002505e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_303_1",
+      "cells": 1890,
+      "query_prediction_rows": 11970,
+      "scalar_predictions": 47880,
+      "max_mae_difference": 1.7763568394002505e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_303_2",
+      "cells": 1890,
+      "query_prediction_rows": 15435,
+      "scalar_predictions": 61740,
+      "max_mae_difference": 1.7763568394002505e-15,
+      "max_mse_difference": 5.684341886080802e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_303_3",
+      "cells": 1575,
+      "query_prediction_rows": 11025,
+      "scalar_predictions": 44100,
+      "max_mae_difference": 1.7763568394002505e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_303_4",
+      "cells": 630,
+      "query_prediction_rows": 3150,
+      "scalar_predictions": 12600,
+      "max_mae_difference": 1.7763568394002505e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_404_0",
+      "cells": 315,
+      "query_prediction_rows": 1890,
+      "scalar_predictions": 7560,
+      "max_mae_difference": 1.7763568394002505e-15,
+      "max_mse_difference": 1.4210854715202004e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_404_1",
+      "cells": 2205,
+      "query_prediction_rows": 19530,
+      "scalar_predictions": 78120,
+      "max_mae_difference": 2.6645352591003757e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_404_2",
+      "cells": 1260,
+      "query_prediction_rows": 6615,
+      "scalar_predictions": 26460,
+      "max_mae_difference": 1.7763568394002505e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_404_3",
+      "cells": 2520,
+      "query_prediction_rows": 16380,
+      "scalar_predictions": 65520,
+      "max_mae_difference": 2.6645352591003757e-15,
+      "max_mse_difference": 5.684341886080802e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_404_4",
+      "cells": 2205,
+      "query_prediction_rows": 16065,
+      "scalar_predictions": 64260,
+      "max_mae_difference": 1.7763568394002505e-15,
+      "max_mse_difference": 5.684341886080802e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_42_0",
+      "cells": 2205,
+      "query_prediction_rows": 13545,
+      "scalar_predictions": 54180,
+      "max_mae_difference": 2.6645352591003757e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_42_1",
+      "cells": 2835,
+      "query_prediction_rows": 25200,
+      "scalar_predictions": 100800,
+      "max_mae_difference": 2.6645352591003757e-15,
+      "max_mse_difference": 5.684341886080802e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_42_2",
+      "cells": 945,
+      "query_prediction_rows": 4725,
+      "scalar_predictions": 18900,
+      "max_mae_difference": 1.7763568394002505e-15,
+      "max_mse_difference": 2.842170943040401e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_42_3",
+      "cells": 1260,
+      "query_prediction_rows": 6615,
+      "scalar_predictions": 26460,
+      "max_mae_difference": 3.552713678800501e-15,
+      "max_mse_difference": 5.684341886080802e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_history_v1/parts/ocm_42_4",
+      "cells": 1260,
+      "query_prediction_rows": 10395,
+      "scalar_predictions": 41580,
+      "max_mae_difference": 1.7763568394002505e-15,
+      "max_mse_difference": 5.684341886080802e-14,
+      "support_query_disjoint": true
+    },
+    {
+      "part": "research/step11/runs/operator_opened_v1/parts/cohort",
+      "cells": 5600,
+      "query_prediction_rows": 2434600,
+      "scalar_predictions": 9738400,
+      "max_mae_difference": 2.842170943040401e-14,
+      "max_mse_difference": 4.547473508864641e-13,
+      "support_query_disjoint": true
+    }
+  ],
+  "note": "Read-only reaggregation of stored predictions against recorded measurements; not a fresh model run."
+}

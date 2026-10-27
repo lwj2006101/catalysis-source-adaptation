@@ -1,0 +1,78 @@
+{
+  "identity": "82bf1561b2421e9ba1d1f6ea15fa098e03537629b8e5d6c608f5177cd63e39b7",
+  "created_utc": "2026-10-11T01:22:18.004045+00:00",
+  "config": {
+    "version": "step8-view-gate-1",
+    "seeds": [
+      42
+    ],
+    "folds": [
+      0
+    ],
+    "policies": [
+      "random",
+      "operating_vopt",
+      "composition_vopt",
+      "feature_cover",
+      "pool_vopt",
+      "kernel_vopt",
+      "robust_view_vopt",
+      "fixed_best_view",
+      "plain_view_gate",
+      "view_gate",
+      "shuffled_composition_vopt"
+    ],
+    "predictors": [
+      "base",
+      "target_mean",
+      "offset_mean",
+      "affine",
+      "eb",
+      "local_ridge",
+      "temperature_ridge",
+      "residual_ridge",
+      "adaptive_blend",
+      "local_ridge_retuned",
+      "adaptive_blend_retuned",
+      "local_rbf_retuned"
+    ],
+    "budgets": [
+      1,
+      2,
+      3,
+      5,
+      10
+    ],
+    "primary": "ocm_f0 frozen adaptive_blend; random queries; five labels; view_gate minus five fixed controls",
+    "primary_controls": [
+      "composition_vopt",
+      "operating_vopt",
+      "kernel_vopt",
+      "robust_view_vopt",
+      "fixed_best_view"
+    ],
+    "primary_uncertainty": "equal sources; draws then seeds averaged; conditional leakage-group bootstrap; Bonferroni 99% intervals",
+    "data_status": "historical development; not new confirmation",
+    "code_hashes": {
+      "aggregate_results.py": "b3e13d21a4c492b94ad487b9bd4316f89f2234bc132b6f0fd6e4f982d66d2dcd",
+      "verify_math.py": "d827c56b01e6e03c397a63178ff8db0f0024ed0b9dbcf239b3530f7cd3553616",
+      "selection_controls.py": "df1ce9cc82673b28d3a7c52672a217a0358d597ce508f9f07ac2b55032ffb62f",
+      "fetch_data.py": "406224eaf6f7ebc86127bb57df76788b6a6c2496f991e4c6d36cf3b5228f5c22",
+      "check_external_data.py": "3e434deafcdccc7bc436cb4dae62477464fa217d791c012cc7d46ed0bcec7698",
+      "server_guard.py": "a2ca0ace307efa31e2986370f7bc94740d772de2ae1b699772d8e420f85fc2bf",
+      "freeze_full_history.py": "cae935445fd870793cfac56a4b3b66b40ac6a37394e3f23aa90fe5bd4690910b",
+      "evaluate_external_ocm.py": "b5ddf20598551f4b653a62733092b5b95cdc7cc575b3c8af7591a6fc9f38c4a6",
+      "view_selection.py": "032f5a165df4e68084cb6b573d4d09775c8a20f89cfa63126e2811135f378ac8",
+      "audit_results.py": "372e3e6f3ca2c08965bbeea9344d9fb6f6383747b0cd1fe58a380d915070f324",
+      "run_history.py": "2a5e1b6777c1bc0182d96bc001a3b3b5701e8defa6e70a3e4e11ec95ac142037"
+    },
+    "historical_input_hashes": {
+      "sty_model_input_operating.csv": "0d21c3886174046a7b8eb44cb07683cfad881b211390f2f082018a43b4921018",
+      "model_input_revision.csv": "2a2414085b593f9834eeedcb0f5fdacd010265ed1026035b266df081e42672fc",
+      "ocm_model_input_operating.csv": "8a644837707edf5fc1d4f32e3bfabcb7e9e35536801d0e9768b3fae8bacafe0a",
+      "ocm_paired_raw_chemistry.csv": "4f19d033b1aeb5e709bec0e068991b59acee593357c3b28f6177ed231a60ef9b"
+    },
+    "reference_release_manifest_sha256": "82c4248e639eb1803139693f0f1827e564277a7e84c14b63dfe5d636a55549ee",
+    "plan_sha256": "7d7d790fb589ad1cb89ec0e2d3739c141fb92d15443eee9068f13a3faad69427"
+  }
+}

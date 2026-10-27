@@ -1,0 +1,24 @@
+{
+  "checked_utc": "2026-10-10T19:19:19.171303+00:00",
+  "python_files_syntax_parsed": [
+    "aggregate_results.py",
+    "audit_results.py",
+    "check_external_data.py",
+    "evaluate_external_ocm.py",
+    "fetch_data.py",
+    "freeze_full_history.py",
+    "run_history.py",
+    "selection_controls.py",
+    "server_guard.py",
+    "verify_math.py",
+    "view_selection.py"
+  ],
+  "shell_syntax": "bash -n passed for both entry points",
+  "outside_server_guard_blocked": true,
+  "guard_message": "正式实验仅在 upc 用户的 /home/HDD/upc/lwj 项目目录运行。",
+  "formal_model_fit_calls": 0,
+  "numerical_math_tests_executed": false,
+  "historical_grid_executed": false,
+  "new_cohort_evaluation_executed": false,
+  "status": "static/packaging verification only; runtime experiment and numeric audits pending on server"
+}

@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-11T06:15:48.289064+00:00",
+  "centered_kernel_vs_sklearn_max_error": 5.551115123125783e-16,
+  "centered_kernel_matches_previous_local_rbf": true,
+  "constant_shift_invariance": true,
+  "variance_vs_independent_joint_matrix_max_error": 7.771561172376096e-15,
+  "monte_carlo_draws": 50000,
+  "empirical_working_mae": 0.8608798119421569,
+  "analytic_working_mae": 0.861237472030168,
+  "minimum_block_kernel_eigenvalue": 0.002740015829839793,
+  "all_nested_orders": {
+    "finite_gp_v": [
+      1,
+      8,
+      14,
+      3,
+      6,
+      7,
+      5,
+      10,
+      2,
+      11
+    ],
+    "centered_mse": [
+      1,
+      8,
+      14,
+      3,
+      6,
+      7,
+      5,
+      10,
+      2,
+      11
+    ],
+    "centered_mae": [
+      1,
+      8,
+      14,
+      3,
+      6,
+      7,
+      5,
+      10,
+      2,
+      11
+    ],
+    "hedged_mse": [
+      8,
+      4,
+      1,
+      3,
+      5,
+      7,
+      6,
+      14,
+      10,
+      11
+    ],
+    "hedged_mae": [
+      8,
+      4,
+      1,
+      3,
+      5,
+      7,
+      12,
+      10,
+      14,
+      11
+    ]
+  },
+  "scientific_scope": "finite mathematical/simulation checks, not catalytic measurements or confidence calibration"
+}

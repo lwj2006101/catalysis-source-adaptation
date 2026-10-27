@@ -1,0 +1,22 @@
+{
+  "parts": 1,
+  "scalar_values_reaggregated": 157380,
+  "support_orders_checked": 854,
+  "new_design_orders_reconstructed": 70,
+  "independent_kernel_query_values_reconstructed": 10320,
+  "frozen_blend_query_values_reconstructed": 5160,
+  "legacy_locked_rbf_cells_matched": 70,
+  "actual_poisoned_source_frames": 14,
+  "maximum_independent_prediction_error": 4.2810199829546036e-13,
+  "maximum_scalar_loss_error": 2.842170943040401e-14,
+  "passed": true,
+  "audited_utc": "2026-10-11T06:19:21.633011+00:00",
+  "independence": "All scalar losses independently reaggregated. New kernel and locked RBF predictions reconstructed by a separate kernel implementation and sklearn; frozen blend uses inherited helpers. New design orders reuse selector; mathematical risk checks are separate.",
+  "new_backbone_refits": 0
+}
+         control  candidate_mae  control_mae  delta_mae  family_adjusted_ci_low  family_adjusted_ci_high  n_sources  n_leakage_groups  adjusted_support_for_advantage                statistical_status
+composition_vopt       2.559018     1.924916   0.634102            1.480297e-16                 1.384966          6                 6                           False historical development diagnostic
+     kernel_vopt       2.559018     2.318251   0.240768           -9.689817e-02                 0.918091          6                 6                           False historical development diagnostic
+robust_view_vopt       2.559018     1.957215   0.601803           -6.459878e-02                 1.384966          6                 6                           False historical development diagnostic
+       pool_vopt       2.559018     2.113309   0.445709           -2.730838e-01                 1.306188          6                 6                           False historical development diagnostic
+    centered_mae       2.559018     1.924916   0.634102            0.000000e+00                 1.384966          6                 6                           False historical development diagnostic

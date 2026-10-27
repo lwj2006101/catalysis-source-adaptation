@@ -1,0 +1,6 @@
+         control   task scenario  k  candidate_mae  control_mae  delta_mae  family_adjusted_ci_low  family_adjusted_ci_high  n_sources  n_leakage_groups  adjusted_support_for_advantage
+composition_vopt ocm_f0   random  5       3.373032     3.369579   0.003453                0.000000                 0.013810         22                22                           False
+  operating_vopt ocm_f0   random  5       3.373032     3.821443  -0.448412               -1.142915                 0.095755         22                22                           False
+     kernel_vopt ocm_f0   random  5       3.373032     3.458073  -0.085041               -0.268488                 0.041947         22                22                           False
+robust_view_vopt ocm_f0   random  5       3.373032     3.379344  -0.006313               -0.037077                 0.014684         22                22                           False
+ fixed_best_view ocm_f0   random  5       3.373032     3.369579   0.003453                0.000000                 0.013810         22                22                           False

@@ -1,0 +1,7 @@
+contrast,delta_mae,ci_low,ci_high,n_sources,status
+Centered squared vs random,-0.52524025949514,-0.7972696554514017,-0.2458648130064124,22,"post-hoc development; nominal 95%, no family adjustment"
+Centered squared vs finite GP,0.002119382284703047,-0.006937661271945677,0.01197850824118718,22,"post-hoc development; nominal 95%, no family adjustment"
+Centered absolute vs squared,0.053449455121519225,-0.033662810582982,0.15620758419124173,22,"post-hoc development; nominal 95%, no family adjustment"
+Averaged squared vs centered,0.23025902997321657,0.06937778985753144,0.4307276853710562,22,"post-hoc development; nominal 95%, no family adjustment"
+Expanded vs isotropic (composition V),-0.033438700822455925,-0.10560743413516306,0.02357365595582001,22,"post-hoc development; nominal 95%, no family adjustment"
+Expanded vs strong RBF (composition V),0.01260824076294621,-0.07014216401848027,0.1204370527094482,22,"post-hoc development; nominal 95%, no family adjustment"

@@ -1,0 +1,18 @@
+{
+  "primary_episodes": 110,
+  "composition_selected": 109,
+  "operating_selected": 1,
+  "composition_selected_fraction": 0.990909090909091,
+  "changed_episode": [
+    {
+      "part": "ocm_404_4",
+      "source": "OCM-PUB-350",
+      "scenario": "random",
+      "estimated_delta_mae": 1.3473608101635302,
+      "threshold": 1.275996183747493,
+      "selected_view": "operating",
+      "n_historical_groups": 16
+    }
+  ],
+  "interpretation": "The empirical margin mostly preserves the fixed composition design; near-equality is not evidence of superior learning."
+}

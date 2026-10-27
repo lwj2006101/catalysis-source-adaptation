@@ -1,0 +1,38 @@
+[
+  {
+    "resource": "Nguyen2021 catalyst-best-condition table",
+    "doi": "10.1021/acscatal.0c04629",
+    "url": "https://cads.eng.hokudai.ac.jp/datamanagement/datasources/f7e30001-e440-4c1a-be64-ea866b2f77cb/",
+    "download_url": "https://cads.eng.hokudai.ac.jp/private-media/ce5f5ab3-86a2-4ee1-a386-bf41092a973c/f7e30001-e440-4c1a-be64-ea866b2f77cb.csv",
+    "sha256": "628ff2928774bde6003dd08df1acc9bf8584f8b2ec4feb53273277b3c2953aa5",
+    "n_rows": 300,
+    "n_complete_response_condition_rows": 291,
+    "status": "not evaluated",
+    "reason": "response-selected best operating conditions alter the task; redistribution explicitly restricted",
+    "raw_in_delivery": false
+  },
+  {
+    "resource": "Niquini methanol kinetics",
+    "doi": "10.1039/d5re00330j",
+    "publisher_url": "https://pubs.rsc.org/en/content/articlelanding/2025/re/d5re00330j",
+    "status": "no compatible raw SI retrieved",
+    "runtime_errors": [
+      "HTTP403",
+      "HTTP404",
+      "repositoryHTTP502"
+    ],
+    "n_rows_evaluated": 0
+  },
+  {
+    "resource": "Nakanowatari OCM2025",
+    "doi": "10.1080/14686996.2025.2454219",
+    "full_xml_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11792127/fullTextXML",
+    "full_xml_sha256": "9f684b55fd722ae1d43e9b463b5726859f1506c2d8af00417920dc9fce152332",
+    "status": "full XML inspected; supplementary CSV not validated",
+    "runtime_errors": [
+      "EBI supplementary download timed out",
+      "PMC returned challenge HTML rather than CSV"
+    ],
+    "n_rows_evaluated": 0
+  }
+]

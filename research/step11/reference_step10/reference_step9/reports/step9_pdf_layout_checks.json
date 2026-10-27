@@ -1,0 +1,20 @@
+{
+  "manuscript_en": {
+    "pages": 24,
+    "bytes": 589515,
+    "rotation_aware": true,
+    "out_of_page_spans": []
+  },
+  "supplementary_en": {
+    "pages": 36,
+    "bytes": 560158,
+    "rotation_aware": true,
+    "out_of_page_spans": []
+  },
+  "第9步_真实结果与一区差距": {
+    "pages": 3,
+    "bytes": 9770,
+    "rotation_aware": true,
+    "out_of_page_spans": []
+  }
+}

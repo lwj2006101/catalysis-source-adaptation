@@ -1,0 +1,69 @@
+第11步文件索引
+解压根目录：step11；以下均为相对路径，可移动到新的工作目录。
+
+先看：
+00_第11步进度说明.txt
+README.txt
+AGENT_START_HERE.txt
+
+最新可核读的稿件：
+manuscripts/manuscript_en.pdf / .tex（12页，作者中性科学主稿）
+manuscripts/supplementary_en.pdf / .tex（45页，完整SI）
+manuscripts/第11步_成果与投稿说明.pdf（中文实际结果和投稿安排）
+
+投稿附件：
+submission/cover_letter.txt / .pdf（Computers & Chemical Engineering候选适配信）
+submission/cover_letter_Digital_Discovery_ESCI.txt（主题备选，官方为ESCI）
+submission/highlights.txt（5条，均不超过85字符）
+submission/graphical_abstract.pdf / .png
+submission/TOC_entry.txt
+submission/author_metadata.json
+submission/投稿操作说明.txt
+
+填写真实作者信息后：
+python3 analysis/finalize_author_info.py
+输出manuscripts/manuscript_submission.pdf、supplementary_submission.pdf与submission/cover_letter_submission.pdf，并保留作者中性原稿。署名与声明由实际作者确认，不能用猜测信息替代。
+
+本轮科学代码：
+code/robust_operator.py：固定RBF权重、工作风险、谱球惩罚选样
+code/run_extension.py：真实25组历史与20次身份留出
+analysis/audit_extension.py：误差重汇总、每条RBF的独立sklearn重建
+analysis/verify_operator_math.py：联合协方差、谱扰动和高斯模拟数学核验
+analysis/reproduce.py：完整核验、重新运行、新目录复现与PDF重建入口
+analysis/build_results.py：由实跑结果生成表格和图，不重新预测
+analysis/build_submission.py：由真实结果生成中文说明、投稿信和图文摘要
+analysis/verify_release.py：只读文件完整性与就绪状态核验
+requirements.txt：运行环境版本
+
+实际结果：
+runs/operator_history_v1/parts/：25组完整输入、支持/查询账本、参数、预测数组、完成记录
+runs/operator_history_v1/aggregated/：完整汇总与逐来源结果
+runs/operator_opened_v1/parts/cohort/：20次身份隔离账本、所有预测、输入与冻结参数
+runs/operator_opened_v1/aggregated/：逐划分与总汇总
+runs/operator_full_history_v1/：全历史惩罚选择及冻结记录
+runs/logs/：实际执行、独立审计、LaTeX与复现日志
+reports/step11_measured_facts.json：本轮实际计数与核心数值
+reports/repeated_partition_contrasts.csv：20次同预算对比
+reports/robust_vs_nominal_per_source.csv：惩罚方案与名义方案的逐来源差异
+reports/working_risk_rank_correlations.csv：来源内风险排序诊断
+reports/operator_math_checks.json：数学核验
+reports/portable_smoke_reproduction.json：新目录真实复现
+reports/additional_data_investigation.json：新公开数据调查、排除原因与读取错误
+reports/reference_metadata_audit.json：引用元数据核验与未成功请求记录
+protocol/：方案与执行锁定记录；没有冒称独立预注册
+
+全部前序成果：
+reference_step10/：完整第10步原包，原3290个清单文件逐文件保持不变。
+reference_step10/reference_step9/：全第9步，56个已拟合历史模型、首次测量来源应用与原始数据。
+reference_step10/reference_step9/reference_step7/：更早全部反应数据、来源分割、五面板标签机制、完整曲线与外部91来源。
+
+保存的统计层级：新策略14种，不代表14个独立来源；20个查询划分是同一实验家族；五个历史种子也不是五套独立数据。
+
+
+2026-10-12 中英文阅读版合并：
+manuscripts/第11步_论文英文原文.pdf：12页英文主文独立阅读版。
+manuscripts/第11步_论文中文版.pdf：11页完整中文主文译文。
+manuscripts/第11步_论文中文译文编辑源文件.zip：中文编辑源文件小包。
+manuscripts/chinese_source/：已展开的中文LaTeX、图表和重建入口。
+中文译文保留公式及数值，表格与图注已翻译；图内文字及文献沿用原文。
+此更新合并阅读文件并修复恢复时发现的旧ZIP截断，不增加新的科学结论。

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "final_pdf_pages": {
+    "manuscript_en": 21,
+    "supplementary_en": 23,
+    "chinese": 3
+  },
+  "all_pages_rendered": 47,
+  "all_pages_visually_reviewed": true,
+  "full_size_new_method_and_forest_and_factorial_tables_reviewed": true,
+  "missing_glyphs": 0,
+  "rotation_aware_bounds_violations": 0,
+  "latex_overfull_or_undefined_warnings": 0,
+  "new_scientific_figures": 3
+}

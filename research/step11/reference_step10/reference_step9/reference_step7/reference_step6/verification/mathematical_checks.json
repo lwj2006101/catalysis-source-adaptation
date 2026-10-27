@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "isotropic_ridge_equivalence": true,
+  "primal_dual_equivalence": true,
+  "response_shift_equivariance": true,
+  "feature_translation_invariance": true,
+  "latent_risk_monte_carlo_trials": 100000,
+  "latent_risk_monte_carlo_relative_error": 0.0031130129726638645,
+  "greedy_steps_exhaustively_checked": 10,
+  "nested_unique_supports": true,
+  "constant_feature_nonidentifiability": true,
+  "variance_monotonicity": true
+}

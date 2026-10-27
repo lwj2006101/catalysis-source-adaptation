@@ -1,0 +1,94 @@
+你接手的是催化机器学习论文升级项目第9步。用户目标是SCI一区，要求理性补强原创性、增加至少两项方法对照并补真实验证；每一步交付完整编号ZIP，附短进度说明和可续接提示词。用户已明确改为“你直接跑吧，不需要去我的网络”，请在你当前可用环境继续，毋须连接此前的私网。常规读文件、代码修复、可逆实验和公开数据获取已获授权，不要反复停下来确认。可能有没想到的地方，需要你自己检查一下。
+
+一、定位与路径
+当前真实执行根目录：
+/workspace/scratch/8bea8356e6d0/output/q1_upgrade_step9/step9
+如果你从ZIP接手，以解压后的 step9 为根；以下路径相对于该根。代码通过 __file__ 自动定位，日志和冻结元数据中的旧绝对路径仅是执行出处。
+先读：00_第9步进度说明.txt、01_现有成果与路径索引.txt、reports/step9_measured_facts.json。
+最新英文主稿：manuscripts/manuscript_en.pdf，源码同名.tex。
+完整SI：manuscripts/supplementary_en.pdf，源码同名.tex。
+中文判断：manuscripts/第9步_真实结果与一区差距.pdf。
+全套前序成果：reference_step7/；第8步原始准备代码/说明：reference_step8_prepared/。
+
+二、首先核对已完成事实，不要把本步当作未执行方案
+运行 python3 analysis/verify_release.py 进行只读核验。它核对完整manifest、冻结管线、前序文件、实际完成数量和关键数值。数学核对与小规模运行均实际通过。
+历史 runs/history_v1 共5个种子42/101/202/303/404×5个外层折=25组；93150评价单元，662400逐行查询记录，7948800标量预测；11选样策略×每视图12预测方法，五个预算，随机/温度压力/可用分层情境。历史主要比较有22个合格来源。
+本次历史比较复用第7步已经核验的骨干响应与来源分组OOF输入，没有新拟合25个外层骨干。新的门控、设计对照及局部预测确实执行。若提到“新拟合”，必须区分这些拟合与骨干。
+runs/full_history_v1 实际新拟合56个骨干：2视图×3个来源分组内层折×9个候选+2全量模型。另有门控/局部对照拟合，因此56不是所有fit调用总数。最终候选F0为GBDT100棵/depth3，F1为500棵/depth8；具体选择与adapter网格见infos.json、parameters.json及候选记录。79个代码/模型/输入/参数hash在新队列评价前冻结。
+新队列 runs/new_cohorts/nishimura_measured_v1 已完成一次冻结应用，1380评价单元、620310查询记录、7443720标量预测。所有标量损失及138个选样顺序均核验，98890条查询预测重建核对。历史相应为9315个顺序与105600条查询预测。损失重聚合是独立实现；预测重建复用原预测辅助函数，独立数学参考另行核对，不能把这些说成第二个实验室复现实验。
+历史标签替换核验检查2040个实际来源/折框架、110个合格框架、270个分区数组，极端替换目标结果不改变分区。它检查实现隔离，不证明历史来源标记完全可靠。
+原第7步全部2317项manifest文件保持原hash；第8步源包2356项manifest文件及其manifest本身逐文件保留映射在reports/step9_predecessor_preservation.json。无需下载旧包补齐现有成果。
+
+三、研究问题与信息边界
+任务是文献来源/实验家族迁移下的低标签来源内校准。全局模型只学历史来源；目标来源给定未标注候选池和查询输入，选择k个池内观测，再预测不重叠查询行。查询结果只能用于评分。允许读取目标查询输入是转导式部署假设，不能写成任意未见输入的无条件保证。
+F0预测器只使用六个工况通道；F1加入历史定义的组成和缺失/未知表征。选样表征可以与预测表征不同。同一组选样支持点交叉给F0/F1，是拆分“组成帮助选样”和“组成帮助预测”的诊断。
+标签提供响应水平和特征—响应对应关系，属于目标来源条件下的校准；不是自动提高零标签跨来源泛化。必须同时比较未适配模型、只用标签均值、局部模型、残差/混合以及历史调参的强局部非线性对照。
+来源分组后再分外层/内层；预处理和超参数仅用历史训练部分。查询结果不进入选择、预处理、门控或最终参数选择。同预算、同池/查询、同嵌套顺序比较；抽样重复和种子不是独立出版物或实验室。
+
+四、本步具体方法与已执行新增对照
+选样11项：random、operating_vopt、composition_vopt、feature_cover、pool_vopt、kernel_vopt、robust_view_vopt、fixed_best_view、plain_view_gate、view_gate、shuffled_composition_vopt。
+预测12项：base、target_mean、offset_mean、affine、eb、local_ridge、temperature_ridge、residual_ridge、adaptive_blend、local_ridge_retuned、adaptive_blend_retuned、local_rbf_retuned。全部强对照成绩保留在汇总和逐行数组，不只展示最有利预算。
+预算k=1,2,3,5,10；目标随机选样50个抽样，历史调参随机支持点10个抽样；组成行对应打乱10个抽样。
+设计的查询平均工作方差：
+V(A)=mean diag[K_QQ - K_QA (K_AA + alpha I)^(-1) K_AQ]。
+工况/组成线性核为100+x^T x'，截距先验系数100对应特征常量10；这是选样工作模型，不是已校准的真实误差概率。
+新增核V使用组成全表征，K=100+exp(-gamma||x-x'||^2/d)，gamma∈{0.1,1,10}，只用历史来源选择。
+新增稳健多视图V逐步最小化max{V_op(A)/V_op(empty), V_chem(A)/V_chem(empty)}；有限候选贪心，不是全组合全局最优。
+设计alpha沿用F1历史局部ridge的各预算表，双方视图共享，避免把调参差异误解为表征差异。支持顺序嵌套，中间步使用下一个报告预算的alpha。
+门控在历史来源的F0固定adaptive_blend、k5、random查询下学习delta=L_chem-L_op；固定8维无标签情境（池/查询大小、工况变化、组成变化/新颖度、工况未解释组成、均值漂移、两视图五点Jaccard分歧），标准化后加权Ridge(alpha=10)。来源/家族组权重均衡。按留组绝对误差的组均值80%分位(method=higher)设经验门槛q；delta_hat>q选工况，否则回退组成。少于6个历史组时回退组成。普通门控用阈值0，固定最佳视图仅按历史平均选。
+该门槛不是conformal/分布无关保证，原adapter参数曾在完整外层训练来源选择，留组诊断并非所有依赖都再次嵌套。零门槛二选一的逐点regret≤|delta_hat-delta|，加门槛可给≤|delta_hat-delta|+q的初等界；这不是新学习定理，也不能证明催化数据上更优。标准设计已有文献，不能仅重命名当算法原创。
+
+五、实际结果与不能越过的结论
+历史F0主要比较：保守门控3.3730316、固定组成V 3.3695791，MAE单位C2产率百分点。主要五项固定对照为组成V、工况V、核V、稳健多视图V、固定历史最佳。先平均draw和seed，再来源等权，按leakage_group bootstrap 20000次，五项家族用99%条件percentile区间。没有一项调整后支持门控优越；这不是等价性或非劣性证明。110次主要门控情境109次回退组成，仅1次选工况；见step9_gate_decisions.csv。
+历史固定混合F1：随机3.0917581、组成V 2.7084879；F0随机3.7050092、组成3.3695791。当前随机数含外层seed，故随机均值与第7步略不同；不要偷偷替换原五面板主要检验。第7步原有STY与OCM F1经家族调整支持的同预算改进保留原口径。
+新队列F1固定混合：随机4.7874434→组成V 4.2127074，点改善12.0051%；工况V 4.4825629，poolV 4.014950附近，完整值从CSV读。新队列F0：工况V 4.8167287优于组成V 5.0389518，随机5.4763199。历史上F0组成优于工况的顺序没有在这次来源上保持。
+新队列F1同一组成支持点：未适配骨干5.869107、目标标签均值5.959494、局部ridge4.170353、固定混合4.212707、历史调参局部RBF3.813248。强局部非线性模型更好，不能用“超过零标签模型”代替“原创候选超过强基线”。门控在新队列选组成，与固定组成的损失相同。
+新来源只有一个实验家族，报告点结果和条件性适用范围；不给跨来源人口CI、不把五阶段或50抽样算成独立研究。历史追加交叉和化学打乱属于开发/事后探索，原历史结果早已看过；本地hash不等于公开预注册。
+
+六、新测量出处、准入与缺失条件
+原论文Nishimura et al.2023，DOI10.1039/d3cy00596h，作者CADS页面和CSV、原论文已实际下载，所有文件及下载时间/hash在data/raw与receipt。
+2928条raw中只接纳原论文明确新制备/实测的SVR-1、SVR-2、Bayesian-1/2/3；不要纳入混合文献/HTS的List0、预测/建议清单、Unpublished、STD或Refernce/reference控制。
+排除1024条控制/出处未定、120条温度/响应不完整（含水汇总行和一条空温度）、45条重复催化剂条件。去重只用原CSV顺序和条件/组成键，保留第一条，没有用查询结果均值合成标签。最终1739条、116催化剂、1个来源/实验家族；原行出处和每条决策均保存。
+小数逗号转点；摄氏+273.15；已报告CH4/O2比3。单阳离子氧化物支持映射其阳离子历史token，原式保存；不推断价态/形貌。所有mol%缺失，不将“每g支持物0.2mmol”硬换成历史mol%分母。
+四个工况量——CH4分压、O2分压、总压、接触时间——全缺失，保留缺失，只用历史拟合的中位数转换。不假设1bar，不用31mL/min与50mg凭空推导接触时间。原文的炉长、进料和N2内标信息在单位说明中。
+C2产率是进料CH4碳基百分点，不是出口摩尔分数。乙烷+乙烯产率与C2差≤0.1pp，CH4转化率减CO/CO2/C2与报告缺失碳差≤0.2pp，与一位小数及N2内标相符。
+重叠审查发现3条低产率NaMnW/SiO2记录与9条2011旧记录存在舍入近似匹配。原文明确SVR-1包括新制备/实测NaMnW；共有零产率与温度不足以证明复制测量，理由逐条保留。不能因此宣称所有历史实验室/批次完全独立。本次是新出版物实测应用，不是未见催化剂或前瞻实验。
+ACS 2024 SI（10.1021/acs.jpcc.4c07397）实际下载，1702349字节、8页、MD5与出版平台一致；FigureS8只有三种催化剂的重复温度曲线，没有整份可兼容原始数值表。本步没有静默数字化成第二个数据集。
+甲醇候选10.1039/d5re00330j的出版入口实际返回403，没拿到兼容SI记录，没有评价。Sudo2026重分析引用Nishimura2023，不能再算一个独立队列。
+protocol/data_sources.json和analysis_plan.json保留评价前状态（含“预计56/已完成0”）；现在状态见protocol/data_sources_executed.json、execution_completion.json和runs。不要改旧锁来“更新数字”。
+
+七、环境、运行入口与版本纪律
+实际环境Python3.12.14，依赖requirements.txt匹配，资源约8GB内存/8CPU。标准库核验无需额外安装；模型反序列化与复现建议使用相同scikit-learn等版本，环境证据在runs/logs。
+在新的机器确有需要时才安装兼容依赖。环境和缓存放本项目内，不改全局或其他项目：
+python3 -m venv runs/env_step10
+source runs/env_step10/bin/activate
+python -m pip install -r requirements.txt
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+先核验现有包，再开展新版本；当前所有完成目录无需重复运行。
+原完整历史入口是bash server/run_history.sh，但会复用已有检查点并改写部分日志；不能算新的完整训练。若确需重新拟合或改变方法，在新版本目录/代码副本中执行，例如：
+python code/run_history.py --run-name history_step10_v1 --workers 2
+python code/audit_results.py --run-name history_step10_v1
+python code/aggregate_results.py --run-name history_step10_v1
+python code/freeze_full_history.py --history-run-name history_step10_v1 --freeze-run-name full_history_step10_v1
+这些命令只适用于你已锁定新代码/协议、保留现有版本并明确目的后，不能绕过旧冻结hash继续写旧目录。
+新数据进入data/curated/<新cohort>，按data/curated_template填写真实逐行出处、排除账本、单位、重叠与实验家族合同。先冻结历史最终模型，再执行：
+python code/check_external_data.py --cohort <新cohort>
+python code/evaluate_external_ocm.py --cohort <新cohort> --freeze-run-name <新冻结目录名>
+程序拒绝覆盖现有评价目录。换一个文件夹名不能把相同已见数据变成独立新队列。本步nishimura_measured_v1已经打开；后续可以作为开发/解释证据，不能调参后又称未见确认集。
+只读核验现有证据：python3 analysis/verify_release.py。
+表图重建：python analysis/build_step9_results.py；这只从审计结果生成表图，不拟合。中文报告：python analysis/build_chinese_progress.py。文稿增删还须手动校核tex、引文及编译。LaTeX从项目根运行：
+TEXINPUTS=manuscripts: pdflatex -interaction=nonstopmode -halt-on-error -output-directory=manuscripts manuscripts/manuscript_en.tex
+TEXINPUTS=manuscripts: pdflatex -interaction=nonstopmode -halt-on-error -output-directory=manuscripts manuscripts/supplementary_en.tex
+按引用/标签需要再次编译，渲染全部页核对，不能仅凭退出码认定版式无问题。
+
+八、继续工作的实质目标与自主空间
+当前已补齐运行和一个新的实测来源应用，未补齐“新算法确实优于强对照”与多实验家族确认。请先判断研究应主打机制/评测贡献，还是继续开发新方法；别为了凑原创性堆模块或把失败算法换名字。
+若继续方法开发，可根据已见结果检验“选择目标应与最终预测器/校准模型匹配”的机制，建立真正针对局部预测误差/信息价值的准则；它只是候选方向，不能默认比现有门控新或好。先读原始设计文献，核对与kernel/transductive/robust design及meta-active learning的区别，再在来源分离的历史开发中测试。
+至少比较固定组成/工况V、核V、稳健多视图V、固定历史最佳以及强局部ridge/RBF；保留同支持点的预测器对照。候选必须用真实来源级损失评估增量价值、负迁移和特征/预测器依赖。需要统计确认的新主要比较与家族规则在未见数据前锁定，不能事后选预算/终点报成功。
+确认来源优先选择另一实验室/原始实验家族且有兼容条件和真实测量出处，或设计小规模前瞻催化实验；没有来源就诚实说明，不用重复文献/预测行凑数据量。现实湿实验需要实验资源，不能只靠代码宣称完成。
+你可以自主定位问题、改进实现、开展合理对照、修订论文和数据核查；保留旧结果并解释改变目的。若新候选无增益，报告负结果并调整研究定位。不要保证分区/录用，主题有潜力不等于原创性和外部确认已达标。
+
+九、交付验收
+所有结果都能从包内完成记录、来源账本、参数、支持点ID和逐行数组追溯；无查询标签进入训练/选样，来源分组有效，同预算公平，单位一致。
+最终主文围绕有支持的正面贡献组织；失败候选、强基线更好和适用条件如实交代。研究开发、冻结应用、事后探索、未执行方案分别标记。核验图表中的所有数字和实验家族数。
+新增文件和旧版本完整打包为“第10步_…完整包.zip”（如下一步完成）；清除运行缓存/pyc和排版辅助文件，保留实际日志、模型、输入、原始出处、论文源与PDF。写新hash manifest，检查ZIP CRC和逐文件hash，附更新后的本提示词与路径索引。正文回复只需一段核心结果、瓶颈及完整包下载链接。

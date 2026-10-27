@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checked_utc": "2026-10-11T01:26:53.324340+00:00",
+  "actual_source_outer_split_frames": 2040,
+  "eligible_source_outer_split_frames": 110,
+  "partition_index_arrays_compared": 270,
+  "outcome_poison": "replace every actual target response by extreme artificial values",
+  "acquisition_signature": "selection_orders accepts only historical-frozen geometry, row IDs, partitions, frozen gate and seed; no target responses",
+  "limits": "This tests implementation isolation; it does not establish unbiased source identities or independent new laboratories."
+}

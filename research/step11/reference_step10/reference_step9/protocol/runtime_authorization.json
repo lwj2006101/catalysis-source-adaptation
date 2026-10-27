@@ -1,0 +1,9 @@
+{
+  "execution_mode": "current_runtime",
+  "authorization": "User explicitly requested: 你直接跑吧，不需要去我的网络",
+  "authorized_utc": "2026-10-11T01:21:41.526732+00:00",
+  "project_root": "/workspace/scratch/8bea8356e6d0/output/q1_upgrade_step9/step9",
+  "prior_server_constraint_superseded": true,
+  "output_boundary": "All new results stay inside this project root",
+  "private_server_connection_attempted": false
+}

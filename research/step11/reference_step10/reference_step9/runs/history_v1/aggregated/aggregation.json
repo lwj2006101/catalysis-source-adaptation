@@ -1,0 +1,11 @@
+{
+  "created_utc": "2026-10-11T01:25:17.562665+00:00",
+  "cells": 93150,
+  "units": "percentage points of C2 yield",
+  "primary_family_size": 5,
+  "uncertainty": "conditional on historical fitted components; sources equally weighted; repeats and seeds averaged first",
+  "data_scope": "historical_development",
+  "new_dataset_confirmation": false,
+  "prospective_experiments": false,
+  "pipeline_refit_bootstrap": false
+}

@@ -1,0 +1,63 @@
+Historical selection of acquisition views for source-local calibration
+Status: implemented candidate; no Step 8 performance experiment has run.
+
+Let L_C(s) and L_O(s) denote the query MAE of the same deployment predictor
+after five labels acquired in the composition and operating views, respectively.
+Define delta(s) = L_C(s) - L_O(s). A meta-regressor g(h_s), trained only on
+historical pseudo-sources, predicts this difference from an eight-dimensional
+response-free context h_s. At deployment, obtain only h_s, not query responses.
+Choose the operating view when g(h_s) > q; otherwise choose composition.
+Here q >= 0 is an empirical group-held-out error quantile, not a calibrated
+coverage guarantee. The view is fixed across the reported nested prefixes.
+
+Pointwise regret identities
+For a zero-threshold selector, excess loss above the better of the two fixed
+views is at most |g(h_s) - delta(s)|. If the selector chooses the wrong view,
+the estimate and true difference have opposite signs, so the estimation error
+must be at least the absolute loss difference; otherwise regret is zero.
+
+For threshold q >= 0, excess above the two-view oracle is at most
+|g(h_s) - delta(s)| + q. An erroneous switch from the default composition view
+has positive excess bounded by max(|g(h_s) - delta(s)| - q, 0).
+If no switch occurs, excess relative to that default is zero. If a correct
+switch occurs, the default-relative loss is negative. These deterministic
+relations explain a tradeoff, but do not bound the unobserved prediction error
+on an arbitrary shifted target source. They are elementary identities, not
+claimed as a new general learning theorem.
+
+An analytic counterexample: a richer design view need not improve a restricted predictor
+Consider synthetic operating descriptors that are constant. Two candidate
+measurements have composition c=0 and c=1, with noiseless response y=50+c.
+The query distribution has c=-10 with probability 3/4 and c=30 with probability
+1/4. Query outcomes are therefore 40 and 80. The deployment predictor with one
+label is the constant measured response.
+
+Under a rich-view working prior using features [10,c] and observation variance
+1, the prior average query variance is 400. Measuring c=0 leaves
+400 - 10000/101, while measuring c=1 leaves 400 - 10300/102. Thus rich-view
+V-optimal design favors c=1. Yet constant deployment prediction gives MAE
+15 after measuring c=0 and 15.5 after measuring c=1. This is a constructed
+example, not a catalyst result. It isolates the mismatch between optimizing
+the working model's posterior variance and minimizing the deployed learner's
+MAE. A rich representation can still help other query populations; no ordering
+between the views follows without assumptions about the prediction task.
+
+The historical-source gate targets the actual restricted learner's empirical
+loss difference rather than asserting that a working posterior is calibrated.
+Its success consequently requires that response-free contexts predict the
+loss ordering across source shifts. That assumption must be tested, not merely
+motivated. Limited eligible source counts, changing chemistry reporting and
+the eight-dimensional context can all make the gate unreliable.
+
+Historical pseudo-source geometry is cross-fitted by publication/leakage group.
+New gate/kernel decisions used to tune controls exclude the current pseudo-source
+group. The original adapter settings remain frozen conditional on their previous
+outer-training selection; the gate margin is not advertised as fully nested
+conformal calibration. Query labels enter evaluation losses only after support
+locations and predictions have been defined.
+
+The final evaluation crosses common supports with both F0 and F1 predictors,
+adds policy-retuned local ridge, blend and RBF controls, and averages repeated
+support designs and seeds before source-level inference. Originality and
+advantage remain empirical questions. Learning acquisition policies and
+multi-view/privileged-information methods have substantial prior literature.

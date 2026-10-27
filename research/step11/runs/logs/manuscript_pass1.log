@@ -1,0 +1,222 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./manuscript_en.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty)
+(./result_macros.tex) (/usr/share/texmf/tex/latex/lm/t1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+No file manuscript_en.aux.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+
+LaTeX Warning: Citation `roberts' on page 1 undefined on input line 19.
+
+
+LaTeX Warning: Citation `toldy' on page 1 undefined on input line 21.
+
+
+LaTeX Warning: Citation `yan' on page 1 undefined on input line 21.
+
+
+LaTeX Warning: Citation `suvarna' on page 1 undefined on input line 21.
+
+
+LaTeX Warning: Citation `schmack' on page 1 undefined on input line 21.
+
+
+LaTeX Warning: Citation `mine' on page 1 undefined on input line 21.
+
+
+LaTeX Warning: Citation `feudale' on page 1 undefined on input line 21.
+
+
+LaTeX Warning: Citation `breiman' on page 1 undefined on input line 21.
+
+
+LaTeX Warning: Citation `efron' on page 1 undefined on input line 21.
+
+
+LaTeX Warning: Citation `yubi' on page 1 undefined on input line 23.
+
+
+LaTeX Warning: Citation `gorodetsky2016' on page 1 undefined on input line 23.
+
+
+LaTeX Warning: Citation `nair2026' on page 1 undefined on input line 23.
+
+
+LaTeX Warning: Citation `tang2026' on page 1 undefined on input line 23.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/en
+c/dvips/lm/lm-ec.enc}]
+
+LaTeX Warning: Citation `toldy' on page 2 undefined on input line 29.
+
+
+LaTeX Warning: Citation `yan' on page 2 undefined on input line 29.
+
+
+LaTeX Warning: Citation `suvarna' on page 2 undefined on input line 29.
+
+
+LaTeX Warning: Citation `schmack' on page 2 undefined on input line 29.
+
+[2{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}]
+
+LaTeX Warning: Citation `mine' on page 3 undefined on input line 41.
+
+
+LaTeX Warning: Citation `nishimura2023new' on page 3 undefined on input line 43
+.
+
+[3{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
+
+LaTeX Warning: Citation `gpml' on page 4 undefined on input line 80.
+
+[4]
+
+LaTeX Warning: Reference `fig:split' on page 5 undefined on input line 102.
+
+
+LaTeX Warning: Reference `tab:information' on page 5 undefined on input line 10
+5.
+
+(./tables/internal_k5_body.tex)
+
+LaTeX Warning: Reference `tab:alignment' on page 5 undefined on input line 111.
+
+
+(./tables/label_alignment.tex) [5] [6 <../figures/fig1_split_audit.pdf>]
+
+LaTeX Warning: Reference `eq:projection' on page 7 undefined on input line 117.
+
+
+
+LaTeX Warning: Reference `tab:additional' on page 7 undefined on input line 120
+.
+
+(./tables/external_k5_body.tex)
+
+LaTeX Warning: Reference `tab:acquisition' on page 7 undefined on input line 12
+9.
+
+(./tables/step7_primary.tex) [7]
+
+LaTeX Warning: Reference `fig:crossing' on page 8 undefined on input line 136.
+
+[8 <../figures/step7_01_primary.pdf>]
+
+LaTeX Warning: Reference `tab:repeated' on page 9 undefined on input line 144.
+
+
+LaTeX Warning: Reference `fig:sensitivity' on page 9 undefined on input line 14
+4.
+
+(./tables/repeated_catalyst.tex) (./repeated_results_text.tex)
+
+LaTeX Warning: Reference `tab:matched' on page 9 undefined on input line 152.
+
+
+LaTeX Warning: Reference `eq:bound' on page 9 undefined on input line 152.
+
+(./tables/matched_rbf.tex) [9 <../figures/step9_01_matched_geometry.pdf>]
+
+LaTeX Warning: Reference `eq:projection' on page 10 undefined on input line 161
+.
+
+[10 <../figures/task_sensitivity.pdf>] (./references_main.tex
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd) [11]) [12] (./manuscript_en.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `manuscript_en.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmtt10.pfb>
+Output written on manuscript_en.pdf (12 pages, 344614 bytes).
+Transcript written on manuscript_en.log.

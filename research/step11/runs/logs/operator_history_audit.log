@@ -1,0 +1,35 @@
+AUDITED ocm_101_0 1890
+AUDITED ocm_101_1 1260
+AUDITED ocm_101_2 1260
+AUDITED ocm_101_3 3150
+AUDITED ocm_101_4 945
+AUDITED ocm_202_0 2205
+AUDITED ocm_202_1 630
+AUDITED ocm_202_2 1890
+AUDITED ocm_202_3 1575
+AUDITED ocm_202_4 2205
+AUDITED ocm_303_0 2520
+AUDITED ocm_303_1 1890
+AUDITED ocm_303_2 1890
+AUDITED ocm_303_3 1575
+AUDITED ocm_303_4 630
+AUDITED ocm_404_0 315
+AUDITED ocm_404_1 2205
+AUDITED ocm_404_2 1260
+AUDITED ocm_404_3 2520
+AUDITED ocm_404_4 2205
+AUDITED ocm_42_0 2205
+AUDITED ocm_42_1 2835
+AUDITED ocm_42_2 945
+AUDITED ocm_42_3 1260
+AUDITED ocm_42_4 1260
+{
+  "passed": true,
+  "parts": 25,
+  "cells": 42525,
+  "query_records": 302400,
+  "scalar_predictions": 1209600,
+  "sklearn_reconstructed_values": 302400,
+  "max_loss_difference": 5.684341886080802e-14,
+  "max_reconstruction_difference": 6.252776074688882e-13
+}
